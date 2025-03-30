@@ -1,0 +1,38 @@
+<section class="section about" id='about'>
+    <div class="container">
+        <div class="section-box">
+            <div class="about-title" data-aos="fade-up">
+                <h3 class="section-title">
+                    <span class='n-section-title'>01.</span> {{"AboutMe.Title" | translate}}
+                </h3>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6 mb-4 mb-md-0">
+                    <div class="about-description">
+                        <p *ngFor='let text of "AboutMe.Paragraphs" | translate' [innerHTML]="text" data-aos="fade-up" data-aos-duration="1000">
+                        </p>
+                        <ul class="skills-list" data-aos="fade-up">
+                            @for (item of ("AboutMe.technologies" | translate); track $index) {
+                                <li class="skill-element" data-aos="fade-up" data-aos-duration="1000"><span class="underline">{{item}}</span></li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 mt-4 mt-md-0 text-center" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="about-img-container">
+                        <owl-carousel-o class='owl-carousel-o' [options]="customOptions">
+                            <ng-container *ngFor="let img of ownImages">
+                                <ng-template carouselSlide>
+                                    <div #imgContainer class='img-container'>
+                                        <img class='img-feature-proyect rounded' [src]="img">
+                                    </div>
+                                </ng-template>
+                            </ng-container>
+                        </owl-carousel-o>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

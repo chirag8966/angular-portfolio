@@ -1,0 +1,29 @@
+<footer>
+    <div [@animateFooter]>
+        <ul class="footer-left-bar d-none d-md-block">
+            <li>
+                <a (click)='analyticsService.sendAnalyticEvent("click_github", "footer", "github")' href="https://github.com/chirag8966" target='_blank'>
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            <li>
+                <a (click)='analyticsService.sendAnalyticEvent("click_linkedin", "footer", "github")' href="https://www.linkedin.com/in/chirag8966/" target='_blank'>
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+        </ul>
+        <div class="footer-right-bar d-none d-md-block">
+            <a (click)='analyticsService.sendAnalyticEvent("click_send_mail", "footer", "email")' href="mailto:chirag8966@gmail.com" target='_blank'>chirag8966&#64;gmail.com </a>
+        </div>
+    </div>
+
+    <div class="footer-credits text-center" >
+        <a (click)='analyticsService.sendAnalyticEvent("click_github_portfolio_chiragJain", "footer", "click")' href="https://github.com/chirag8966/angular-portfolio" target="_blank" rel="nofollow noopener noreferrer">
+            <div>Built with Angular by Chirag Jain</div>
+        </a>
+        <a (click)='analyticsService.sendAnalyticEvent("click_github_portfolio_brittany", "footer", "click")' href="https://github.com/bchiang7/v4" target="_blank" rel="nofollow noopener noreferrer">
+            <div class="mt-2">Designed by Brittany Chiang</div>
+        </a>
+    </div>
+
+</footer>
