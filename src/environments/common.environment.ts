@@ -1,7 +1,7 @@
 import { OwlOptions } from "ngx-owl-carousel-o"
 
 export const commonCredentials = {
-    trackAnalyticID: "G-60VZQTZRSR",
+    trackAnalyticID: "G-L7Y2QY3PGV",
 }
 
 export const customOptions: OwlOptions = {

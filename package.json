@@ -29,7 +29,7 @@
     "@popperjs/core": "^2.11.8",
     "aos": "^2.3.4",
     "bootstrap": "^4.5.0",
-    "ngx-google-analytics": "^11.2.0",
+    "ngx-google-analytics": "^14.0.1",
     "ngx-owl-carousel-o": "^18.0.0",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",

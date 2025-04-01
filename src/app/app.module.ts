@@ -17,31 +17,36 @@ import {
 } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { environment } from '../environments/environment';
+import { NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
-@NgModule({ declarations: [
-        AppComponent,
-        /* ArchiveComponent */
-    ],
-    bootstrap: [AppComponent], imports: [BrowserAnimationsModule,
-        HomeModule,
-        GeneralModule,
-        // AnimateOnScrollModule.forRoot(),
-        BrowserModule,
-        AppRoutingModule,
-        ServiceWorkerModule.register('ngsw-worker.js', {
-            enabled: environment.production,
-        }),
-        // NgxGoogleAnalyticsModule.forRoot(environment.trackAnalyticID),
-        TranslateModule.forRoot({
-            loader: {
-                provide: TranslateLoader,
-                useFactory: HttpLoaderFactory,
-                deps: [HttpClient],
-            },
-        }),
-        NgbModule], providers: [TranslateService, provideHttpClient(withInterceptorsFromDi())] })
-export class AppModule {}
+@NgModule({
+  declarations: [
+    AppComponent,
+    /* ArchiveComponent */
+  ],
+  bootstrap: [AppComponent],
+  imports: [
+    BrowserAnimationsModule,
+    HomeModule,
+    GeneralModule,
+    // AnimateOnScrollModule.forRoot(),
+    BrowserModule,
+    AppRoutingModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+    }),
+    NgxGoogleAnalyticsModule.forRoot(environment.trackAnalyticID),
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
+    }),
+    NgbModule], providers: [TranslateService, provideHttpClient(withInterceptorsFromDi())]
+})
+export class AppModule { }
