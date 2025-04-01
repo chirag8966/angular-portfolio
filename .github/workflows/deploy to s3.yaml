@@ -14,34 +14,34 @@ env:
   AWS_CLOUDFRONT_DISTRIBUTION_ID: "E2IVJT1UVKO29P"
   AWS_ACCOUNT_ID: "858098074775"
 
-  permissions:
-    id-token: write
-    contents: read
+permissions:
+  id-token: write
+  contents: read
 
-  jobs:
-    S3PackageUpload:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Git clone the repository
-          uses: actions/checkout@v4
+jobs:
+  S3PackageUpload:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git clone the repository
+        uses: actions/checkout@v4
 
-        - name: Configure AWS credentials
-          uses: aws-actions/configure-aws-credentials@v4
-          with:
-            role-to-assume: arn:aws:iam::${{ env.AWS_ACCOUNT_ID }}:role/GithubS3Access
-            role-session-name: GitHubActions
-            aws-region: ${{ env.AWS_REGION }}
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::${{ env.AWS_ACCOUNT_ID }}:role/GithubS3Access
+          role-session-name: GitHubActions
+          aws-region: ${{ env.AWS_REGION }}
 
-        - name: Install dependencies
-          run: npm install
+      - name: Install dependencies
+        run: npm install
 
-        - name: Build the project
-          run: npm run build-portfolio
+      - name: Build the project
+        run: npm run build-portfolio
 
-        - name: Sync files to S3 bucket
-          run: |
-            aws s3 sync ./dist/chiragjain-portfolio/browser s3://${{ env.BUCKET_NAME }}/
+      - name: Sync files to S3 bucket
+        run: |
+          aws s3 sync ./dist/chiragjain-portfolio/browser s3://${{ env.BUCKET_NAME }}/
             
-        - name: cache invalidation
-          run: |
-            aws cloudfront create-invalidation --distribution-id ${{ env.AWS_CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
+      - name: cache invalidation
+        run: |
+          aws cloudfront create-invalidation --distribution-id ${{ env.AWS_CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
