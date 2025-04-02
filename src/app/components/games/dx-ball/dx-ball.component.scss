@@ -1,0 +1,138 @@
+@import '../../../../variables.scss';
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: $Navy;
+  padding: 1rem;
+  margin: 0;
+  padding-bottom: 10rem;
+
+  canvas {
+    width: 80%;
+    height: 60vh;
+    border: 2px solid $Green;
+    border-radius: 5px;
+    background-color: $Navy;
+    touch-action: none; // Prevents default touch actions
+  }
+
+  .game-controls {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    .restart-btn {
+      background-color: $Green;
+      color: $Navy;
+      border: none;
+      padding: 0.5rem 1.5rem;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: bold;
+
+      &:hover {
+        background-color: darken($Green, 10%);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+    }
+  }
+
+  .game-instructions {
+    margin-top: 1rem;
+    text-align: center;
+    padding: 0 1rem;
+
+    h2 {
+      margin-bottom: 0.5rem;
+      font-size: 1.5rem;
+    }
+
+    p {
+      margin: 0.25rem 0;
+      font-size: 1rem;
+    }
+
+    a {
+      color: $Green;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .game-container {
+    padding: 0.5rem;
+    padding-bottom: 5rem;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    canvas {
+      width: 95%;
+      height: 80vh;
+      margin-bottom: 0.5rem;
+    }
+
+    .game-controls {
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+      
+      .restart-btn {
+        padding: 0.4rem 1.2rem;
+        font-size: 0.9rem;
+      }
+    }
+
+    .game-instructions {
+      margin-top: 0.5rem;
+      padding: 0 0.5rem;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+
+      h2 {
+        font-size: 1.1rem;
+        margin-bottom: 0.25rem;
+      }
+
+      p {
+        font-size: 0.85rem;
+        margin: 0.15rem 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .game-container {
+    canvas {
+      height: 60vh;
+      width: 98%;
+    }
+
+    .game-instructions {
+      h2 {
+        font-size: 1rem;
+      }
+
+      p {
+        font-size: 0.8rem;
+      }
+    }
+  }
+} 
