@@ -5,22 +5,5 @@
     <app-projects></app-projects>
     <app-more-proyects></app-more-proyects> -->
     <app-contact></app-contact>
-    @defer (on viewport) {
-        <app-dx-ball></app-dx-ball>
-    } @placeholder {
-        <div class="game-placeholder">
-            <div class="loading-spinner"></div>
-            <p>Loading game...</p>
-        </div>
-    } @loading {
-        <div class="game-loading">
-            <div class="loading-spinner"></div>
-            <p>Loading game...</p>
-        </div>
-    } @error {
-        <div class="game-error">
-            <p>Error loading game. Please try again.</p>
-        </div>
-    }
+    <app-dx-ball></app-dx-ball>
 </main>
-
