@@ -271,5 +271,21 @@
   "Contact.Pretitle": "And... Now?",
   "Contact.Title": "Say Hi!",
   "Contact.Content": "I will be glad to hear from you if you want to discuss new opportunities. Write to me, and I will respond as soon as I see your message.",
-  "Contact.Btn": "Contact Me"
+  "Contact.Btn": "Contact Me",
+
+  "dxBall": {
+    "title": "DX Ball",
+    "startMessage": "Click to begin",
+    "gameOver": "It was cool while it lasted! lets hire Chirag now.",
+    "restartMessage": "Click to restart",
+    "continueMessage": "Click to continue",
+    "score": "Score: {{score}}",
+    "lives": "Lives: {{lives}}",
+    "instructions": {
+      "title": "DX Ball Game made with",
+      "link": "Prompt Engineering",
+      "description": "Move your mouse or touch the screen and hold to control the paddle and break all the bricks!"
+    },
+    "restartButton": "Restart Game"
+  }
 }

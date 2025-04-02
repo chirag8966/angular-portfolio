@@ -236,6 +236,13 @@
     background: #172a45;
     border-radius: 5px;
     cursor: pointer;
+    &.first-item {
+        border-radius: 5px 5px 0 0;
+    }
+    
+    &.last-item {
+        border-radius: 0 0 5px 5px;
+    }
 }
 
 .language-container-selector {
@@ -302,4 +309,14 @@
     .arrow-active {
         visibility: inherit;
     }
+}
+
+.language-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cursor-pointer {
+    cursor: pointer;
 }
