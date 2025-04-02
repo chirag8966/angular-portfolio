@@ -7,7 +7,7 @@ import { Location } from '@angular/common';
 })
 export class LanguageService {
 
-  language: "es" | "en";
+  language: "es" | "en" | "ar";
 
   constructor(
     public translateService: TranslateService,
@@ -15,9 +15,10 @@ export class LanguageService {
   ) {}
 
   initLanguage(){
-    this.translateService.addLangs(["en", "es"])
+    this.translateService.addLangs(["en", "es", "ar"])
     let language = navigator.language || (navigator as any).userLanguage;
-    language = language.split("-").includes("es") ? "es" : "en"
+    language = language.split("-").includes("es") ? "es" : 
+               language.split("-").includes("ar") ? "ar" : "en"
     this.translateService.setDefaultLang(language)
 
     // Change the URL without navigate:

@@ -1,13 +1,7 @@
+import { HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { GeneralModule } from './components/general/general.module';
-import { HomeModule } from './components/home/home.module';
-// import { AnimateOnScrollModule } from 'ng2-animate-on-scroll';
-import { HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {
@@ -16,8 +10,12 @@ import {
   TranslateService,
 } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { NgxGoogleAnalyticsModule } from 'ngx-google-analytics';
 import { environment } from '../environments/environment';
-import { NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { GeneralModule } from './components/general/general.module';
+import { HomeModule } from './components/home/home.module';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -26,15 +24,12 @@ export function HttpLoaderFactory(http: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
-    /* ArchiveComponent */
   ],
   bootstrap: [AppComponent],
   imports: [
     BrowserAnimationsModule,
     HomeModule,
     GeneralModule,
-    // AnimateOnScrollModule.forRoot(),
-    BrowserModule,
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
@@ -47,6 +42,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         deps: [HttpClient],
       },
     }),
-    NgbModule], providers: [TranslateService, provideHttpClient(withInterceptorsFromDi())]
+    NgbModule
+  ],
+  providers: [TranslateService, provideHttpClient(withInterceptorsFromDi())]
 })
 export class AppModule { }

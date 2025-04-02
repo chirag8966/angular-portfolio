@@ -1,0 +1,12 @@
+<div class="game-container">
+  <canvas #gameCanvas></canvas>
+  <div class="game-controls">
+    <button class="restart-btn" (click)="restartGame()">{{ 'dxBall.restartButton' | translate}}</button>
+  </div>
+  <div class="game-instructions">
+    <h2>{{ 'dxBall.instructions.title' | translate }} 
+      <a href="https://www.cursor.com/" target="_blank">{{ 'dxBall.instructions.link' | translate }}</a>
+    </h2>
+    <p>{{ 'dxBall.instructions.description' | translate }}</p>
+  </div>
+</div> 

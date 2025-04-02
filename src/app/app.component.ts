@@ -19,6 +19,12 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // Smooth scroll to top
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+
     this.languageService.initLanguage()
     this.titleService.setTitle("Chirag Jain | Frontend Developer");
     this.metaService.addTags([
@@ -26,6 +32,5 @@ export class AppComponent implements OnInit {
       { name: 'description', content: 'Software Engineer with 6+ years of expertise in Angular development, dedicated to crafting engaging, accessible digital experiences with proven success scaling products and teams.' },
     ]);
     AOS.init();
-
   }
 }

@@ -266,5 +266,21 @@
   "Contact.Pretitle": "Y... ¿Ahora?",
   "Contact.Title": "¡Salúdame!",
   "Contact.Content": "Estaré encantado de recibir tu contacto si quieres conversar acerca de nuevas oportunidades. Escríbeme, y te responderé tan pronto como vea tu mensaje.",
-  "Contact.Btn": "Contactame"
+  "Contact.Btn": "Contactame",
+
+  "dxBall": {
+    "title": "DX Ball",
+    "startMessage": "Haz clic para comenzar",
+    "gameOver": "¡Fue genial mientras duró! Contratemos a Chirag ahora.",
+    "restartMessage": "Haz clic para reiniciar",
+    "continueMessage": "Haz clic para continuar",
+    "score": "Puntuación: {{score}}",
+    "lives": "Vidas: {{lives}}",
+    "instructions": {
+      "title": "Juego DX Ball creado con",
+      "link": "Ingeniería de Prompts",
+      "description": "¡Mueve el mouse o toca la pantalla y mantén presionado para controlar la paleta y romper todos los ladrillos!"
+    },
+    "restartButton": "Reiniciar Juego"
+  }
 }

@@ -1,0 +1,97 @@
+{
+  "Header.Item1": "عني",
+  "Header.Item2": "الخبرة",
+  "Header.Item3": "المشاريع",
+  "Header.Item4": "اتصل بي",
+  "Header.cvBtn": "السيرة الذاتية",
+  "Header.cvName": "resume.pdf",
+
+  "Banner.Pretitle": "مرحباً! اسمي",
+  "Banner.Description": "مع <span class='underline'>6 سنوات من الخبرة</span>، أتخصص في تطوير أنظمة الواجهة الأمامية، والمكونات القابلة لإعادة الاستخدام، والحلول التكنولوجية المبتكرة لتحسين إمكانية الوصول إلى الويب. تركيزي هو على كتابة كود نظيف وقابل للتطوير والصيانة، بشكل أساسي في <span class='underline'>Angular</span> وبشكل عام في <span class='underline'>JavaScript</span>.",
+  "Banner.ActionBtn": "مرحباً",
+
+  "AboutMe.Title": "عني",
+  "AboutMe.Paragraphs": [
+    "مع أكثر من <span class='underline'>6 سنوات من الخبرة المهنية</span>، شغلت أدواراً متنوعة مثل <span class='underline'>محلل النظم</span>، و<span class='underline'>معلم</span>، و<span class='underline'>مطور الواجهة الأمامية</span>، و<span class='underline'>قائد تقني</span>. شغفي يكمن في تطوير حلول مبتكرة تحقق نتائج مؤثرة.",
+    "أتخصص في تحسين الأنظمة، وتحسين الأداء، وتوحيد أنماط التطوير، وتقديم أفكار ترفع من قيمة كل مشروع أشارك فيه.",
+    "خارج ساعات العمل، أستمتع بإنشاء أدوات وتطبيقات للاستخدام الشخصي، مدمجاً بين المنفعة والإبداع.",
+    "أستخدم مجموعة واسعة من التقنيات، بما في ذلك (ولكن ليس على سبيل الحصر):"
+  ],
+  "AboutMe.technologies": [
+    "Angular",
+    "RxJS",
+    "HTML & (S)CSS",
+    "JavaScript",
+    "TypeScript",
+    "graphQL",
+    "Node.js",
+    "YAML",
+    "JSON",
+    "NX",
+    "CI / CD",
+    "AWS"
+  ],
+
+  "Experience.Title": "الخبرة",
+  "Experience.Jobs": [
+    {
+      "Tab": "Global",
+      "Title": "مطور متكامل",
+      "Date": "مايو 2023",
+      "Description": [
+        "قائد في اتخاذ القرارات التقنية",
+        "توظيف المواهب التقنية للشركة",
+        "قائد فريق قسم التكنولوجيا",
+        "إنشاء وصيانة منصة إدارة العمليات الداخلية لبيع الدورات",
+        "برمجة وظائف وإضافات مخصصة لتخصيص منصة WordPress",
+        "تنفيذ التكامل المستمر والنسخ الاحتياطي اليومي",
+        "اجتماعات التخطيط والتقارير"
+      ]
+    }
+  ],
+
+  "FeatureProjects.Title": "مشاريعي",
+  "FeatureProjects.Label": "مشروع مميز",
+  "FeatureProjects.Projects": [
+    {
+      "Title": "Gisselle",
+      "Description": "تطبيق ويب لإدارة الشركة الداخلية يغطي أقسام المبيعات والمحاسبة والتتبع، واسع ومعقد للغاية مع وظائف متنوعة تم تطويرها في <span class='underline'>Angular</span> و <span class='underline'>Laravel</span>. يعمل مع <span class='underline'>websockets</span>، <span class='underline'>الجدول الزمني</span>، <span class='underline'>وظائف Laravel</span>، تكامل مع WordPress، Zadarma، LiveConnect، إلخ.",
+      "imgs": [
+        "assets/images/gisselle/Captura de pantalla 2024-05-19 1009582.png",
+        "assets/images/gisselle/Captura de pantalla 2024-05-19 115514.png",
+        "assets/images/gisselle/Captura de pantalla 2024-05-19 115702.png",
+        "assets/images/gisselle/Captura de pantalla 2024-05-19 115829.png",
+        "assets/images/gisselle/Captura de pantalla 2024-05-19 1009582.png"
+      ],
+      "Technologies": ["Laravel", "Angular", "SASS", "Angular Material", "RxJS"]
+    }
+  ],
+
+  "OtherProjects.Title": "المزيد من المشاريع",
+  "OtherProjects.Projects": [
+    {
+      "Title": "لعبة اليدين",
+      "Description": "لعبة حجر ورق مقص موسعة. مشروع شخصي تم تطويره في Angular حيث تلعب بشكل عشوائي ضد الآلة. يتميز باستخدام الخدمات والواجهات والمكونات.",
+      "imgs": ["assets/images/hands-game.png"],
+      "ghLink": "https://github.com/andresjosehr/hands-game",
+      "demoLink": "https://projects.andresjosehr.com/hands-game",
+      "Technologies": ["Angular", "CSS GRID", "SASS", "Angular animations"]
+    }
+  ],
+
+  "dxBall": {
+    "title": "DX Ball",
+    "startMessage": "انقر للبدء",
+    "gameOver": "كان رائعًا بينما استمر! دعنا نوظف Chirag الآن.",
+    "restartMessage": "انقر لإعادة التشغيل",
+    "continueMessage": "انقر للمتابعة",
+    "score": "النتيجة: {{score}}",
+    "lives": "الأرواح: {{lives}}",
+    "instructions": {
+      "title": "لعبة DX Ball تم إنشاؤها باستخدام",
+      "link": "هندسة التوجيه",
+      "description": "حرك الماوس أو المس الشاشة وامسك للتحكم في المضرب وكسر جميع الطوب!"
+    },
+    "restartButton": "إعادة تشغيل اللعبة"
+  }
+}
