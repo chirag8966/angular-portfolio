@@ -1,13 +1,18 @@
+<!-- Experience Section -->
 <section class="section" id="jobs">
   <div class="container jobs">
     <div class="section-box">
+      <!-- Section Title with Animation -->
       <div class="about-title mb-5" data-aos="fade-up" data-aos-duration="1000">
         <h3 class="e-font section-title">
           <span class="code-font n-section-title">02.</span>
           {{ "Experience.Title" | translate }}
         </h3>
       </div>
+
+      <!-- Jobs Tabs Container with Animation -->
       <div class="jobs-tabs" data-aos="fade-up" data-aos-duration="1000">
+        <!-- Vertical Navigation Tabs -->
         <ul
           ngbNav
           #nav="ngbNav"
@@ -15,31 +20,36 @@
           orientation="vertical"
           class="nav-tabs jobs-tabs"
         >
-          <li
-            *ngFor="let job of 'Experience.Jobs' | translate; let i = index"
-            [title]="job.Tab"
-            [ngbNavItem]="i"
-          >
-            <a ngbNavLink>{{ job.Tab }}</a>
-            <ng-template ngbNavContent>
-              <h4 class="title-tab-content">
-                {{ job.Title }} |
-                <span class="company-tab-content">{{ job.Tab }}</span>
-              </h4>
-              <h5 class="job-time">{{ job.Date }}</h5>
-              <!-- {{job.Description | json}} -->
-              <p
-                *ngFor="
-                  let jobDescriptionParagraph of job.Description;
-                  let i = index
-                "
-                class="job-description"
-                [innerHTML]="jobDescriptionParagraph | translate"
-              ></p>
-              <span></span>
-            </ng-template>
-          </li>
+          <!-- Job Tab Items -->
+          @for (job of 'Experience.Jobs' | translate; track job.Tab) {
+            <li [title]="job.Tab" [ngbNavItem]="$index">
+              <!-- Tab Link -->
+              <a ngbNavLink>{{ job.Tab }}</a>
+
+              <!-- Tab Content Template -->
+              <ng-template ngbNavContent>
+                <!-- Job Title and Company -->
+                <h4 class="title-tab-content">
+                  {{ job.Title }} |
+                  <span class="company-tab-content">{{ job.Tab }}</span>
+                </h4>
+
+                <!-- Job Duration -->
+                <h5 class="job-time">{{ job.Date }}</h5>
+
+                <!-- Job Description Points -->
+                @for (description of job.Description; track $index) {
+                  <p 
+                    class="job-description"
+                    [innerHTML]="description | translate"
+                  ></p>
+                }
+              </ng-template>
+            </li>
+          }
         </ul>
+
+        <!-- Tab Content Outlet -->
         <div [ngbNavOutlet]="nav" class="mt-2"></div>
       </div>
     </div>
