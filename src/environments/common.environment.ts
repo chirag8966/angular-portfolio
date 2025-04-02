@@ -12,5 +12,7 @@ export const customOptions: OwlOptions = {
     navSpeed: 700,
     items: 1,
     autoplay: true,
-    autoplayTimeout: 3000
+    autoplayTimeout: 3000,
+    center: true,
+    lazyLoad: true
 }
