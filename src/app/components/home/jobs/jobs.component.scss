@@ -105,6 +105,7 @@
         &:before {
             content: '▹';
             position: absolute;
+            margin-right: 5px;
             left: 0;
             color: $Green;
         }
