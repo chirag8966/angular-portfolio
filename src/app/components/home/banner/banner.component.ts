@@ -1,6 +1,6 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 
-import {trigger, state, style, animate, transition, stagger, query } from "@angular/animations"
+import { animate, query, stagger, style, transition, trigger } from "@angular/animations";
 import { AnalyticsService } from 'src/app/services/analytics/analytics.service';
 
 @Component({
@@ -23,15 +23,16 @@ import { AnalyticsService } from 'src/app/services/analytics/analytics.service';
     ])
   ]
 })
-export class BannerComponent implements OnInit {
+export class BannerComponent {
 
-  
+  analyticsService = inject(AnalyticsService);
 
-  constructor(
-    public analyticsService: AnalyticsService
-  ) { }
+  downloadResume() {
+    this.analyticsService.sendAnalyticEvent("click_Download_Resume", "banner", "download");
 
-  ngOnInit(): void { 
+    // Open a new window with the CV
+    let url = window.location.href;
+    window.open(url + "../assets/cv/resume.pdf", "_blank");
   }
   
 

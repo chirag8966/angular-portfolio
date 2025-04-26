@@ -15,6 +15,9 @@
                 </div>
             </div>
             <div class="div-btn-banner">
+                <a (click)='downloadResume()' class="main-btn">
+                    Resume
+                </a>
                 <a (click)='analyticsService.sendAnalyticEvent("click_send_mail", "banner", "email")' href="mailto:chirag8966@gmail.com" target="_black" class="main-btn">
                     {{"Banner.ActionBtn" | translate}}
                 </a>

@@ -87,8 +87,8 @@ body {
   &:hover,
   &:focus,
   &:active {
-    background-color: rgba(100, 255, 218, 0.07);
     outline: none;
+    color: $Green;
   }
 }
 

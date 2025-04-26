@@ -7,12 +7,12 @@
   "Header.cvName": "resume.pdf",
 
   "Banner.Pretitle": "¡Hola! Mi nombre es",
-  "Banner.Description": "Con <span class='underline'>6 años de experiencia</span>, me especializo en crear sistemas frontend, componentes reutilizables y soluciones tecnológicas innovadoras para mejorar la accesibilidad web. Mi enfoque está en escribir código limpio, escalable y mantenible, principalmente en <span class='underline'>Angular</span> y en general en <span class='underline'>JavaScript</span>.",
+  "Banner.Description": "Con <span class='underline'>5 años de experiencia</span>, me especializo en crear sistemas frontend, componentes reutilizables y soluciones tecnológicas innovadoras para mejorar la accesibilidad web. Mi enfoque está en escribir código limpio, escalable y mantenible, principalmente en <span class='underline'>Angular</span> y en general en <span class='underline'>JavaScript</span>.",
   "Banner.ActionBtn": "Saludar",
 
   "AboutMe.Title": "Sobre Mí",
   "AboutMe.Paragraphs": [
-    "Con más de <span class='underline'>6 años de experiencia profesional</span>, he desempeñado diversos roles como <span class='underline'>Analista de Sistemas</span>, <span class='underline'>Tutor</span>, <span class='underline'>Desarrollador Frontend</span> y <span class='underline'>Líder Técnico</span>. Mi pasión radica en crear soluciones innovadoras que generen resultados impactantes.",
+    "Con más de <span class='underline'>5 años de experiencia profesional</span>, he desempeñado diversos roles como <span class='underline'>Desarrollador Frontend</span>, <span class='underline'>Tutor</span> y <span class='underline'>Líder Técnico</span>. Mi pasión radica en crear soluciones innovadoras que generen resultados impactantes.",
     "Me especializo en mejorar sistemas, optimizar el rendimiento, estandarizar patrones de desarrollo y proponer ideas que elevan el valor de cada proyecto al que contribuyo.",
     "Más allá del horario laboral, disfruto creando herramientas y aplicaciones para uso personal, combinando utilidad con creatividad.",
     "Mi arsenal tecnológico incluye una amplia gama de tecnologías, incluyendo (pero no limitado a):"
