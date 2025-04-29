@@ -6,11 +6,11 @@
   "Header.cvBtn": "Resume",
   "Header.cvName": "resume.pdf",
   "Banner.Pretitle": "Hello! My name is",
-  "Banner.Description": "With <span class='underline'>6 years of experience</span>, I specialize in crafting frontend systems, reusable components, and innovative technological solutions to enhance web accessibility. My focus is on writing clean, scalable, and maintainable code, primarily in <span class='underline'>Angular</span> and in general <span class='underline'>JavaScript</span>.",
+  "Banner.Description": "With <span class='underline'>5 years of experience</span>, I specialize in crafting frontend systems, reusable components, and innovative technological solutions to enhance web accessibility. My focus is on writing clean, scalable, and maintainable code, primarily in <span class='underline'>Angular</span> and in general <span class='underline'>JavaScript</span>.",
   "Banner.ActionBtn": "Say Hi",
   "AboutMe.Title": "About Me",
   "AboutMe.Paragraphs": [
-    "With over <span class='underline'>6 years of professional experience</span>, I have embraced diverse roles such as <span class='underline'>Systems Analyst</span>, <span class='underline'>Tutor</span>, <span class='underline'>Frontend Developer</span>, and <span class='underline'>Technical Lead</span>. My passion lies in crafting innovative solutions that drive impactful results.",
+    "With over <span class='underline'>5 years of professional experience</span>, I have embraced diverse roles such as <span class='underline'>Frontend Developer</span>, <span class='underline'>Tutor</span>, and <span class='underline'>Technical Lead</span>. My passion lies in crafting innovative solutions that drive impactful results.",
     "I specialize in enhancing systems, optimizing performance, standardizing development patterns, and bringing forward ideas that elevate the value of every project I contribute to.",
     "Beyond 9 to 5, I enjoy creating tools and applications for personal use, blending utility with creativity.",
     "My witchcraft utilizes a wide range of technologies, including (but not limited to):"

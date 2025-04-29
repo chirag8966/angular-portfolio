@@ -14,7 +14,7 @@ import { NgxGoogleAnalyticsModule } from 'ngx-google-analytics';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { GeneralModule } from './components/general/general.module';
+import { GeneralModule } from './components/layout/general.module';
 import { HomeModule } from './components/home/home.module';
 
 export function HttpLoaderFactory(http: HttpClient) {
