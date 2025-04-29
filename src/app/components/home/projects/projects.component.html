@@ -1,5 +1,5 @@
 <section class="section proyects" id='proyects'>
-    <div class="container">
+    <div class="container" #projects>
         <div class="section-box">
             <div data-aos="fade-up" data-aos-duration="1000">
                 <h3 class="section-title">
@@ -7,62 +7,111 @@
                 </h3>
             </div>
 
-            <div *ngFor='let project of "FeatureProjects.Projects" | translate; let i = index' class="d-flex proyect-container" data-aos="fade-up" data-aos-duration="1000">
-                <owl-carousel-o class='owl-carousel-o' [options]="customOptions" *ngIf="i%2==0">
-                    <ng-container *ngFor="let img of project.imgs">
-                        <ng-template carouselSlide [id]="project.Title+slide+i">
-                            <div #imgContainer class='img-container'>
-                                <img class='img-feature-proyect rounded' [src]="img" [alt]="project.Title">
-                            </div>
-                        </ng-template>
-                    </ng-container>
+            @for (project of "FeatureProjects.Projects" | translate; track project.Title) {
+            <div class="d-flex proyect-container" data-aos="fade-up" data-aos-duration="1000">
+                @if ($even) {
+                <owl-carousel-o class='owl-carousel-o' [options]="customOptions">
+                    @for (img of project.imgs; track $index) {
+                    <ng-template carouselSlide [id]="project.Title+$index">
+                        <div #imgContainer class='img-container'>
+                            <img (dblclick)="openImage(img)" class='img-feature-proyect rounded' [src]="img"
+                                [alt]="project.Title">
+                        </div>
+                    </ng-template>
+                    }
+
                 </owl-carousel-o>
-                <div class="img-feature-proyect-container" data-aos="fade-up" data-aos-duration="1000" *ngIf="i%2==0">
+                <div class="img-feature-proyect-container" data-aos="fade-up" data-aos-duration="1000">
                     <div class="img-feature-proyect-box">
                         <div class="img-container" style='width: auto;'>
-                            <img class='img-feature-proyect rounded' [src]="project.imgs[0]" [alt]="project.imgs[0]" width='600px'>
+                            <img class='img-feature-proyect rounded' [src]="project.imgs[0]" [alt]="project.imgs[0]"
+                                width='600px'>
                         </div>
                     </div>
                 </div>
-                <div [class.proyect-info-right]='i%2==0' [class.proyect-info-left]='i%2!=0' class="h-100" style="background-image: url('{{project.img}}');">
+                }
+                <div [ngStyle]="{
+                            'proyect-info-right': $even,
+                            'proyect-info-left': $odd
+                        }" class="h-100" style="background-image: url('{{project.img}}');">
                     <div class="proyect-box">
-                        <h4 [class.text-right]='i%2==0' [class.text-left]='i%2!=0' class="feature-proyect">{{"FeatureProjects.Label" | translate}}</h4>
-                        <h5 [class.text-right]='i%2==0' [class.text-left]='i%2!=0' class="proyect-name">{{project.Title}}</h5>
+                        <h4 [ngStyle]="{
+                                'text-align': $even ? 'right' : 'left'
+                            }" class="feature-proyect">{{"FeatureProjects.Label" | translate}}</h4>
+                        <h5 [ngStyle]="{
+                                'text-align': $even ? 'right' : 'left'
+                            }" class="proyect-name">{{project.Title}}</h5>
 
                         <div class="proyect-description-box" (click)='debug()'>
-                            <p class="mb-0" [innerHTML]="project.Description">
-                            </p>
+                            <p class="mb-0" [innerHTML]="project.Description"></p>
                         </div>
-                        <ul [class.justify-content-end]='i%2==0' [class.justify-content-start]='i%2!=0' class="proyect-skills">
-                            <li *ngFor='let technology of project.Technologies' class="ml-3">
-                              <span class="underline technology">{{technology}}</span>
+                        <ul [ngStyle]="{
+                                'justify-content': $even ? 'flex-end' : 'flex-start'
+                            }" class="proyect-skills">
+                            @for (technology of project.Technologies; track technology) {
+                            <li class="ml-3">
+                                <span class="underline technology">{{technology}}</span>
                             </li>
+                            }
                         </ul>
-                        <div [class.text-right]='i%2==0' [class.text-left]='i%2!=0' class="proyect-links">
-                            <a *ngIf="project['ghLink']" style='color: inherit' [href]="project['ghLink']" target="_blank"><i class="ml-3 fab fa-github"></i></a>
-                            <a *ngIf="project['demoLink']" style='color: inherit' [href]="project['demoLink']" target="_blank"><i class="ml-3 fas fa-external-link-alt"></i></a>
+                        <div [ngStyle]="{
+                                'text-align': $even ? 'right' : 'left'
+                            }" class="proyect-links">
+                            @if (project['ghLink']) {
+                            <a style='color: inherit' [href]="project['ghLink']" target="_blank"><i
+                                    class="ml-3 fab fa-github"></i></a>
+                            }
+
+                            @if (project['demoLink']) {
+                            <a style='color: inherit' [href]="project['demoLink']" target="_blank"><i
+                                    class="ml-3 fas fa-external-link-alt"></i></a>
+                            }
                         </div>
                     </div>
                 </div>
-                <owl-carousel-o class='owl-carousel-o' [options]="customOptions" *ngIf="i%2!=0">
-                    <ng-container *ngFor="let img of project.imgs">
-                        <ng-template carouselSlide [id]="project.Title+slide+i">
+                @if ($odd) {
+                <owl-carousel-o class='owl-carousel-o' [options]="customOptions">
+                    @for (img of project.imgs; track $index) {
+                        <ng-template carouselSlide [id]="project.Title+$index">
                             <div class='img-container'>
-                                <img class='img-feature-proyect rounded' [src]="img" [alt]="project.Title">
+                                <img (dblclick)="openImage(img)" class='img-feature-proyect rounded' [src]="img"
+                                    [alt]="project.Title">
                             </div>
                         </ng-template>
-                    </ng-container>
+                    }
                 </owl-carousel-o>
-                <div class="img-feature-proyect-container" data-aos="fade-up" data-aos-duration="1000" *ngIf="i%2!=0">
+                <div class="img-feature-proyect-container" data-aos="fade-up" data-aos-duration="1000">
                     <div class="img-feature-proyect-box">
                         <div class="img-container" style='width: auto;'>
-                            <img class='img-feature-proyect rounded' [src]="project.imgs[0]" [alt]="project.imgs[0]" width='600px'>
+                            <img class='img-feature-proyect rounded' [src]="project.imgs[0]" [alt]="project.imgs[0]"
+                                width='600px'>
                         </div>
                     </div>
                 </div>
+                }
             </div>
-            <div>
-            </div>
+            }
         </div>
+    </div>
+
+    <div class="container">
+        @defer (on viewport(projects))  {
+
+            <div class="mb-4" data-aos="fade-up" data-aos-duration="1000">
+                <h3 class="section-title">
+                    <span class='n-section-title'></span> {{"Interview Tasks" | translate}}
+                </h3>
+            </div>
+
+            <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/f290770e802d4462951ef2573c1f2465?sid=138ca63c-be15-422f-933f-725a63ae7cdd" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
+            <div class="mt-5" style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/c5972491c1bc436c89b16909a8108f1e?sid=b15b2bfb-c2c9-4f8d-8028-a4fd53a6217d" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+         } @placeholder(minimum 500ms) {
+           <span> Will be overwritten with the external video </span>
+         } @loading(after 100ms; minimum 1s) {
+           <span> Loading... </span>
+         } @error {
+           <span> Oops! Failed to download </span>
+         }
     </div>
 </section>

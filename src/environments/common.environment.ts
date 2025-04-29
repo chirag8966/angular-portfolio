@@ -9,10 +9,11 @@ export const customOptions: OwlOptions = {
     mouseDrag: true,
     touchDrag: true,
     pullDrag: false,
-    navSpeed: 700,
+    navSpeed: 2000,
+    margin: 10,
     items: 1,
     autoplay: true,
-    autoplayTimeout: 3000,
+    autoplayTimeout: 6000,
     center: true,
     lazyLoad: true
 }
