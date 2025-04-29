@@ -5,14 +5,12 @@
   "Header.Item4": "اتصل بي",
   "Header.cvBtn": "السيرة الذاتية",
   "Header.cvName": "resume.pdf",
-
   "Banner.Pretitle": "مرحباً! اسمي",
   "Banner.Description": "مع <span class='underline'>5 سنوات من الخبرة</span>، أتخصص في إنشاء أنظمة الواجهة الأمامية، والمكونات القابلة لإعادة الاستخدام، والحلول التكنولوجية المبتكرة لتحسين إمكانية الوصول إلى الويب. تركيزي على كتابة كود نظيف وقابل للتطوير والصيانة، بشكل أساسي في <span class='underline'>Angular</span> وبشكل عام في <span class='underline'>JavaScript</span>.",
   "Banner.ActionBtn": "مرحباً",
-
   "AboutMe.Title": "عني",
   "AboutMe.Paragraphs": [
-    "مع أكثر من <span class='underline'>6 سنوات من الخبرة المهنية</span>، شغلت العديد من الأدوار مثل <span class='underline'>محلل النظم</span>، و<span class='underline'>مدرس</span>، و<span class='underline'>مطور الواجهة الأمامية</span>، و<span class='underline'>قائد فني</span>. شغفي يكمن في إنشاء حلول مبتكرة تؤدي إلى نتائج مؤثرة.",
+    "مع أكثر من <span class='underline'>5 سنوات من الخبرة المهنية</span>، شغلت العديد من الأدوار مثل <span class='underline'>مطور الواجهة الأمامية</span>، و<span class='underline'>مدرس</span>، و<span class='underline'>قائد فني</span>. شغفي يكمن في إنشاء حلول مبتكرة تؤدي إلى نتائج مؤثرة.",
     "أتخصص في تحسين الأنظمة، وتحسين الأداء، وتوحيد أنماط التطوير، واقتراح أفكار ترفع من قيمة كل مشروع أشارك فيه.",
     "خارج ساعات العمل، أستمتع بإنشاء أدوات وتطبيقات للاستخدام الشخصي، مع الجمع بين المنفعة والإبداع.",
     "يشمل ترسانتي التكنولوجية مجموعة واسعة من التقنيات، بما في ذلك (ولكن لا تقتصر على):"
@@ -31,7 +29,6 @@
     "CI / CD",
     "AWS"
   ],
-
   "Experience.Title": "الخبرة",
   "Experience.Jobs": [
     {
@@ -92,163 +89,46 @@
       ]
     }
   ],
-
-  "FeatureProjects.Title": "مشاريعي",
+  "FeatureProjects.Title": "مشاريع حديثة",
   "FeatureProjects.Label": "مشروع مميز",
   "FeatureProjects.Projects": [
     {
-      "Title": "Gisselle",
-      "Description": "تطبيق ويب لإدارة الشركة الداخلية يغطي أقسام المبيعات والتحصيل والمتابعة، واسع ومعقد للغاية مع وظائف متعددة تم إنشاؤها في <span class='underline'>Angular</span> و<span class='underline'>Laravel</span>. يعمل مع <span class='underline'>websockets</span>، و<span class='underline'>الجدولة</span>، و<span class='underline'>مهام Laravel</span>، وتكامل مع WordPress وZadarma وLiveConnect، إلخ.",
+      "Title": "CM-UI",
+      "Description": "قمت بتطوير تطبيق ويب شامل في CareMonitor لإدارة المرضى والمراقبة عن بعد والرعاية الافتراضية. تم بناؤه باستخدام <span class='underline'>Angular</span> و<span class='underline'>Node.js</span>، مع دعم <span class='underline'>WebSockets</span> و<span class='underline'>تكاملات متعددة مع جهات خارجية</span>، والبنية التحتية مُدارة بالكامل على <span class='underline'>AWS</span>.",
       "imgs": [
-        "assets/images/gisselle/Captura de pantalla 2024-05-19 1009582.png",
-        "assets/images/gisselle/Captura de pantalla 2024-05-19 115514.png",
-        "assets/images/gisselle/Captura de pantalla 2024-05-19 115702.png",
-        "assets/images/gisselle/Captura de pantalla 2024-05-19 115829.png",
-        "assets/images/gisselle/Captura de pantalla 2024-05-19 1009582.png"
+        "assets/images/projects/cm-ui/1.png",
+        "assets/images/projects/cm-ui/2.png",
+        "assets/images/projects/cm-ui/3.png",
+        "assets/images/projects/cm-ui/4.png",
+        "assets/images/projects/cm-ui/5.png"
       ],
       "Technologies": [
-        "Laravel",
         "Angular",
-        "SASS",
-        "Angular Material",
-        "RxJS"
+        "PrimeNg",
+        "Syncfusion",
+        "RxJS",
+        "Node.js",
+        "AWS",
+        "GraphQL"
       ]
     },
     {
-      "Title": "Emelteciot",
-      "Description": "تطبيق مراقبة لاستعلام البيانات، تم إنشاؤه باستخدام <span class='underline'>Angular</span> و<span class='underline'>Laravel</span>. يتم استخدام مكتبة <span class='underline'>chart.js</span>.",
+      "Title": "CM-Careplan",
+      "Description": "قمت بتطوير تطبيق ويب قابل للتطوير ومعياري ضمن بنية NX monorepo لإدارة خطط رعاية المرضى. يستخدم التطبيق <span class='underline'>Angular</span> لواجهة المستخدم و<span class='underline'>Node.js</span> للخلفية، مع ميزات تحديثات في الوقت الحقيقي عبر <span class='underline'>WebSockets</span>، وتكامل سلس مع خدمات متعددة من جهات خارجية، وبنية تحتية قوية مستضافة على <span class='underline'>AWS</span>. تم تصميمه لتبسيط إنشاء خطط الرعاية وتتبعها والتعاون بين مقدمي الرعاية الصحية.",
       "imgs": [
-        "assets/images/proyex2/Captura de pantalla 2024-07-28 102852.png",
-        "assets/images/proyex2/849c117f-bed9-4406-9c13-c8669f655acc.png",
-        "assets/images/proyex2/62cdf90c-6196-4a6e-b639-8919cda4f749.png",
-        "assets/images/proyex2/8c919208-d6a8-48f4-890d-4817323b6923.png",
-        "assets/images/proyex2/8c919208-d6a8-48f4-890d-4817323b6923 (1).png"
+        "assets/images/projects/cm-careplan/1.png",
+        "assets/images/projects/cm-careplan/2.png"
       ],
       "Technologies": [
-        "Laravel",
         "Angular",
-        "SASS",
-        "Angular Material",
-        "RxJS"
-      ]
-    },
-    {
-      "Title": "Vas Aviation",
-      "Description": "تطبيق لتتبع طلبات إمداد الوقود للطائرات. يحتوي على <span class='underline'>وحدة بريد إلكتروني</span>، و<span class='underline'>إشعارات في الوقت الفعلي</span>، و<span class='underline'>معالجة ملفات CSV لاستيراد البيانات</span>، و<span class='underline'>عروض الأسعار</span>. تم تطويره باستخدام <span class='underline'>Angular</span> و<span class='underline'>Laravel</span>.",
-      "imgs": [
-        "assets/images/vasaviation/capture0.png",
-        "assets/images/vasaviation/capture1.png",
-        "assets/images/vasaviation/capture2.png",
-        "assets/images/vasaviation/capture3.png",
-        "assets/images/vasaviation/capture4.png",
-        "assets/images/vasaviation/capture5.png"
-      ],
-      "Technologies": [
-        "Laravel",
-        "Angular",
-        "SASS",
-        "Angular Material",
-        "RxJS"
-      ]
-    },
-    {
-      "Title": "GlobalJobs",
-      "Description": "منصة تعليم إلكتروني تم تطويرها باستخدام WordPress. تصميم مخصص بالكامل، مع إضافات تم تطويرها من الصفر. تحتوي على وحدة دفع مخصصة، وفصل دراسي افتراضي، ولوحة تحكم لتتبع الدورات.",
-      "imgs": [
-        "assets/images/globaljobs/capture1.png",
-        "assets/images/globaljobs/capture2.png",
-        "assets/images/globaljobs/capture3.png",
-        "assets/images/globaljobs/capture4.png",
-        "assets/images/globaljobs/capture5.png",
-        "assets/images/globaljobs/capture6.png"
-      ],
-      "Technologies": [
-        "WordPress",
-        "WordPress Codex",
-        "PHP",
-        "MySQL"
-      ]
-    },
-    {
-      "Title": "GlobalJobs",
-      "Description": "منصة تجارة إلكترونية للمنتجات التكنولوجية. تم تطويرها باستخدام WordPress وتنفيذ نظام شحن للمنتجات. تحتوي على تقارير مبيعات من خلال برمجة مخصصة.",
-      "imgs": [
-        "assets/images/mbelectronics/capture0.png",
-        "assets/images/mbelectronics/capture1.png",
-        "assets/images/mbelectronics/capture2.png"
-      ],
-      "Technologies": [
-        "WordPress",
-        "Elementor",
-        "Woocommerce",
-        "WordPress Codex",
-        "PHP",
-        "MySQL"
-      ]
-    },
-    {
-      "Title": "Agrourbana",
-      "Description": "تطبيق مراقبة تم إنشاؤه من الصفر مع وحدة مصادقة، <span class='underline'>رسوم بيانية قابلة للتكوين</span>، و<span class='underline'>تنبيهات قابلة للتكوين</span>، و<span class='underline'>إدارة المستخدمين</span>. يحتوي أيضاً على منطق للنماذج التفاعلية لتكوين المعلمات.",
-      "imgs": [
-        "assets/images/agrourbana/agrourbana1.png",
-        "assets/images/agrourbana/agrourbana2.png",
-        "assets/images/agrourbana/agrourbana3.png",
-        "assets/images/agrourbana/agrourbana4.png",
-        "assets/images/agrourbana/agrourbana5.png"
-      ],
-      "Technologies": [
-        "Laravel",
-        "Angular",
-        "SASS",
-        "Angular Material",
-        "RxJS"
-      ]
-    },
-    {
-      "Title": "Tu Super Plan",
-      "Description": "مقوم خطط صحية يحتوي على محرك بحث متقدم. يتم عرض الخطط بناءً على عمر المستخدم والدخل الشهري والموقع. يحتوي على <span class='underline'>دردشة مباشرة</span>، و<span class='underline'>نموذج اتصال</span>، و<span class='underline'>نظام إشعارات عبر WhatsApp والبريد الإلكتروني</span>، و<span class='underline'>مصادقة</span>، و<span class='underline'>إدارة معلومات من خلال دور المسؤول</span>.",
-      "imgs": [
-        "assets/images/tusuperplan/tusuperplan1.png",
-        "assets/images/tusuperplan/tusuperplan2.png",
-        "assets/images/tusuperplan/tusuperplan3.png",
-        "assets/images/tusuperplan/tusuperplan4.png",
-        "assets/images/tusuperplan/tusuperplan5.png"
-      ],
-      "Technologies": [
-        "Laravel",
-        "Angular",
-        "SASS",
-        "Angular Material",
-        "RxJS"
-      ]
-    },
-    {
-      "Title": "Proyexiot",
-      "Description": "منصة مراقبة بيانات لآبار المياه والمراكب وسفن القطر والمنشآت المختلفة تم إنشاؤها من الصفر مع وحدة مصادقة، <span class='underline'>رسوم بيانية قابلة للتكوين</span>، و<span class='underline'>تنبيهات قابلة للتكوين</span>، و<span class='underline'>إدارة المستخدمين</span>، و<span class='underline'>تحديد المواقع الجغرافية مع openlayers</span>. يحتوي أيضاً على منطق للنماذج التفاعلية لتكوين المعلمات.",
-      "imgs": [
-        "assets/images/proyex/proyex1.png",
-        "assets/images/proyex/proyex2.png",
-        "assets/images/proyex/proyex3.png",
-        "assets/images/proyex/proyex4.png",
-        "assets/images/proyex/proyex5.png",
-        "assets/images/proyex/proyex6.png",
-        "assets/images/proyex/proyex7.png",
-        "assets/images/proyex/proyex8.png",
-        "assets/images/proyex/proyex9.png",
-        "assets/images/proyex/proyex10.png",
-        "assets/images/proyex/proyex11.png",
-        "assets/images/proyex/proyex12.png"
-      ],
-      "Technologies": [
-        "Laravel",
-        "Angular",
-        "SASS",
-        "Angular Material",
-        "RxJS"
+        "PrimeNg",
+        "RxJS",
+        "Node.js",
+        "AWS",
+        "GraphQL"
       ]
     }
   ],
-
   "OtherProjects.Title": "المزيد من المشاريع",
   "OtherProjects.Projects": [
     {
@@ -280,58 +160,12 @@
         "SASS",
         "API"
       ]
-    },
-    {
-      "Title": "Four Card Feature Section",
-      "Description": "صفحة واحدة مع تصميم بسيط تعرض 4 ميزات في 4 بطاقات. يتم استخدام حركات الدخول مع حركات Angular.",
-      "ghLink": "https://github.com/andresjosehr/four-card-feature-section",
-      "demoLink": "https://projects.andresjosehr.com/four-card-feature-section",
-      "Technologies": [
-        "Angular",
-        "SASS",
-        "CSS GRID"
-      ]
-    },
-    {
-      "Title": "Social Proof Section",
-      "Description": "مشروع شخصي لصفحة تم تصميمها من تصميم تم إنشاؤه في Figma. تم استخدام Angular للتطوير مع SASS وCSS GRID.",
-      "ghLink": "https://github.com/andresjosehr/social-proof-section",
-      "demoLink": "https://projects.andresjosehr.com/social-proof-section",
-      "Technologies": [
-        "Angular",
-        "CSS GRID",
-        "GIT"
-      ]
-    },
-    {
-      "Title": "FAQ Accordion Card",
-      "Description": "قائمة منسدلة للأسئلة الشائعة مع منطق وحركات تم إنشاؤها في Angular.",
-      "ghLink": "https://github.com/andresjosehr/faq-accordion",
-      "demoLink": "https://projects.andresjosehr.com/faq-accordion",
-      "Technologies": [
-        "Angular",
-        "CSS GRID",
-        "Angular animations"
-      ]
-    },
-    {
-      "Title": "Profile Card",
-      "Description": "تصميم بسيط لصفحة تعرض بطاقة ملف شخصي مع معلومات أساسية عن شخص ما.",
-      "ghLink": "https://github.com/andresjosehr/profile-card-component",
-      "demoLink": "https://projects.andresjosehr.com/profile-card-component",
-      "Technologies": [
-        "Angular",
-        "SASS",
-        "GIT"
-      ]
     }
   ],
-
   "Contact.Pretitle": "و... ماذا الآن؟",
   "Contact.Title": "مرحباً!",
-  "Contact.Content": "سأكون سعيداً بسماعك إذا كنت تريد مناقشة فرص جديدة. اكتب لي وسأرد عليك بمجرد أن أرى رسالتك.",
+  "Contact.Content": "اكتب لي، ولنبني شيئًا رائعًا معًا.",
   "Contact.Btn": "اتصل بي",
-
   "dxBall": {
     "title": "DX Ball",
     "startMessage": "انقر للبدء",
