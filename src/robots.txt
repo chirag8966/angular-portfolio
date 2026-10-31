@@ -1,5 +1,5 @@
-# https://chiragjain.pro
+# https://chiragj.pro
 User-agent: *
 Allow: /
 
-Sitemap: https://chiragjain.pro/sitemap.xml
+Sitemap: https://chiragj.pro/sitemap.xml

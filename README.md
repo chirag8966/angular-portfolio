@@ -1,132 +1,82 @@
-# Angular Portfolio
+# Chirag Jain — Portfolio
 
-A modern, responsive portfolio website built with Angular 18 featuring multiple sections, internationalization support, and PWA capabilities.
+**Live site: [chiragj.pro](https://chiragj.pro)**
 
-## 🚀 Features
+Personal portfolio of Chirag Jain, Assistant Vice President at Delta Capita and Angular / frontend engineering leader. Built with Angular, prerendered at build time for SEO and fast first paint, and deployed to AWS S3 + CloudFront.
 
-- Modern UI/UX with responsive design
-- Internationalization (i18n) support for multiple languages (English, Spanish, Arabic)
-- Progressive Web App (PWA) functionality
-- Interactive project showcase with carousel
-- Google Analytics integration
-- Lazy loading modules
-- Animations and transitions
-- Contact form
-- Dark/Light theme
-- Resume download option
+## ✨ Highlights
+
+- **Prerendered (SSG) + hydration**: full HTML for search engines and link previews, then a fully interactive Angular app
+- **SEO**: canonical URL, Open Graph / Twitter cards, schema.org JSON-LD (`Person`, `WebSite`, `ProfilePage`), `robots.txt`, `sitemap.xml`
+- **Core Web Vitals**: ~100 kB initial JS (gzip), CLS 0 (preloaded fonts with metric-matched fallbacks), WebP images with `srcset`, lazy-loaded sections
+- **Multilingual**: English, Spanish and Arabic (English bundled; other languages loaded on demand)
+- **Accessible**: semantic headings, keyboard-navigable tabs and menus, skip link, reduced-motion support
+- **Always up to date**: years of experience are calculated automatically
+- Project showcase, experience timeline, resume download and a small DX-Ball canvas game
 
 ## 🛠️ Tech Stack
 
-- Angular 18.2.13
-- Bootstrap 4.5.0
-- NgBootstrap 17.0.0
+- Angular 18 (SSG prerendering, hydration, standalone components)
+- TypeScript, RxJS, SCSS
+- Bootstrap 4 (grid and utilities only)
 - ngx-translate
-- ngx-owl-carousel-o
-- AOS (Animate On Scroll)
-- Font Awesome 5
-- PWA Support
-- Google Analytics
+- AOS (scroll animations, loaded when idle)
+- Google Analytics (gtag, loaded after page load)
+- Angular service worker (PWA)
+- GitHub Actions → AWS S3 + CloudFront
 
 ## 📁 Project Structure
+
 ```
 src/
 ├── app/
 │   ├── components/
-│   │   ├── games/
-│   │   ├── home/
-│   │   │   ├── about/
-│   │   │   ├── banner/
-│   │   │   ├── contact/
-│   │   │   ├── jobs/
-│   │   │   ├── more-projects/
-│   │   │   └── projects/
-│   │   └── layout/
-│   │       ├── footer/
-│   │       └── header/
+│   │   ├── games/dx-ball/        # lazy-loaded canvas game
+│   │   ├── home/                 # banner, about, jobs, projects, contact
+│   │   ├── layout/               # header, footer
+│   │   └── shared/               # gallery, icons
 │   ├── services/
 │   │   ├── analytics/
-│   │   ├── ipservice/
-│   │   └── language/
-│   ├── app-routing.module.ts
-│   └── app.module.ts
-├── assets/
-│   ├── cv/
-│   ├── fonts/
-│   ├── i18n/
-│   ├── icons/
-│   └── images/
-└── environments/
+│   │   ├── language/             # language detection + translation loader
+│   │   └── seo/                  # meta tags, Open Graph, JSON-LD
+│   ├── shared/experience.ts      # years-of-experience pipe
+│   ├── app.module.ts
+│   └── app.server.module.ts      # used for build-time prerendering
+├── assets/                       # i18n, images, fonts, icons, resume
+├── robots.txt
+└── sitemap.xml
 ```
 
 ## 🚀 Getting Started
 
-### Prerequisites
-- Node.js (LTS version)
-- npm (Node Package Manager)
-- Angular CLI 18.x
-
-### Installation
-
-1. Clone the repository
-\`\`\`bash
-git clone [repository-url]
+```bash
+git clone https://github.com/chirag8966/angular-portfolio.git
 cd angular-portfolio
-\`\`\`
-
-2. Install dependencies
-\`\`\`bash
 npm install
-\`\`\`
+npm start            # http://localhost:4200
+```
 
-3. Start development server
-\`\`\`bash
-npm start
-\`\`\`
+### Production build
 
-The application will be available at `http://localhost:4200/`
-
-### Building for Production
-
-To build the project for production:
-\`\`\`bash
+```bash
 npm run build-portfolio
-\`\`\`
+```
 
-The build artifacts will be stored in the `dist/` directory.
+Output (including the prerendered `index.html`) is written to `dist/chiragjain-portfolio/browser`.
 
-## 📜 Available Scripts
+## 🚢 Deployment
 
-- `npm start` - Starts development server
-- `npm run build` - Builds the project
-- `npm run build-portfolio` - Builds the project in production mode
-- `npm test` - Executes unit tests
-- `npm run lint` - Runs linting
-- `npm run e2e` - Runs end-to-end tests
+Every push to `main` runs `.github/workflows/deploy to s3.yaml`:
+
+1. builds the production bundle,
+2. syncs hashed assets to S3 with long-lived caching,
+3. uploads `index.html`, translations, `robots.txt`, `sitemap.xml` and service-worker files with `no-cache`,
+4. invalidates the CloudFront cache.
 
 ## 🌐 Internationalization
 
-The portfolio supports multiple languages:
-- English (default)
-- Spanish
-- Arabic
-
-Language files are located in `src/assets/i18n/`
-
-## 📱 PWA Support
-
-This portfolio is configured as a Progressive Web App. The service worker configuration can be found in `ngsw-config.json`.
-
-## 📊 Analytics
-
-Google Analytics is integrated. The tracking ID can be configured in the environment files.
-
-## 🎨 Customization
-
-You can customize the portfolio by modifying:
-- `src/styles.scss` for global styles
-- `src/variables.scss` for theme variables
-- Environment files for configuration settings
+Translations live in `src/assets/i18n/` (`en.json`, `es.json`, `ar.json`). Use the `%YEARS%` token anywhere in the copy to insert the live years-of-experience value.
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the LICENSE file for details
+MIT. See [LICENSE](LICENSE).
