@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import * as AOS from 'aos';
 import { LanguageService } from "src/app/services/language/language.service";
+import { yearsOfExperience } from './shared/experience';
 
 @Component({
   selector: 'app-root',
@@ -23,6 +24,10 @@ export class AppComponent implements OnInit {
 
     // Keep runtime metadata in sync with index.html (single source of truth for the title/description)
     this.titleService.setTitle('Chirag Jain | Assistant Vice President at Delta Capita');
+    this.metaService.updateTag({
+      name: 'description',
+      content: `Chirag Jain – Assistant Vice President at Delta Capita and engineering leader with ${yearsOfExperience()}+ years of experience building high-performance, accessible web platforms with Angular and TypeScript.`
+    });
     this.metaService.updateTag({
       name: 'keywords',
       content: 'Chirag Jain, Assistant Vice President, Delta Capita, Angular, Frontend, Software Engineer, TypeScript, RxJS'

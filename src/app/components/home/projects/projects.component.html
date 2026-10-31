@@ -38,9 +38,58 @@
     </div>
   </div>
 
+  <div class="container">
+    <div class="other-projects">
+      <div class="other-projects-header" data-aos="fade-up">
+        <h3 class="other-projects-title">{{ "OtherProjects.Title" | translate }}</h3>
+        <p class="other-projects-subtitle">{{ "OtherProjects.Subtitle" | translate }}</p>
+      </div>
+
+      <ul class="project-grid">
+        @for (project of "OtherProjects.Projects" | translate; track project.Title) {
+          <li class="project-card" data-aos="fade-up" data-aos-duration="600">
+            <div class="project-card-top">
+              <svg class="folder" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="38" height="38" fill="none"
+                stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+              </svg>
+              <div class="project-card-links">
+                @if (project.ghLink) {
+                  <a [href]="project.ghLink" target="_blank" rel="noopener noreferrer" [attr.aria-label]="project.Title + ' source code on GitHub'">
+                    <app-icon name="github" [size]="20"></app-icon>
+                  </a>
+                }
+                @if (project.demoLink) {
+                  <a [href]="project.demoLink" target="_blank" rel="noopener noreferrer" [attr.aria-label]="project.Title + ' live site'">
+                    <app-icon name="external" [size]="21"></app-icon>
+                  </a>
+                }
+              </div>
+            </div>
+            <h4 class="project-card-title">
+              <a [href]="project.demoLink || project.ghLink" target="_blank" rel="noopener noreferrer">{{ project.Title }}</a>
+            </h4>
+            <p class="project-card-description">{{ project.Description }}</p>
+            <ul class="project-card-tech">
+              @for (tech of project.Technologies; track tech) {
+                <li>{{ tech }}</li>
+              }
+            </ul>
+          </li>
+        }
+      </ul>
+
+      <div class="text-center mt-5">
+        <a class="main-btn" href="https://github.com/chirag8966?tab=repositories" target="_blank" rel="noopener noreferrer">
+          {{ "OtherProjects.ViewArchive" | translate }}
+        </a>
+      </div>
+    </div>
+  </div>
+
   <div class="container interview-tasks" #videos>
     @defer (on viewport(videos)) {
-      <h3 class="section-title mb-4" data-aos="fade-up">Interview Tasks</h3>
+      <h3 class="section-title mb-4" data-aos="fade-up">{{ "Walkthroughs.Title" | translate }}</h3>
       <div class="video-grid">
       <div class="video-frame">
         <iframe

@@ -25,8 +25,8 @@ const GAME_CONFIG = {
 const GAME_COLORS = {
   PRIMARY: '#64ffda',
   SPECIAL_BRICK: '#ff6b6b',
-  OVERLAY: 'rgba(0, 0, 0, 0.3)',
-  TEXT: '#64ffda'
+  OVERLAY: 'rgba(10, 25, 47, 0.72)',
+  TEXT: '#ccd6f6'
 };
 
 // Game text
@@ -181,9 +181,9 @@ export class DxBallComponent implements OnInit, AfterViewInit, OnDestroy {
 
   // Resize canvas and adjust game elements based on container size
   private resizeCanvas(): void {
-    const container = this.canvas.parentElement;
-    const containerWidth = container.clientWidth;
-    const containerHeight = window.innerHeight * GAME_CONFIG.VIEWPORT_HEIGHT_RATIO;
+    // Match the drawing buffer to the canvas' CSS box (its size is controlled by the stylesheet)
+    const containerWidth = this.canvas.clientWidth || this.canvas.parentElement.clientWidth;
+    const containerHeight = this.canvas.clientHeight || window.innerHeight * GAME_CONFIG.VIEWPORT_HEIGHT_RATIO;
     
     this.scale = containerWidth / GAME_CONFIG.CANVAS_SCALE;
     
@@ -498,15 +498,15 @@ export class DxBallComponent implements OnInit, AfterViewInit, OnDestroy {
   // Draw start message
   private drawStartMessage(): void {
     this.ctx.textAlign = 'center';
-    this.ctx.font = 'bold 48px Arial';
+    this.ctx.font = '600 34px Calibre, -apple-system, system-ui, sans-serif';
     this.ctx.fillStyle = GAME_COLORS.TEXT;
     this.translate.get('dxBall.title').subscribe(text => {
-      this.ctx.fillText(text, this.canvas.width / 2, this.canvas.height / 2 - 60);
+      this.ctx.fillText(text, this.canvas.width / 2, this.canvas.height * 0.62 - 16);
     });
     
-    this.ctx.font = 'bold 32px Arial';
+    this.ctx.font = '18px "SF Mono", Menlo, monospace';
     this.translate.get('dxBall.startMessage').subscribe(text => {
-      this.ctx.fillText(text, this.canvas.width / 2, this.canvas.height / 2 + 20);
+      this.ctx.fillText(text, this.canvas.width / 2, this.canvas.height * 0.62 + 24);
     });
     
     this.ctx.textAlign = 'left';
@@ -514,13 +514,16 @@ export class DxBallComponent implements OnInit, AfterViewInit, OnDestroy {
 
   // Draw paddle with shadow effect
   private drawPaddle(): void {
+    // save/restore so the glow only applies to the paddle (it used to leak into every later draw call)
+    this.ctx.save();
+    this.ctx.shadowColor = GAME_COLORS.PRIMARY;
+    this.ctx.shadowBlur = 10;
     this.ctx.beginPath();
     this.ctx.rect(this.paddle.x, this.canvas.height - this.paddle.height, this.paddle.width, this.paddle.height);
     this.ctx.fillStyle = GAME_COLORS.PRIMARY;
     this.ctx.fill();
-    this.ctx.shadowColor = GAME_COLORS.PRIMARY;
-    this.ctx.shadowBlur = 10;
     this.ctx.closePath();
+    this.ctx.restore();
   }
 
   // Draw ball
@@ -547,7 +550,7 @@ export class DxBallComponent implements OnInit, AfterViewInit, OnDestroy {
 
   // Draw score and lives
   private drawScore(): void {
-    this.ctx.font = '16px Arial';
+    this.ctx.font = '13px "SF Mono", Menlo, monospace';
     this.ctx.fillStyle = GAME_COLORS.TEXT;
     this.translate.get('dxBall.score', { score: this.gameState.score }).subscribe(text => {
       this.ctx.fillText(text, 8, 20);
@@ -556,22 +559,24 @@ export class DxBallComponent implements OnInit, AfterViewInit, OnDestroy {
 
   private drawLives(): void {
     this.translate.get('dxBall.lives', { lives: this.gameState.lives }).subscribe(text => {
-      this.ctx.fillText(text, this.canvas.width - 65, 20);
+      this.ctx.textAlign = 'right';
+      this.ctx.fillText(text, this.canvas.width - 8, 20);
+      this.ctx.textAlign = 'left';
     });
   }
 
   // Draw game over message
   private drawGameOverMessage(): void {
     this.ctx.textAlign = 'center';
-    this.ctx.font = 'bold 48px Arial';
+    this.ctx.font = '600 34px Calibre, -apple-system, system-ui, sans-serif';
     this.ctx.fillStyle = GAME_COLORS.TEXT;
     this.translate.get('dxBall.gameOver').subscribe(text => {
-      this.ctx.fillText(text, this.canvas.width / 2, this.canvas.height / 2 - 60);
+      this.ctx.fillText(text, this.canvas.width / 2, this.canvas.height * 0.62 - 16);
     });
     
-    this.ctx.font = 'bold 32px Arial';
+    this.ctx.font = '18px "SF Mono", Menlo, monospace';
     this.translate.get('dxBall.restartMessage').subscribe(text => {
-      this.ctx.fillText(text, this.canvas.width / 2, this.canvas.height / 2 + 20);
+      this.ctx.fillText(text, this.canvas.width / 2, this.canvas.height * 0.62 + 24);
     });
     
     this.ctx.textAlign = 'left';
@@ -580,7 +585,7 @@ export class DxBallComponent implements OnInit, AfterViewInit, OnDestroy {
   // Draw pause message
   private drawPauseMessage(): void {
     this.ctx.textAlign = 'center';
-    this.ctx.font = 'bold 32px Arial';
+    this.ctx.font = '18px "SF Mono", Menlo, monospace';
     this.ctx.fillStyle = GAME_COLORS.TEXT;
     this.translate.get('dxBall.continueMessage').subscribe(text => {
       this.ctx.fillText(text, this.canvas.width / 2, this.canvas.height / 2);

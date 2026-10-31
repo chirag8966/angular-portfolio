@@ -5,38 +5,42 @@
   "Header.Item4": "Contacto",
   "Header.cvBtn": "Currículum",
   "Header.cvName": "resume.pdf",
-  "Banner.Pretitle": "¡Hola! Mi nombre es",
-  "Banner.Description": "Con <span class='underline'>5 años de experiencia</span>, me especializo en crear sistemas frontend, componentes reutilizables y soluciones tecnológicas innovadoras para mejorar la accesibilidad web. Mi enfoque está en escribir código limpio, escalable y mantenible, principalmente en <span class='underline'>Angular</span> y en general en <span class='underline'>JavaScript</span>.",
-  "Banner.ActionBtn": "Saludar",
+  "Banner.Pretitle": "Hola, mi nombre es",
+  "Banner.Description": "Soy un líder de ingeniería con <span class='underline'>más de %YEARS% años de experiencia</span> diseñando y entregando plataformas web de alto rendimiento en fintech y healthtech. Me especializo en <span class='underline'>Angular</span>, <span class='underline'>TypeScript</span> y arquitectura frontend escalable, creando productos rápidos, accesibles y hechos para durar.",
+  "Banner.ActionBtn": "Contáctame",
   "AboutMe.Title": "Sobre Mí",
   "AboutMe.Paragraphs": [
-    "Con más de <span class='underline'>5 años de experiencia profesional</span>, he desempeñado diversos roles como <span class='underline'>Desarrollador Frontend</span>, <span class='underline'>Tutor</span> y <span class='underline'>Líder Técnico</span>. Mi pasión radica en crear soluciones innovadoras que generen resultados impactantes.",
-    "Me especializo en mejorar sistemas, optimizar el rendimiento, estandarizar patrones de desarrollo y proponer ideas que elevan el valor de cada proyecto al que contribuyo.",
-    "Más allá del horario laboral, disfruto creando herramientas y aplicaciones para uso personal, combinando utilidad con creatividad.",
-    "Mi arsenal tecnológico incluye una amplia gama de tecnologías, incluyendo (pero no limitado a):"
+    "Soy ingeniero de software y líder técnico con <span class='underline'>más de %YEARS% años</span> de experiencia convirtiendo problemas de negocio complejos en software elegante y confiable. Hoy me desempeño como <span class='underline'>Vicepresidente Asistente en Delta Capita</span>, ayudando a dar forma a la tecnología del sector de servicios financieros.",
+    "Anteriormente en CareMonitor, lideré la ingeniería frontend de plataformas de salud críticas: hice crecer el equipo de UI de 3 a 8 ingenieros y lancé productos de <span class='underline'>Telesalud</span>, <span class='underline'>Receta electrónica</span> y <span class='underline'>Agendamiento</span> utilizados por más de 15 mil usuarios.",
+    "Me importan profundamente la arquitectura limpia, el rendimiento, la accesibilidad y la experiencia del desarrollador, así como guiar a los equipos para elevar juntos el nivel. Fuera del trabajo, creo productos para pequeñas empresas y proyectos personales que combinan utilidad y oficio.",
+    "Tecnologías con las que trabajo habitualmente:"
   ],
   "AboutMe.technologies": [
     "Angular",
-    "RxJS",
-    "HTML & (S)CSS",
-    "JavaScript",
     "TypeScript",
-    "graphQL",
-    "Node.js",
-    "YAML",
-    "JSON",
-    "NX",
-    "CI / CD",
-    "AWS"
+    "RxJS / NgRx",
+    "JavaScript (ES2023+)",
+    "Node.js / NestJS",
+    "React",
+    "HTML & SCSS",
+    "Tailwind CSS",
+    "GraphQL",
+    "AWS",
+    "Nx Monorepos",
+    "CI / CD"
   ],
   "Experience.Title": "Experiencia",
   "Experience.Jobs": [
     {
       "Tab": "Delta Capita",
       "Title": "Vicepresidente Asistente",
-      "Date": "Presente",
+      "Date": "2025 - Presente",
       "Description": [
-        "💼 Trabajo como Vicepresidente Asistente en Delta Capita, construyendo y liderando la entrega de ingeniería para tecnología de mercados de capitales y servicios financieros."
+        "🏦 Lidero la ingeniería frontend de plataformas de mercados de capitales y tecnología regulatoria al servicio de instituciones financieras globales.",
+        "🧭 Defino la arquitectura y la dirección técnica de aplicaciones Angular empresariales: librerías de componentes escalables, gestión de estado robusta y patrones orientados al rendimiento.",
+        "🤝 Colaboro con product owners, analistas de negocio y stakeholders para convertir flujos financieros complejos en experiencias intuitivas y accesibles.",
+        "👥 Mentoreo a ingenieros e impulso la excelencia técnica mediante estándares de code review, pruebas automatizadas y buenas prácticas de CI/CD.",
+        "🤖 Impulso la adopción de desarrollo asistido por IA y automatización para acelerar la entrega sin comprometer la calidad ni la seguridad."
       ]
     },
     {
@@ -97,7 +101,7 @@
       ]
     }
   ],
-  "FeatureProjects.Title": "Proyectos Recientes",
+  "FeatureProjects.Title": "Trabajo Destacado",
   "FeatureProjects.Label": "Proyecto Destacado",
   "FeatureProjects.Projects": [
     {
@@ -137,56 +141,102 @@
       ]
     }
   ],
-  "OtherProjects.Title": "Más Proyectos",
+  "OtherProjects.Title": "Otros Proyectos Destacados",
   "OtherProjects.Projects": [
     {
-      "Title": "Hands Game",
-      "Description": "Juego extendido de piedra-papel-tijera. Un proyecto personal desarrollado en Angular donde juegas aleatoriamente contra la máquina. Incluye el uso de servicios, interfaces y componentes.",
-      "imgs": [
-        "assets/images/hands-game.png"
-      ],
-      "ghLink": "https://github.com/andresjosehr/hands-game",
-      "demoLink": "https://projects.andresjosehr.com/hands-game",
+      "Title": "Divyam Shree",
+      "Description": "Una tienda de marca orientada a la conversión para una empresa india tradicional de té y especias, con un hero animado de 62 fotogramas guiado por el scroll, secciones con carga diferida, SEO avanzado y precios de Amazon en vivo; totalmente probada y desplegada en AWS.",
+      "ghLink": "https://github.com/chirag8966/divyamshree-ui",
+      "demoLink": "https://divyamshree.com/",
       "Technologies": [
-        "Angular",
-        "CSS GRID",
-        "SASS",
-        "Angular animations"
+        "React 19",
+        "Vite",
+        "Vitest",
+        "SEO",
+        "AWS S3 + CloudFront"
       ]
     },
     {
-      "Title": "Countries Viewer",
-      "Description": "Interfaz que consume una API de países donde puedes ver una lista de países, ver detalles de cada país, filtrar por nombre y región. También tiene un modo oscuro para cambiar entre temas oscuros y claros.",
-      "imgs": [
-        "assets/images/countries-viewer.png"
-      ],
-      "ghLink": "https://github.com/andresjosehr/countries-viewer",
-      "demoLink": "https://projects.andresjosehr.com/countries-viewer",
+      "Title": "FlytBase Drone Platform",
+      "Description": "Una plataforma integral de gestión de flotas de drones: planificación de misiones con visualización geoespacial, programación, monitoreo en tiempo real y panel de analítica.",
+      "ghLink": "https://github.com/chirag8966/drone-management-task",
+      "demoLink": "https://flytbase.chiragjain.pro",
       "Technologies": [
-        "Angular",
-        "RxJS",
-        "SASS",
-        "API"
+        "Angular 19",
+        "NgRx",
+        "PrimeNG",
+        "Google Maps",
+        "NestJS",
+        "PostgreSQL"
+      ]
+    },
+    {
+      "Title": "ShopByChirag",
+      "Description": "Una experiencia moderna de e-commerce full-stack con carrito interactivo, ofertas especiales y múltiples temas, respaldada por una API REST tipada.",
+      "ghLink": "https://github.com/chirag8966/shopping-app",
+      "demoLink": "https://shopbychirag.netlify.app/#/",
+      "Technologies": [
+        "Angular 19",
+        "PrimeNG",
+        "Tailwind CSS",
+        "NestJS",
+        "PostgreSQL"
+      ]
+    },
+    {
+      "Title": "Trip Route Visualiser",
+      "Description": "Un visualizador elegante que representa viajes de varios tramos como una línea de tiempo conectada, detectando viajes continuos, tramos repetidos y cambios de nivel en tiempo real.",
+      "ghLink": "https://github.com/chirag8966/transportSimple-assignment",
+      "demoLink": "https://cjtransportsimple.netlify.app",
+      "Technologies": [
+        "Angular 18",
+        "Tailwind CSS",
+        "Standalone Components"
+      ]
+    },
+    {
+      "Title": "Jain Tour & Travels",
+      "Description": "Un sitio web responsivo para un operador turístico regional que muestra su flota, servicios y tarifas, publicado mediante un pipeline automatizado en AWS.",
+      "ghLink": "https://github.com/chirag8966/Jain-Tours-And-Travels",
+      "Technologies": [
+        "HTML5",
+        "SCSS",
+        "Bootstrap",
+        "GitHub Actions",
+        "AWS"
+      ]
+    },
+    {
+      "Title": "This Portfolio",
+      "Description": "El sitio en el que estás: un portafolio Angular multilingüe optimizado para rendimiento, accesibilidad y SEO, con recursos de carga diferida y despliegue en AWS mediante CI.",
+      "ghLink": "https://github.com/chirag8966/angular-portfolio",
+      "demoLink": "https://chiragjain.pro/",
+      "Technologies": [
+        "Angular 18",
+        "ngx-translate",
+        "SCSS",
+        "AWS CloudFront"
       ]
     }
   ],
-  "Contact.Pretitle": "Y... ¿Ahora?",
-  "Contact.Title": "¡Saluda!",
-  "Contact.Content": "Escríbeme, y construyamos algo grandioso juntos.",
-  "Contact.Btn": "Contáctame",
+  "Contact.Pretitle": "¿Qué sigue?",
+  "Contact.Title": "Trabajemos Juntos",
+  "Contact.Content": "Ya sea que tengas un puesto en mente, un producto por construir o simplemente quieras hablar de ingeniería, mi bandeja de entrada siempre está abierta. Te responderé lo antes posible.",
+  "Contact.Btn": "Escríbeme",
   "dxBall": {
     "title": "DX Ball",
-    "startMessage": "Click para comenzar",
-    "gameOver": "¡Fue divertido mientras duró! Contratemos a Chirag ahora.",
-    "restartMessage": "Click para reiniciar",
-    "continueMessage": "Click para continuar",
+    "startMessage": "Haz clic para comenzar",
+    "gameOver": "¡Fin del juego, gran partida!",
+    "restartMessage": "Haz clic para jugar de nuevo",
+    "continueMessage": "Haz clic para continuar",
     "score": "Puntuación: {{score}}",
     "lives": "Vidas: {{lives}}",
-    "instructions": {
-      "title": "Juego DX Ball hecho con",
-      "link": "Ingeniería de Prompts",
-      "description": "¡Mueve tu mouse o toca la pantalla y mantén para controlar la paleta y romper todos los ladrillos!"
-    },
-    "restartButton": "Reiniciar Juego"
-  }
+    "pretitle": "Ronda extra",
+    "heading": "Tómate un Respiro",
+    "description": "Un pequeño homenaje al clásico DX-Ball, renderizado en canvas HTML. Mueve el ratón, o toca y arrastra, para dirigir la paleta y romper el muro.",
+    "restartButton": "Reiniciar"
+  },
+  "Walkthroughs.Title": "Recorridos de Proyectos",
+  "OtherProjects.Subtitle": "Trabajo para clientes, productos y retos de ingeniería",
+  "OtherProjects.ViewArchive": "Ver todo en GitHub"
 }
