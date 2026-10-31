@@ -32,6 +32,14 @@
   "Experience.Title": "Experiencia",
   "Experience.Jobs": [
     {
+      "Tab": "Delta Capita",
+      "Title": "Vicepresidente Asistente",
+      "Date": "Presente",
+      "Description": [
+        "💼 Trabajo como Vicepresidente Asistente en Delta Capita, construyendo y liderando la entrega de ingeniería para tecnología de mercados de capitales y servicios financieros."
+      ]
+    },
+    {
       "Tab": "CareMonitor",
       "Title": "Miembro del Personal Técnico",
       "Date": "Mayo 2020 - Marzo 2025",
