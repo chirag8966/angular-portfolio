@@ -9,28 +9,24 @@
             "root": "",
             "sourceRoot": "src",
             "prefix": "app",
-            "i18n": {
-                "sourceLocale": "es",
-                "locales": {
-                    "en-US": "src/locale/messages.en.xlf"
-                }
-            },
             "architect": {
                 "build": {
                     "builder": "@angular-devkit/build-angular:application",
                     "options": {
                         "outputPath": {
-                          "base": "dist/chiragjain-portfolio"
+                            "base": "dist/chiragjain-portfolio"
                         },
                         "index": "src/index.html",
                         "polyfills": [
-                          "src/polyfills.ts"
+                            "src/polyfills.ts"
                         ],
                         "tsConfig": "tsconfig.app.json",
                         "assets": [
                             "src/favicon.ico",
                             "src/assets",
                             "src/manifest.webmanifest",
+                            "src/robots.txt",
+                            "src/sitemap.xml",
                             "src/.htaccess"
                         ],
                         "styles": [
@@ -38,9 +34,10 @@
                             "src/styles.scss",
                             "src/fonts.scss"
                         ],
-                        "scripts": [
-                            "node_modules/aos/dist/aos.js"
-                        ],
+                        "scripts": [],
+                        "server": "src/main.server.ts",
+                        "prerender": true,
+                        "ssr": false,
                         "extractLicenses": false,
                         "sourceMap": true,
                         "optimization": false,
@@ -80,18 +77,12 @@
                 "serve": {
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "options": {
-                      "buildTarget": "chiragjain-portfolio:build"
+                        "buildTarget": "chiragjain-portfolio:build"
                     },
                     "configurations": {
                         "production": {
-                          "buildTarget": "chiragjain-portfolio:build:production"
+                            "buildTarget": "chiragjain-portfolio:build:production"
                         }
-                    }
-                },
-                "extract-i18n": {
-                    "builder": "@angular-devkit/build-angular:extract-i18n",
-                    "options": {
-                      "buildTarget": "chiragjain-portfolio:build"
                     }
                 },
                 "test": {

@@ -91,7 +91,7 @@
                 li {
                     font-size: 16px;
                     margin: 0px auto 10px;
-                    span {
+                    .nav-number {
                         display: block;
                         color: $Green;
                         font-size: 14px;
@@ -345,4 +345,28 @@
   transition: top 0.2s ease;
 
   &:focus { top: 12px; color: $Navy; }
+}
+
+// language controls are real <button>s now – strip native button chrome
+button.language-container,
+button.language-container-selector {
+  font: inherit;
+  color: inherit;
+  border: 0;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+button.language-toggle { width: auto; }
+
+.language-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.language-container-selector .lang-code { flex: none; width: auto; }
+.menu-responsive button.language-container-selector {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

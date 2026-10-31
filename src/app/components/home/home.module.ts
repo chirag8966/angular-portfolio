@@ -1,9 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TranslateModule } from '@ngx-translate/core';
 import { GalleryComponent } from '../shared/gallery/gallery.component';
 import { IconComponent } from '../shared/icon/icon.component';
 import { YearsPipe } from '../../shared/experience';
@@ -14,9 +11,6 @@ import { HomeComponent } from './home.component';
 import { JobsComponent } from './jobs/jobs.component';
 import { ProjectsComponent } from './projects/projects.component';
 
-export function HttpLoaderFactory(http: HttpClient){
-  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
-}
 
 @NgModule({
   declarations: [
@@ -29,17 +23,11 @@ export function HttpLoaderFactory(http: HttpClient){
   ],
   imports: [
     CommonModule,
-    NgbNavModule,
     GalleryComponent,
     IconComponent,
     YearsPipe,
-    TranslateModule.forChild({
-      loader: {
-          provide: TranslateLoader,
-          useFactory: HttpLoaderFactory,
-          deps: [HttpClient]
-      }
-    })
-  ]
+    TranslateModule
+  ],
+  exports: [HomeComponent]
 })
 export class HomeModule { }

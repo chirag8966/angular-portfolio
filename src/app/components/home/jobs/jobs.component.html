@@ -4,53 +4,43 @@
     <div class="section-box">
       <!-- Section Title with Animation -->
       <div class="about-title mb-5" data-aos="fade-up" data-aos-duration="1000">
-        <h3 class="e-font section-title">
+        <h2 class="e-font section-title">
           <span class="code-font n-section-title">02.</span>
           {{ "Experience.Title" | translate }}
-        </h3>
+        </h2>
       </div>
 
       <!-- Jobs Tabs Container with Animation -->
       <div class="jobs-tabs" data-aos="fade-up" data-aos-duration="1000">
-        <!-- Vertical Navigation Tabs -->
-        <ul
-          ngbNav
-          #nav="ngbNav"
-          [(activeId)]="active"
-          orientation="vertical"
-          class="nav-tabs jobs-tabs"
-        >
-          <!-- Job Tab Items -->
-          @for (job of 'Experience.Jobs' | translate; track job.Tab) {
-            <li [title]="job.Tab" [ngbNavItem]="$index">
-              <!-- Tab Link -->
-              <a ngbNavLink>{{ job.Tab }}</a>
-
-              <!-- Tab Content Template -->
-              <ng-template ngbNavContent>
-                <!-- Job Title and Company -->
-                <h4 class="title-tab-content">
-                  {{ job.Title }} |
-                  <span class="company-tab-content">{{ job.Tab }}</span>
-                </h4>
-
-                <!-- Job Duration -->
-                <h5 class="job-time">{{ job.Date }}</h5>
-
-                <!-- Job Description Points -->
-                @for (description of job.Description; track $index) {
-                  <p 
-                    class="job-description"
-                    [innerHTML]="description | translate"
-                  ></p>
-                }
-              </ng-template>
+        @let jobs = 'Experience.Jobs' | translate;
+        <!-- Vertical tab list (WAI-ARIA tabs pattern, arrow-key navigation) -->
+        <ul class="nav nav-tabs jobs-tabs" role="tablist" aria-orientation="vertical" (keydown)="onTabKeydown($event, jobs.length)">
+          @for (job of jobs; track job.Tab; let i = $index) {
+            <li [title]="job.Tab" role="presentation">
+              <button type="button" class="job-tab" role="tab" [id]="'job-tab-' + i"
+                      [class.active]="active === i" [attr.aria-selected]="active === i"
+                      [attr.aria-controls]="'job-panel-' + i" [attr.tabindex]="active === i ? 0 : -1"
+                      (click)="select(i)">{{ job.Tab }}</button>
             </li>
           }
         </ul>
 
-        <!-- Tab Content Outlet -->
-        <div [ngbNavOutlet]="nav" class="mt-2"></div>
+        <!-- Every panel is rendered (only the active one is visible) so the full history is indexable -->
+        <div class="tab-content mt-2">
+          @for (job of jobs; track job.Tab; let i = $index) {
+            <div class="tab-pane" [class.active]="active === i" role="tabpanel" [id]="'job-panel-' + i" [attr.aria-labelledby]="'job-tab-' + i"
+                 [hidden]="active !== i" tabindex="0">
+              <h3 class="title-tab-content">
+                {{ job.Title }} |
+                <span class="company-tab-content">{{ job.Tab }}</span>
+              </h3>
+              <p class="job-time">{{ job.Date }}</p>
+              @for (description of job.Description; track $index) {
+                <p class="job-description">{{ description }}</p>
+              }
+            </div>
+          }
+        </div>
       </div>
     </div>
   </div>

@@ -18,6 +18,8 @@ import { CommonModule } from '@angular/common';
           <img
             class="gallery-slide"
             [src]="src"
+            [attr.srcset]="srcset(src)"
+            [attr.sizes]="sizes"
             [alt]="label + ' – screenshot ' + (i + 1) + ' of ' + images.length"
             [width]="width"
             [height]="height"
@@ -47,11 +49,20 @@ export class GalleryComponent {
   @Input() width = 1280;
   @Input() height = 800;
   @Input() eager = false;
+  /** Width of the "-{smallWidth}.webp" variant generated next to each image (0 = none). */
+  @Input() smallWidth = 640;
+  /** Rendered width hint for the browser's srcset choice. */
+  @Input() sizes = '(max-width: 991px) 92vw, 600px';
   @ViewChild('track', { static: true }) track: ElementRef<HTMLElement>;
 
   index = 0;
 
   constructor(private cdr: ChangeDetectorRef) {}
+
+  srcset(src: string): string | null {
+    if (!this.smallWidth || !src.endsWith('.webp')) return null;
+    return `${src.replace(/\.webp$/, `-${this.smallWidth}.webp`)} ${this.smallWidth}w, ${src} ${this.width}w`;
+  }
 
   onScroll() {
     const el = this.track.nativeElement;

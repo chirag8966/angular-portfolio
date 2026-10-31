@@ -1,0 +1,5 @@
+# https://chiragjain.pro
+User-agent: *
+Allow: /
+
+Sitemap: https://chiragjain.pro/sitemap.xml

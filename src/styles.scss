@@ -1,5 +1,18 @@
 /* Bootstrap must come first so our own rules can override its reboot styles. */
-@import "bootstrap/scss/bootstrap";
+// Only the Bootstrap parts the site actually uses (was the full framework: ~180kB of CSS)
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/nav";
+@import "bootstrap/scss/navbar";
+@import "bootstrap/scss/dropdown";
+@import "bootstrap/scss/utilities/display";
+@import "bootstrap/scss/utilities/spacing";
+@import "bootstrap/scss/utilities/text";
 @import "./variables.scss";
 
 html {
@@ -104,6 +117,11 @@ body {
   }
 }
 
+@keyframes fade-down { from { opacity: 0; transform: translateY(-12px); } to { opacity: 1; transform: none; } }
+@keyframes fade-up { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+.main-navbar .container { animation: fade-down 0.4s cubic-bezier(0.35, 0, 0.25, 1) both; }
+.footer-bars { animation: fade-up 0.5s 0.3s cubic-bezier(0.35, 0, 0.25, 1) both; }
+
 // Visible keyboard focus for every interactive element
 :focus-visible {
   outline: 2px solid $Green;
@@ -197,6 +215,7 @@ a {
 }
 
 @media (max-width: 1000px) {
+  .banner h1,
   .banner h2,
   .banner h3,
   .big-title {
@@ -208,6 +227,7 @@ a {
 }
 
 @media (max-width: 768px) {
+  .banner h1,
   .banner h2,
   .banner h3,
   .big-title {
@@ -215,6 +235,7 @@ a {
   }
 }
 @media (max-width: 480px) {
+  .banner h1,
   .banner h2,
   .banner h3,
   .big-title {
@@ -222,6 +243,7 @@ a {
   }
 }
 @media (max-width: 376px) {
+  .banner h1,
   .banner h2,
   .banner h3,
   .big-title {

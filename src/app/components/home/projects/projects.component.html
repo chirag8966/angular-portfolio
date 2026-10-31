@@ -2,9 +2,9 @@
   <div class="container">
     <div class="section-box">
       <div data-aos="fade-up" data-aos-duration="1000">
-        <h3 class="section-title">
+        <h2 class="section-title">
           <span class="n-section-title">03.</span> {{ "FeatureProjects.Title" | translate }}
-        </h3>
+        </h2>
       </div>
 
       @for (project of "FeatureProjects.Projects" | translate; track project.Title) {
@@ -13,7 +13,7 @@
 
           <div class="project-info">
             <p class="project-label">{{ "FeatureProjects.Label" | translate }}</p>
-            <h4 class="project-name">{{ project.Title }}</h4>
+            <h3 class="project-name">{{ project.Title }}</h3>
             <div class="project-description" [innerHTML]="project.Description"></div>
             <ul class="project-skills">
               @for (technology of project.Technologies; track technology) {
@@ -41,7 +41,7 @@
   <div class="container">
     <div class="other-projects">
       <div class="other-projects-header" data-aos="fade-up">
-        <h3 class="other-projects-title">{{ "OtherProjects.Title" | translate }}</h3>
+        <h2 class="other-projects-title">{{ "OtherProjects.Title" | translate }}</h2>
         <p class="other-projects-subtitle">{{ "OtherProjects.Subtitle" | translate }}</p>
       </div>
 
@@ -66,9 +66,9 @@
                 }
               </div>
             </div>
-            <h4 class="project-card-title">
+            <h3 class="project-card-title">
               <a [href]="project.demoLink || project.ghLink" target="_blank" rel="noopener noreferrer">{{ project.Title }}</a>
-            </h4>
+            </h3>
             <p class="project-card-description">{{ project.Description }}</p>
             <ul class="project-card-tech">
               @for (tech of project.Technologies; track tech) {
@@ -89,7 +89,7 @@
 
   <div class="container interview-tasks" #videos>
     @defer (on viewport(videos)) {
-      <h3 class="section-title mb-4" data-aos="fade-up">{{ "Walkthroughs.Title" | translate }}</h3>
+      <h2 class="section-title mb-4" data-aos="fade-up">{{ "Walkthroughs.Title" | translate }}</h2>
       <div class="video-grid">
       <div class="video-frame">
         <iframe

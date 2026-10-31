@@ -16,21 +16,23 @@
         border: none;
     }
 
-    a.active{
+    .job-tab.active{
         background-color: $LightNavy !important;
         color: $Green !important;
         border-color: transparent !important;
         border-radius: 0px;
     }
     
-    a:hover{
+    .job-tab:hover{
         background-color: $LightNavy !important;
         color: $Green !important;
         border-color: transparent !important;
         border-radius: 0px;
     }
 
-    a{
+    .job-tab{
+        border: 0;
+        font: inherit;
         display: inline-block;
         -webkit-text-decoration: none;
         text-decoration: none;
@@ -63,6 +65,7 @@
     }
 
     li{
+        list-style: none;
         border-left: 2px solid $LightestNavy;
         border-left-width: 2px;
         border-left-style: solid;

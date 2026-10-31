@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
-import * as AOS from 'aos';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { LanguageService } from "src/app/services/language/language.service";
-import { yearsOfExperience } from './shared/experience';
+import { SeoService } from './services/seo/seo.service';
 
 @Component({
   selector: 'app-root',
@@ -13,27 +12,23 @@ export class AppComponent implements OnInit {
   title = 'chiragjain-portfolio';
 
   constructor(
-    private titleService: Title,
-    private metaService: Meta,
-    private languageService: LanguageService
+    private seo: SeoService,
+    private languageService: LanguageService,
+    @Inject(PLATFORM_ID) private platformId: object,
   ) {
   }
 
   ngOnInit(): void {
     this.languageService.initLanguage();
 
-    // Keep runtime metadata in sync with index.html (single source of truth for the title/description)
-    this.titleService.setTitle('Chirag Jain | Assistant Vice President at Delta Capita');
-    this.metaService.updateTag({
-      name: 'description',
-      content: `Chirag Jain – Assistant Vice President at Delta Capita and engineering leader with ${yearsOfExperience()}+ years of experience building high-performance, accessible web platforms with Angular and TypeScript.`
-    });
-    this.metaService.updateTag({
-      name: 'keywords',
-      content: 'Chirag Jain, Assistant Vice President, Delta Capita, Angular, Frontend, Software Engineer, TypeScript, RxJS'
-    });
+    this.seo.init();
 
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    AOS.init({ once: true, disable: prefersReducedMotion, duration: 800 });
+    if (isPlatformBrowser(this.platformId)) {
+      // scroll-reveal library is browser-only and not needed for first paint
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const initAos = () => import('aos').then(({ default: AOS }) => AOS.init({ once: true, disable: prefersReducedMotion, duration: 800 }));
+      // after first paint & hydration, when the main thread is free
+      'requestIdleCallback' in window ? (window as any).requestIdleCallback(initAos, { timeout: 1500 }) : setTimeout(initAos, 300);
+    }
   }
 }
