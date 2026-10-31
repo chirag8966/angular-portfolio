@@ -1,3 +1,4 @@
+import { IconComponent } from '../shared/icon/icon.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FooterComponent } from './footer/footer.component'
@@ -19,6 +20,7 @@ export function HttpLoaderFactory(http: HttpClient){
     FooterComponent
   ],
   imports: [
+        IconComponent,
     CommonModule,
     NgbModule,
     RouterModule,

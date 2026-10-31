@@ -1,24 +1,15 @@
-import { Component } from '@angular/core';
-import { OwlOptions } from 'ngx-owl-carousel-o';
-import { AnalyticsService } from 'src/app/services/analytics/analytics.service';
-import { customOptions } from 'src/environments/common.environment';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
-  styleUrls: ['./about.component.scss']
+  styleUrls: ['./about.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AboutComponent {
-
-  customOptions: OwlOptions = customOptions;
   ownImages = [
-    "../assets/images/me.jpg",
-    "../assets/images/setup.jpg",
-    "../assets/images/me2.png",
-  ]
-
-  constructor(
-    public analyticsService: AnalyticsService
-  ) { }
-
-} 
+    'assets/images/me.webp',
+    'assets/images/setup.webp',
+    'assets/images/me2.webp',
+  ];
+}

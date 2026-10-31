@@ -29,9 +29,20 @@
                 font-family: $CodeFont;
             }
 
+            .banner-role {
+                font-family: $MainFont;
+                font-weight: 600;
+                font-size: clamp(22px, 4.2vw, 44px);
+                line-height: 1.2;
+                color: $Slate;
+                max-width: none;
+                margin: 8px 0 0;
+                .banner-at { color: $Green; }
+            }
+
             h2, h3 {
                 font-weight: 600;
-                font-size: 80px;
+                font-size: clamp(44px, 8vw, 80px);
                 line-height: 1.1;
                 margin: 0;
                 font-family: $MainFont;

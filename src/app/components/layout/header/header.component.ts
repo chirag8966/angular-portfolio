@@ -8,7 +8,7 @@ import { LanguageService } from 'src/app/services/language/language.service';
 interface Language {
   code: string;
   name: string;
-  flag: string;
+  code2: string;
   alt: string;
 }
 
@@ -84,19 +84,19 @@ export class HeaderComponent implements OnInit {
     {
       code: 'es',
       name: 'Español',
-      flag: 'https://www.worldometers.info/img/flags/sp-flag.gif',
+      code2: 'ES',
       alt: 'Español'
     },
     {
       code: 'en',
       name: 'English',
-      flag: 'https://www.worldometers.info/img/flags/us-flag.gif',
+      code2: 'EN',
       alt: 'English'
     },
     {
       code: 'ar',
       name: 'العربية',
-      flag: 'https://www.worldometers.info/img/flags/sa-flag.gif',
+      code2: 'AR',
       alt: 'العربية'
     }
   ];
@@ -136,10 +136,8 @@ export class HeaderComponent implements OnInit {
   }
 
   downloadCV() {
-    let url = window.location.href;
-
-    // Open a new window with the CV
-    window.open(url + "/../assets/cv/resume.pdf", "_blank");
+    // base href is "/", so this resolves correctly whatever the current (language) URL is
+    window.open("assets/cv/resume.pdf", "_blank", "noopener");
 
   }
 

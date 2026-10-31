@@ -19,18 +19,16 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // Smooth scroll to top
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
+    this.languageService.initLanguage();
+
+    // Keep runtime metadata in sync with index.html (single source of truth for the title/description)
+    this.titleService.setTitle('Chirag Jain | Assistant Vice President at Delta Capita');
+    this.metaService.updateTag({
+      name: 'keywords',
+      content: 'Chirag Jain, Assistant Vice President, Delta Capita, Angular, Frontend, Software Engineer, TypeScript, RxJS'
     });
 
-    this.languageService.initLanguage()
-    this.titleService.setTitle("Chirag Jain | Frontend Developer");
-    this.metaService.addTags([
-      { name: 'keywords', content: 'Frontend, software, developer' },
-      { name: 'description', content: 'Software Engineer with 6+ years of expertise in Angular development, dedicated to crafting engaging, accessible digital experiences with proven success scaling products and teams.' },
-    ]);
-    AOS.init();
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    AOS.init({ once: true, disable: prefersReducedMotion, duration: 800 });
   }
 }

@@ -1,4 +1,11 @@
+/* Bootstrap must come first so our own rules can override its reboot styles. */
+@import "bootstrap/scss/bootstrap";
 @import "./variables.scss";
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
 
 body {
   margin: 0;
@@ -14,7 +21,7 @@ body {
   font-size: 20px;
 }
 .section-box {
-  padding: 130px 0;
+  padding: clamp(70px, 10vw, 110px) 0;
 }
 .section {
   background: $Navy;
@@ -84,16 +91,42 @@ body {
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   padding: 1.25rem 1.75rem;
 
+  display: inline-block;
+
   &:hover,
-  &:focus,
+  &:focus-visible,
   &:active {
     outline: none;
     color: $Green;
+    background-color: $GreenOpacity;
+    box-shadow: 4px 4px 0 0 rgba(100, 255, 218, 0.3);
+    transform: translate(-4px, -4px);
+  }
+}
+
+// Visible keyboard focus for every interactive element
+:focus-visible {
+  outline: 2px solid $Green;
+  outline-offset: 3px;
+}
+
+::selection {
+  background: rgba(100, 255, 218, 0.25);
+  color: $White;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
 a {
   text-decoration: none;
+  transition: color 0.2s ease;
 
   &:hover {
     text-decoration: none;
@@ -201,6 +234,3 @@ a {
     font-size: 18px;
   }
 }
-
-/* Importing Bootstrap SCSS file. */
-@import "bootstrap/scss/bootstrap";

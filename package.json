@@ -22,7 +22,6 @@
     "@angular/platform-browser-dynamic": "^18.2.13",
     "@angular/router": "^18.2.13",
     "@angular/service-worker": "^18.2.13",
-    "@fortawesome/fontawesome-free": "^5.14.0",
     "@ng-bootstrap/ng-bootstrap": "^17.0.0",
     "@ngx-translate/core": "^15.0.0",
     "@ngx-translate/http-loader": "^6.0.0",
@@ -30,7 +29,6 @@
     "aos": "^2.3.4",
     "bootstrap": "^4.5.0",
     "ngx-google-analytics": "^14.0.1",
-    "ngx-owl-carousel-o": "^18.0.0",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
     "zone.js": "~0.14.10"

@@ -25,11 +25,13 @@ export class LanguageService {
     this.location.go(language)
 
     this.language=language
+    document.documentElement.lang = language
   }
 
   changeLanguage(language){
     this.translateService.setDefaultLang(language)
     this.location.go(language)
     this.language=language
+    document.documentElement.lang = language
   }
 }

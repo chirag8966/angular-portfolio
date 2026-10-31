@@ -1,9 +1,10 @@
 <!-- Main Navigation Bar -->
+<a class="skip-link" href="#main">Skip to content</a>
 <nav [@animateMenu] class="navbar main-navbar on-top" [class.nav-shadow]="this.pageYPosition > 0">
     <div class="container">
         <!-- Logo -->
-        <a class="navbar-brand text-light cursor-pointer" (click)="logoClickHandler()">
-            <img src="assets/images/logo.png" width="25" alt="logo" />
+        <a class="navbar-brand text-light cursor-pointer" href="#" (click)="$event.preventDefault(); logoClickHandler()" aria-label="Chirag Jain – back to top">
+            <img src="assets/images/logo.png" width="25" height="44" alt="" />
         </a>
 
         <!-- Desktop Menu -->
@@ -28,7 +29,7 @@
                 <div ngbDropdown class="d-inline-block">
                     <!-- Current Language Display -->
                     <div class="language-container" id="dropdownForm1" ngbDropdownToggle>
-                        <img width="20px" [src]="currentLanguage.flag" [alt]="currentLanguage.alt" />
+                        <span class="lang-code" aria-hidden="true">{{ currentLanguage.code2 }}</span>
                         <span class="flag-text">{{ currentLanguage.name }}</span>
                         <svg class="arrow-language" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                             viewBox="0 0 24 24">
@@ -47,7 +48,7 @@
                                      'last-item': i === languages.length - 1
                                  }">
                                 <div class="language-item">
-                                    <img width="20px" [src]="lang.flag" [alt]="lang.alt" />
+                                    <span class="lang-code" aria-hidden="true">{{ lang.code2 }}</span>
                                     <span class="flag-text">
                                         {{ lang.name }}
                                     </span>
@@ -62,8 +63,10 @@
 
         <!-- Mobile Menu Toggle -->
         <div class="menu-wrapper">
-            <div class="hamburger-menu" [ngClass]="{'animate': responsiveMenuVisible}" 
-                 (click)="responsiveMenuVisible = !responsiveMenuVisible"></div>
+            <div class="hamburger-menu" [ngClass]="{'animate': responsiveMenuVisible}"
+                 role="button" tabindex="0" aria-label="Toggle navigation menu" [attr.aria-expanded]="responsiveMenuVisible"
+                 (click)="responsiveMenuVisible = !responsiveMenuVisible"
+                 (keydown.enter)="responsiveMenuVisible = !responsiveMenuVisible"></div>
         </div>
 
         <!-- Mobile Menu -->
@@ -95,7 +98,7 @@
                                              'last-item': i === languages.length - 1
                                          }">
                                         <div class="language-item">
-                                            <img width="20px" [src]="lang.flag" [alt]="lang.alt" />
+                                            <span class="lang-code" aria-hidden="true">{{ lang.code2 }}</span>
                                             <span class="flag-text">{{ lang.name }}</span>
                                         </div>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" 

@@ -4,31 +4,45 @@
   <meta charset="utf-8">
 
   <!-- Primary Meta Tags -->
-  <title>Chirag Jain | Software Engineer</title>
-  <meta name="title" content="Chirag Jain | Software Engineer">
-  <meta name="description" content="Software Engineer with 5+ years of expertise in Frontend Development, specializing in Angular.">
+  <title>Chirag Jain | Assistant Vice President at Delta Capita</title>
+  <meta name="title" content="Chirag Jain | Assistant Vice President at Delta Capita">
+  <meta name="description" content="Chirag Jain – Assistant Vice President at Delta Capita and Angular software engineer with 5+ years of experience building scalable, accessible frontend systems.">
+  <meta name="author" content="Chirag Jain">
+  <link rel="canonical" href="https://chiragjain.pro/">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://chiragjain.pro/">
-  <meta property="og:title" content="Chirag Jain | Software Engineer">
-  <meta property="og:description" content="Software Engineer with 5+ years of expertise in Frontend Development, specializing in Angular.">">
-  <meta property="og:image" content="https://chiragjain.pro/assets/images/preview.png">
+  <meta property="og:title" content="Chirag Jain | Assistant Vice President at Delta Capita">
+  <meta property="og:description" content="Assistant Vice President at Delta Capita and Angular software engineer with 5+ years of experience building scalable, accessible frontend systems.">
+  <meta property="og:image" content="https://chiragjain.pro/assets/images/preview.jpg">
 
   <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://chiragjain.pro/">
-  <meta property="twitter:title" content="Chirag Jain | Software Engineer">
-  <meta property="twitter:description" content="Software Engineer with 5+ years of expertise in Frontend Development, specializing in Angular.">">
-  <meta property="twitter:image" content="https://chiragjain.pro/assets/images/preview.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://chiragjain.pro/">
+  <meta name="twitter:title" content="Chirag Jain | Assistant Vice President at Delta Capita">
+  <meta name="twitter:description" content="Assistant Vice President at Delta Capita and Angular software engineer with 5+ years of experience building scalable, accessible frontend systems.">
+  <meta name="twitter:image" content="https://chiragjain.pro/assets/images/preview.jpg">
 
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0a192f">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="manifest" href="manifest.webmanifest">
-  
 
-  <meta name="theme-color" content="#1976d2">
+  <!-- Critical fonts: fetched in parallel with the JS bundle instead of after CSS parse -->
+  <link rel="preload" href="assets/fonts/Calibre/Calibre-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/Calibre/Calibre-Semibold.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Google Analytics is loaded lazily by ngx-google-analytics; warm up the connection -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
+
+  <style>
+    /* Prevents a white flash before the app styles load */
+    html, body { background: #0a192f; margin: 0; }
+  </style>
 </head>
 <body>
   <app-root></app-root>
