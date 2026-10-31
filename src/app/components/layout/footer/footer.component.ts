@@ -54,7 +54,7 @@ export class FooterComponent {
       url: 'https://www.linkedin.com/in/chirag8966/',
       analyticsEvent: 'click_linkedin',
       analyticsCategory: 'footer',
-      analyticsAction: 'github'
+      analyticsAction: 'linkedin'
     }
   ];
 
@@ -69,8 +69,8 @@ export class FooterComponent {
   credits: Credit[] = [
     {
       text: 'Built with Angular by Chirag Jain',
-      url: 'https://github.com/chirag8966/angular-portfolio',
-      analyticsEvent: 'click_github_portfolio_chiragJain',
+      url: 'https://www.linkedin.com/in/chirag8966/',
+      analyticsEvent: 'click_linkedin_chiragJain',
       analyticsCategory: 'footer',
       analyticsAction: 'click'
     },
