@@ -117,10 +117,16 @@ body {
   }
 }
 
-@keyframes fade-down { from { opacity: 0; transform: translateY(-12px); } to { opacity: 1; transform: none; } }
-@keyframes fade-up { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
-.main-navbar .container { animation: fade-down 0.4s cubic-bezier(0.35, 0, 0.25, 1) both; }
-.footer-bars { animation: fade-up 0.5s 0.3s cubic-bezier(0.35, 0, 0.25, 1) both; }
+// Entrance animations.
+// NOTE: never animate `transform` on an element that *contains* position:fixed children —
+// a filled transform animation makes it the containing block, so the "fixed" side bars and
+// the mobile menu would scroll away with the page. Wrappers fade (opacity only); the fixed
+// elements animate their own transform.
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes rise-in { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+.main-navbar .container { animation: fade-in 0.4s cubic-bezier(0.35, 0, 0.25, 1) both; }
+.footer-bars .footer-left-bar,
+.footer-bars .footer-right-bar { animation: rise-in 0.5s 0.3s cubic-bezier(0.35, 0, 0.25, 1) both; }
 
 // Visible keyboard focus for every interactive element
 :focus-visible {

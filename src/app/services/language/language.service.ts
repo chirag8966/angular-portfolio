@@ -25,7 +25,7 @@ export class LanguageService {
   /**
    * The prerendered (crawlable) HTML is always English. In the browser we switch to the
    * visitor's saved or preferred language. The URL is intentionally left untouched so the
-   * canonical address stays https://chiragjain.pro/.
+   * canonical address stays https://chiragj.pro/.
    */
   initLanguage() {
     this.translateService.addLangs(SUPPORTED);

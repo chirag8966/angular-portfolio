@@ -210,7 +210,7 @@
       "Title": "This Portfolio",
       "Description": "الموقع الذي تتصفحه الآن: معرض أعمال Angular متعدد اللغات ومحسّن للأداء وسهولة الوصول ومحركات البحث، مع تحميل مؤجل للموارد ونشر آلي على AWS.",
       "ghLink": "https://github.com/chirag8966/angular-portfolio",
-      "demoLink": "https://chiragjain.pro/",
+      "demoLink": "https://chiragj.pro/",
       "Technologies": [
         "Angular 18",
         "ngx-translate",

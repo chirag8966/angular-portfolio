@@ -210,7 +210,7 @@
       "Title": "This Portfolio",
       "Description": "The site you're on: a multilingual Angular portfolio tuned for performance, accessibility and SEO, with lazy-loaded assets and a CI-driven AWS deployment.",
       "ghLink": "https://github.com/chirag8966/angular-portfolio",
-      "demoLink": "https://chiragjain.pro/",
+      "demoLink": "https://chiragj.pro/",
       "Technologies": [
         "Angular 18",
         "ngx-translate",

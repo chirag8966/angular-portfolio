@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://chiragjain.pro/</loc>
+    <loc>https://chiragj.pro/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://chiragjain.pro/assets/images/og-image.jpg</image:loc>
+      <image:loc>https://chiragj.pro/assets/images/og-image.jpg</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://chiragjain.pro/assets/images/me.webp</image:loc>
+      <image:loc>https://chiragj.pro/assets/images/me.webp</image:loc>
     </image:image>
   </url>
 </urlset>

@@ -4,13 +4,13 @@ import { Meta, Title } from '@angular/platform-browser';
 import { CAREER_START, yearsOfExperience } from 'src/app/shared/experience';
 
 export const SITE = {
-  url: 'https://chiragjain.pro/',
+  url: 'https://chiragj.pro/',
   name: 'Chirag Jain',
   jobTitle: 'Assistant Vice President',
   employer: 'Delta Capita',
   employerUrl: 'https://www.deltacapita.com/',
-  image: 'https://chiragjain.pro/assets/images/og-image.jpg',
-  photo: 'https://chiragjain.pro/assets/images/me.webp',
+  image: 'https://chiragj.pro/assets/images/og-image.jpg',
+  photo: 'https://chiragj.pro/assets/images/me.webp',
   email: 'chirag8966@gmail.com',
   github: 'https://github.com/chirag8966',
   linkedin: 'https://www.linkedin.com/in/chirag8966/',
