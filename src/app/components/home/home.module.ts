@@ -6,6 +6,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { GalleryComponent } from '../shared/gallery/gallery.component';
 import { IconComponent } from '../shared/icon/icon.component';
+import { YearsPipe } from '../../shared/experience';
 import { AboutComponent } from './about/about.component';
 import { BannerComponent } from './banner/banner.component';
 import { ContactComponent } from './contact/contact.component';
@@ -31,6 +32,7 @@ export function HttpLoaderFactory(http: HttpClient){
     NgbNavModule,
     GalleryComponent,
     IconComponent,
+    YearsPipe,
     TranslateModule.forChild({
       loader: {
           provide: TranslateLoader,
