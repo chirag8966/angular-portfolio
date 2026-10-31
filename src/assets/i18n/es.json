@@ -104,11 +104,11 @@
       "Title": "CM-UI",
       "Description": "Desarrollé una aplicación web integral en CareMonitor para Gestión de Pacientes, Monitoreo Remoto y Atención Virtual. Construida con <span class='underline'>Angular</span> y <span class='underline'>Node.js</span>, con soporte para <span class='underline'>WebSockets</span>, <span class='underline'>múltiples integraciones de terceros</span>, e infraestructura completamente gestionada en <span class='underline'>AWS</span>.",
       "imgs": [
-        "assets/images/projects/cm-ui/1.png",
-        "assets/images/projects/cm-ui/2.png",
-        "assets/images/projects/cm-ui/3.png",
-        "assets/images/projects/cm-ui/4.png",
-        "assets/images/projects/cm-ui/5.png"
+        "assets/images/projects/cm-ui/1.webp",
+        "assets/images/projects/cm-ui/2.webp",
+        "assets/images/projects/cm-ui/3.webp",
+        "assets/images/projects/cm-ui/4.webp",
+        "assets/images/projects/cm-ui/5.webp"
       ],
       "Technologies": [
         "Angular",
@@ -124,8 +124,8 @@
       "Title": "CM-Careplan",
       "Description": "Desarrollé una aplicación web escalable y modular dentro de una arquitectura monorepo NX para gestionar planes de atención de pacientes. La aplicación utiliza <span class='underline'>Angular</span> para el frontend y <span class='underline'>Node.js</span> para el backend, con actualizaciones en tiempo real a través de <span class='underline'>WebSockets</span>, integración perfecta con múltiples servicios de terceros, y una infraestructura robusta alojada en <span class='underline'>AWS</span>. Diseñada para simplificar la creación, seguimiento y colaboración de planes de atención entre proveedores de salud.",
       "imgs": [
-        "assets/images/projects/cm-careplan/1.png",
-        "assets/images/projects/cm-careplan/2.png"
+        "assets/images/projects/cm-careplan/1.webp",
+        "assets/images/projects/cm-careplan/2.webp"
       ],
       "Technologies": [
         "Angular",

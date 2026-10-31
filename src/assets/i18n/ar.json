@@ -104,11 +104,11 @@
       "Title": "CM-UI",
       "Description": "قمت بتطوير تطبيق ويب شامل في CareMonitor لإدارة المرضى والمراقبة عن بعد والرعاية الافتراضية. تم بناؤه باستخدام <span class='underline'>Angular</span> و<span class='underline'>Node.js</span>، مع دعم <span class='underline'>WebSockets</span> و<span class='underline'>تكاملات متعددة مع جهات خارجية</span>، والبنية التحتية مُدارة بالكامل على <span class='underline'>AWS</span>.",
       "imgs": [
-        "assets/images/projects/cm-ui/1.png",
-        "assets/images/projects/cm-ui/2.png",
-        "assets/images/projects/cm-ui/3.png",
-        "assets/images/projects/cm-ui/4.png",
-        "assets/images/projects/cm-ui/5.png"
+        "assets/images/projects/cm-ui/1.webp",
+        "assets/images/projects/cm-ui/2.webp",
+        "assets/images/projects/cm-ui/3.webp",
+        "assets/images/projects/cm-ui/4.webp",
+        "assets/images/projects/cm-ui/5.webp"
       ],
       "Technologies": [
         "Angular",
@@ -124,8 +124,8 @@
       "Title": "CM-Careplan",
       "Description": "قمت بتطوير تطبيق ويب قابل للتطوير ومعياري ضمن بنية NX monorepo لإدارة خطط رعاية المرضى. يستخدم التطبيق <span class='underline'>Angular</span> لواجهة المستخدم و<span class='underline'>Node.js</span> للخلفية، مع ميزات تحديثات في الوقت الحقيقي عبر <span class='underline'>WebSockets</span>، وتكامل سلس مع خدمات متعددة من جهات خارجية، وبنية تحتية قوية مستضافة على <span class='underline'>AWS</span>. تم تصميمه لتبسيط إنشاء خطط الرعاية وتتبعها والتعاون بين مقدمي الرعاية الصحية.",
       "imgs": [
-        "assets/images/projects/cm-careplan/1.png",
-        "assets/images/projects/cm-careplan/2.png"
+        "assets/images/projects/cm-careplan/1.webp",
+        "assets/images/projects/cm-careplan/2.webp"
       ],
       "Technologies": [
         "Angular",

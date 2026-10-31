@@ -104,11 +104,11 @@
       "Title": "CM-UI",
       "Description": "Developed a comprehensive web application at CareMonitor for Patient Management, Remote Monitoring, and Virtual Care. Built using <span class='underline'>Angular</span> and <span class='underline'>Node.js</span>, with support for <span class='underline'>WebSockets</span>, <span class='underline'>multiple third-party integrations</span>, and infrastructure fully managed on <span class='underline'>AWS</span>.",
       "imgs": [
-        "assets/images/projects/cm-ui/1.png",
-        "assets/images/projects/cm-ui/2.png",
-        "assets/images/projects/cm-ui/3.png",
-        "assets/images/projects/cm-ui/4.png",
-        "assets/images/projects/cm-ui/5.png"
+        "assets/images/projects/cm-ui/1.webp",
+        "assets/images/projects/cm-ui/2.webp",
+        "assets/images/projects/cm-ui/3.webp",
+        "assets/images/projects/cm-ui/4.webp",
+        "assets/images/projects/cm-ui/5.webp"
       ],
       "Technologies": [
         "Angular",
@@ -124,8 +124,8 @@
       "Title": "CM-Careplan",
       "Description": "Developed a scalable and modular web application within an NX monorepo architecture for managing patient care plans. The application leverages <span class='underline'>Angular</span> for the frontend and <span class='underline'>Node.js</span> for the backend, featuring real-time updates via <span class='underline'>WebSockets</span>, seamless integration with multiple third-party services, and a robust infrastructure hosted on <span class='underline'>AWS</span>. Designed to streamline care plan creation, tracking, and collaboration among healthcare providers.",
       "imgs": [
-        "assets/images/projects/cm-careplan/1.png",
-        "assets/images/projects/cm-careplan/2.png"
+        "assets/images/projects/cm-careplan/1.webp",
+        "assets/images/projects/cm-careplan/2.webp"
       ],
       "Technologies": [
         "Angular",

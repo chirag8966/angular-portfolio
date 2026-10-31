@@ -320,3 +320,29 @@
 .cursor-pointer {
     cursor: pointer;
 }
+.lang-code {
+  display: inline-block;
+  font-family: $CodeFont;
+  font-size: 11px;
+  line-height: 1;
+  padding: 3px 5px;
+  border: 1px solid currentColor;
+  border-radius: 3px;
+  color: $Green;
+}
+
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -60px;
+  z-index: 1000;
+  padding: 10px 16px;
+  background: $Green;
+  color: $Navy;
+  border-radius: 3px;
+  font-family: $CodeFont;
+  font-size: 13px;
+  transition: top 0.2s ease;
+
+  &:focus { top: 12px; color: $Navy; }
+}

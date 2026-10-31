@@ -26,14 +26,4 @@ import { AnalyticsService } from 'src/app/services/analytics/analytics.service';
 export class BannerComponent {
 
   analyticsService = inject(AnalyticsService);
-
-  downloadResume() {
-    this.analyticsService.sendAnalyticEvent("click_Download_Resume", "banner", "download");
-
-    // Open a new window with the CV
-    let url = window.location.href;
-    window.open(url + "../assets/cv/resume.pdf", "_blank");
-  }
-  
-
 }

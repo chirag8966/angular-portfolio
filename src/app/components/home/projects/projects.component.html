@@ -1,117 +1,60 @@
-<section class="section proyects" id='proyects'>
-    <div class="container" #projects>
-        <div class="section-box">
-            <div data-aos="fade-up" data-aos-duration="1000">
-                <h3 class="section-title">
-                    <span class='n-section-title'>03.</span> {{"FeatureProjects.Title" | translate}}
-                </h3>
+<section class="section proyects" id="proyects">
+  <div class="container">
+    <div class="section-box">
+      <div data-aos="fade-up" data-aos-duration="1000">
+        <h3 class="section-title">
+          <span class="n-section-title">03.</span> {{ "FeatureProjects.Title" | translate }}
+        </h3>
+      </div>
+
+      @for (project of "FeatureProjects.Projects" | translate; track project.Title) {
+        <article class="project" [class.project-reverse]="$odd" data-aos="fade-up" data-aos-duration="800">
+          <app-gallery class="project-gallery" [images]="project.imgs" [label]="project.Title"></app-gallery>
+
+          <div class="project-info">
+            <p class="project-label">{{ "FeatureProjects.Label" | translate }}</p>
+            <h4 class="project-name">{{ project.Title }}</h4>
+            <div class="project-description" [innerHTML]="project.Description"></div>
+            <ul class="project-skills">
+              @for (technology of project.Technologies; track technology) {
+                <li>{{ technology }}</li>
+              }
+            </ul>
+            <div class="project-links">
+              @if (project["ghLink"]) {
+                <a [href]="project['ghLink']" target="_blank" rel="noopener noreferrer" [attr.aria-label]="project.Title + ' on GitHub'">
+                  <app-icon name="github" [size]="22"></app-icon>
+                </a>
+              }
+              @if (project["demoLink"]) {
+                <a [href]="project['demoLink']" target="_blank" rel="noopener noreferrer" [attr.aria-label]="project.Title + ' live demo'">
+                  <app-icon name="external" [size]="22"></app-icon>
+                </a>
+              }
             </div>
-
-            @for (project of "FeatureProjects.Projects" | translate; track project.Title) {
-            <div class="d-flex proyect-container" data-aos="fade-up" data-aos-duration="1000">
-                @if ($even) {
-                <owl-carousel-o class='owl-carousel-o' [options]="customOptions">
-                    @for (img of project.imgs; track $index) {
-                    <ng-template carouselSlide [id]="project.Title+$index">
-                        <div #imgContainer class='img-container'>
-                            <img (dblclick)="openImage(img)" class='img-feature-proyect rounded' [src]="img"
-                                [alt]="project.Title">
-                        </div>
-                    </ng-template>
-                    }
-
-                </owl-carousel-o>
-                <div class="img-feature-proyect-container" data-aos="fade-up" data-aos-duration="1000">
-                    <div class="img-feature-proyect-box">
-                        <div class="img-container" style='width: auto;'>
-                            <img class='img-feature-proyect rounded' [src]="project.imgs[0]" [alt]="project.imgs[0]"
-                                width='600px'>
-                        </div>
-                    </div>
-                </div>
-                }
-                <div [ngStyle]="{
-                            'proyect-info-right': $even,
-                            'proyect-info-left': $odd
-                        }" class="h-100" style="background-image: url('{{project.img}}');">
-                    <div class="proyect-box">
-                        <h4 [ngStyle]="{
-                                'text-align': $even ? 'right' : 'left'
-                            }" class="feature-proyect">{{"FeatureProjects.Label" | translate}}</h4>
-                        <h5 [ngStyle]="{
-                                'text-align': $even ? 'right' : 'left'
-                            }" class="proyect-name">{{project.Title}}</h5>
-
-                        <div class="proyect-description-box" (click)='debug()'>
-                            <p class="mb-0" [innerHTML]="project.Description"></p>
-                        </div>
-                        <ul [ngStyle]="{
-                                'justify-content': $even ? 'flex-end' : 'flex-start'
-                            }" class="proyect-skills">
-                            @for (technology of project.Technologies; track technology) {
-                            <li class="ml-3">
-                                <span class="underline technology">{{technology}}</span>
-                            </li>
-                            }
-                        </ul>
-                        <div [ngStyle]="{
-                                'text-align': $even ? 'right' : 'left'
-                            }" class="proyect-links">
-                            @if (project['ghLink']) {
-                            <a style='color: inherit' [href]="project['ghLink']" target="_blank"><i
-                                    class="ml-3 fab fa-github"></i></a>
-                            }
-
-                            @if (project['demoLink']) {
-                            <a style='color: inherit' [href]="project['demoLink']" target="_blank"><i
-                                    class="ml-3 fas fa-external-link-alt"></i></a>
-                            }
-                        </div>
-                    </div>
-                </div>
-                @if ($odd) {
-                <owl-carousel-o class='owl-carousel-o' [options]="customOptions">
-                    @for (img of project.imgs; track $index) {
-                        <ng-template carouselSlide [id]="project.Title+$index">
-                            <div class='img-container'>
-                                <img (dblclick)="openImage(img)" class='img-feature-proyect rounded' [src]="img"
-                                    [alt]="project.Title">
-                            </div>
-                        </ng-template>
-                    }
-                </owl-carousel-o>
-                <div class="img-feature-proyect-container" data-aos="fade-up" data-aos-duration="1000">
-                    <div class="img-feature-proyect-box">
-                        <div class="img-container" style='width: auto;'>
-                            <img class='img-feature-proyect rounded' [src]="project.imgs[0]" [alt]="project.imgs[0]"
-                                width='600px'>
-                        </div>
-                    </div>
-                </div>
-                }
-            </div>
-            }
-        </div>
+          </div>
+        </article>
+      }
     </div>
+  </div>
 
-    <div class="container">
-        @defer (on viewport(projects))  {
-
-            <div class="mb-4" data-aos="fade-up" data-aos-duration="1000">
-                <h3 class="section-title">
-                    <span class='n-section-title'></span> {{"Interview Tasks" | translate}}
-                </h3>
-            </div>
-
-            <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/f290770e802d4462951ef2573c1f2465?sid=138ca63c-be15-422f-933f-725a63ae7cdd" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
-
-            <div class="mt-5" style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/c5972491c1bc436c89b16909a8108f1e?sid=b15b2bfb-c2c9-4f8d-8028-a4fd53a6217d" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
-         } @placeholder(minimum 500ms) {
-           <span> Will be overwritten with the external video </span>
-         } @loading(after 100ms; minimum 1s) {
-           <span> Loading... </span>
-         } @error {
-           <span> Oops! Failed to download </span>
-         }
-    </div>
+  <div class="container interview-tasks" #videos>
+    @defer (on viewport(videos)) {
+      <h3 class="section-title mb-4" data-aos="fade-up">Interview Tasks</h3>
+      <div class="video-grid">
+      <div class="video-frame">
+        <iframe
+          src="https://www.loom.com/embed/f290770e802d4462951ef2573c1f2465?sid=138ca63c-be15-422f-933f-725a63ae7cdd"
+          title="Interview task walkthrough 1" loading="lazy" allowfullscreen></iframe>
+      </div>
+      <div class="video-frame">
+        <iframe
+          src="https://www.loom.com/embed/c5972491c1bc436c89b16909a8108f1e?sid=b15b2bfb-c2c9-4f8d-8028-a4fd53a6217d"
+          title="Interview task walkthrough 2" loading="lazy" allowfullscreen></iframe>
+      </div>
+      </div>
+    } @placeholder {
+      <div class="video-placeholder" aria-hidden="true"></div>
+    }
+  </div>
 </section>

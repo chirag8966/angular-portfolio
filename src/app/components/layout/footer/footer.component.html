@@ -4,11 +4,13 @@
         <ul class="footer-left-bar d-none d-md-block">
             @for (link of socialLinks; track link.url) {
                 <li>
-                    <a class="social-link" 
-                       (click)="handleAnalytics(link.analyticsEvent, link.analyticsCategory, link.analyticsAction)" 
-                       [href]="link.url" 
-                       target="_blank">
-                        <i [ngClass]="link.icon"></i>
+                    <a class="social-link"
+                       (click)="handleAnalytics(link.analyticsEvent, link.analyticsCategory, link.analyticsAction)"
+                       [href]="link.url"
+                       [attr.aria-label]="link.label"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        <app-icon [name]="link.icon" [size]="20"></app-icon>
                     </a>
                 </li>
             }
@@ -16,10 +18,9 @@
 
         <!-- Email Link -->
         <div class="footer-right-bar d-none d-md-block">
-            <a class="email-link" 
-               (click)="handleAnalytics(emailLink.analyticsEvent, emailLink.analyticsCategory, emailLink.analyticsAction)" 
-               [href]="emailLink.url" 
-               target="_blank">
+            <a class="email-link"
+               (click)="handleAnalytics(emailLink.analyticsEvent, emailLink.analyticsCategory, emailLink.analyticsAction)"
+               [href]="emailLink.url">
                 chirag8966&#64;gmail.com
             </a>
         </div>
@@ -28,11 +29,11 @@
     <!-- Credits -->
     <div class="footer-credits text-center">
         @for (credit of credits; track credit.url) {
-            <a class="credit-link" 
-               (click)="handleAnalytics(credit.analyticsEvent, credit.analyticsCategory, credit.analyticsAction)" 
-               [href]="credit.url" 
-               target="_blank" 
-               rel="nofollow noopener noreferrer">
+            <a class="credit-link"
+               (click)="handleAnalytics(credit.analyticsEvent, credit.analyticsCategory, credit.analyticsAction)"
+               [href]="credit.url"
+               target="_blank"
+               rel="noopener noreferrer">
                 <div [ngClass]="{'mt-2': $index === 1}">{{ credit.text }}</div>
             </a>
         }

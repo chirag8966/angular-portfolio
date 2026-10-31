@@ -3,7 +3,8 @@ import { trigger, query, stagger, animate, style, transition } from '@angular/an
 import { AnalyticsService } from 'src/app/services/analytics/analytics.service';
 
 interface SocialLink {
-  icon: string;
+  icon: 'github' | 'linkedin' | '';
+  label?: string;
   url: string;
   analyticsEvent: string;
   analyticsCategory: string;
@@ -43,14 +44,16 @@ export class FooterComponent {
 
   socialLinks: SocialLink[] = [
     {
-      icon: 'fab fa-github',
+      icon: 'github',
+      label: 'GitHub',
       url: 'https://github.com/chirag8966',
       analyticsEvent: 'click_github',
       analyticsCategory: 'footer',
       analyticsAction: 'github'
     },
     {
-      icon: 'fab fa-linkedin-in',
+      icon: 'linkedin',
+      label: 'LinkedIn',
       url: 'https://www.linkedin.com/in/chirag8966/',
       analyticsEvent: 'click_linkedin',
       analyticsCategory: 'footer',
