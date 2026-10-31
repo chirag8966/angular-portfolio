@@ -1,12 +1,10 @@
-import { animate, query, stagger, style, transition, trigger } from '@angular/animations';
-import { Component, HostListener, OnInit } from '@angular/core';
-import { UntypedFormControl } from '@angular/forms';
-import { Router } from '@angular/router';
+import { isPlatformBrowser } from '@angular/common';
+import { ChangeDetectorRef, Component, DestroyRef, ElementRef, HostListener, Inject, NgZone, OnInit, PLATFORM_ID, ViewChild } from '@angular/core';
 import { AnalyticsService } from 'src/app/services/analytics/analytics.service';
-import { LanguageService } from 'src/app/services/language/language.service';
+import { Language as LanguageCode, LanguageService } from 'src/app/services/language/language.service';
 
 interface Language {
-  code: string;
+  code: LanguageCode;
   name: string;
   code2: string;
   alt: string;
@@ -24,27 +22,15 @@ interface MenuItem {
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
-  animations: [
-    trigger("animateMenu", [
-      transition(":enter", [
-        query("*", [
-          style({ opacity: 0, transform: "translateY(-50%)" }),
-          stagger(50, [
-            animate(
-              "250ms cubic-bezier(0.35, 0, 0.25, 1)",
-              style({ opacity: 1, transform: "none" }))
-          ])
-        ])
-      ])
-    ])
-  ]
 })
 
 export class HeaderComponent implements OnInit {
 
   responsiveMenuVisible: Boolean = false;
-  pageYPosition: number;
-  languageFormControl: UntypedFormControl = new UntypedFormControl();
+  pageYPosition = 0;
+  selectedLang: LanguageCode = 'en';
+  langMenuOpen = false;
+  @ViewChild('langDropdown') langDropdown?: ElementRef<HTMLElement>;
   cvName: string = "";
 
   menuItems: MenuItem[] = [
@@ -103,25 +89,48 @@ export class HeaderComponent implements OnInit {
   currentLanguage: Language;
 
   constructor(
-    private router: Router,
     public analyticsService: AnalyticsService,
-    public languageService: LanguageService
+    public languageService: LanguageService,
+    private zone: NgZone,
+    private cdr: ChangeDetectorRef,
+    private destroyRef: DestroyRef,
+    @Inject(PLATFORM_ID) private platformId: object,
   ) { }
 
   ngOnInit(): void {
-    this.languageFormControl.valueChanges.subscribe(val => this.languageService.changeLanguage(val))
-    this.languageFormControl.setValue(this.languageService.language);
+    if (isPlatformBrowser(this.platformId)) {
+      this.listenToScroll();
+    }
+    this.selectedLang = this.languageService.language;
     this.currentLanguage = this.getCurrentLanguage();
   }
 
   scroll(el: string) {
     if (!el) return;
-    if (document.getElementById(el)) {
-      document.getElementById(el).scrollIntoView({ behavior: 'smooth' });
-    } else {
-      this.router.navigate(['/home']).then(() => document.getElementById(el).scrollIntoView({ behavior: 'smooth' }));
-    }
+    document.getElementById(el)?.scrollIntoView({ behavior: 'smooth' });
     this.responsiveMenuVisible = false;
+  }
+
+  /** Close the language menu on any click outside it. */
+  @HostListener('document:click', ['$event.target'])
+  onDocumentClick(target: EventTarget | null) {
+    if (this.langMenuOpen && !this.langDropdown?.nativeElement.contains(target as Node)) {
+      this.langMenuOpen = false;
+    }
+  }
+
+  /** Links keep real hrefs (crawlable, open-in-new-tab works); we just add smooth scrolling + analytics. */
+  onMenuClick(event: MouseEvent, item: MenuItem) {
+    if (item.analyticsEvent) {
+      this.analyticsService.sendAnalyticEvent(item.analyticsEvent, "menu", "click");
+    }
+    if (item.isCV) {
+      this.analyticsService.sendAnalyticEvent("click_Download_Resume", "menu", "download");
+      this.responsiveMenuVisible = false;
+      return; // let the browser open the PDF
+    }
+    event.preventDefault();
+    this.scroll(item.scrollTarget);
   }
 
   handleMenuItemClick(item: MenuItem) {
@@ -141,18 +150,27 @@ export class HeaderComponent implements OnInit {
 
   }
 
-  @HostListener('window:scroll', ['getScrollPosition($event)'])
-  getScrollPosition(event) {
-    this.pageYPosition = window.scrollY;
+  /** Passive scroll listener outside Angular; change detection runs only when the shadow state flips. */
+  private listenToScroll() {
+    const onScroll = () => {
+      const y = window.scrollY > 0 ? 1 : 0;
+      if (y !== this.pageYPosition) {
+        this.zone.run(() => { this.pageYPosition = y; this.cdr.markForCheck(); });
+      }
+    };
+    this.zone.runOutsideAngular(() => window.addEventListener('scroll', onScroll, { passive: true }));
+    this.destroyRef.onDestroy(() => window.removeEventListener('scroll', onScroll));
+    onScroll();
   }
 
-  changeLanguage(language: string) {
-    this.languageFormControl.setValue(language);
+  changeLanguage(language: LanguageCode) {
+    this.selectedLang = language;
+    this.languageService.changeLanguage(language);
     this.currentLanguage = this.getCurrentLanguage();
   }
 
   getCurrentLanguage(): Language {
-    return this.languages.find(lang => lang.code === this.languageFormControl.value) || this.languages[0];
+    return this.languages.find(lang => lang.code === this.selectedLang) || this.languages[0];
   }
 
   logoClickHandler() {

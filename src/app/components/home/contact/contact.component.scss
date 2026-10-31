@@ -25,7 +25,10 @@
         -webkit-box-align: center;
         -ms-flex-align: center;
         align-items: center;
-        white-space: nowrap;
+        white-space: normal;
+        text-align: center;
+        justify-content: center;
+        line-height: 1.1;
         font-size: 60px;
         font-weight: 600;
         color: $LightestSlate;

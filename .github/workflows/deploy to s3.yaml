@@ -41,13 +41,13 @@ jobs:
       - name: Sync hashed assets to S3 bucket
         run: |
           aws s3 sync ./dist/chiragjain-portfolio/browser s3://${{ env.BUCKET_NAME }}/ --delete \
-            --exclude "index.html" --exclude "assets/i18n/*" --exclude "ngsw.json" --exclude "ngsw-worker.js" --exclude "safety-worker.js" --exclude "worker-basic.min.js" \
+            --exclude "index.html" --exclude "assets/i18n/*" --exclude "robots.txt" --exclude "sitemap.xml" --exclude "manifest.webmanifest" --exclude "ngsw.json" --exclude "ngsw-worker.js" --exclude "safety-worker.js" --exclude "worker-basic.min.js" \
             --cache-control "public,max-age=31536000,immutable"
 
       - name: Upload entry files with no-cache
         run: |
           aws s3 sync ./dist/chiragjain-portfolio/browser s3://${{ env.BUCKET_NAME }}/ \
-            --exclude "*" --include "index.html" --include "assets/i18n/*" --include "ngsw.json" --include "ngsw-worker.js" --include "safety-worker.js" --include "worker-basic.min.js" \
+            --exclude "*" --include "index.html" --include "assets/i18n/*" --include "robots.txt" --include "sitemap.xml" --include "manifest.webmanifest" --include "ngsw.json" --include "ngsw-worker.js" --include "safety-worker.js" --include "worker-basic.min.js" \
             --cache-control "no-cache"
 
       - name: cache invalidation

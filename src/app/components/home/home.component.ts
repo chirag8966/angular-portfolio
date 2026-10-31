@@ -1,4 +1,5 @@
-import { AfterViewInit, Component, ElementRef, NgZone, OnDestroy, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { AfterViewInit, Component, ElementRef, Inject, NgZone, OnDestroy, OnInit, PLATFORM_ID, ViewChild, ViewContainerRef } from '@angular/core';
 import { AnalyticsService } from 'src/app/services/analytics/analytics.service';
 
 @Component({
@@ -15,6 +16,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   constructor(
     private analyticsService: AnalyticsService,
     private zone: NgZone,
+    @Inject(PLATFORM_ID) private platformId: object,
   ) { }
 
   ngOnInit(): void {
@@ -26,6 +28,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
    * downloaded once the placeholder is about to scroll into view.
    */
   ngAfterViewInit(): void {
+    if (!isPlatformBrowser(this.platformId)) return;
     this.observer = new IntersectionObserver((entries) => {
       if (entries.some(e => e.isIntersecting)) {
         this.observer?.disconnect();

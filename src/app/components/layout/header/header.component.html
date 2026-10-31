@@ -1,6 +1,6 @@
 <!-- Main Navigation Bar -->
 <a class="skip-link" href="#main">Skip to content</a>
-<nav [@animateMenu] class="navbar main-navbar on-top" [class.nav-shadow]="this.pageYPosition > 0">
+<nav class="navbar main-navbar on-top" [class.nav-shadow]="this.pageYPosition > 0">
     <div class="container">
         <!-- Logo -->
         <a class="navbar-brand text-light cursor-pointer" href="#" (click)="$event.preventDefault(); logoClickHandler()" aria-label="Chirag Jain – back to top">
@@ -8,11 +8,15 @@
         </a>
 
         <!-- Desktop Menu -->
-        <ul ngbNav #nav="ngbNav" class="menu-ul">
-            <!-- Navigation Items -->
+        <ul class="nav menu-ul">
+            <!-- Navigation Items: real hrefs so crawlers and keyboard users can follow them -->
             @for (item of menuItems; track item.translationKey) {
-                <li ngbNavItem (click)="handleMenuItemClick(item)">
-                    <a ngbNavLink class="nav-link" [ngClass]="{'main-btn': item.isCV, 'cv-btn': item.isCV}">
+                <li class="nav-item">
+                    <a class="nav-link" [ngClass]="{'main-btn': item.isCV, 'cv-btn': item.isCV}"
+                       [href]="item.isCV ? 'assets/cv/resume.pdf' : '#' + item.scrollTarget"
+                       [attr.target]="item.isCV ? '_blank' : null"
+                       [attr.rel]="item.isCV ? 'noopener' : null"
+                       (click)="onMenuClick($event, item)">
                         @if (item.number) {
                             <span class="nav-number">{{ item.number }}</span>
                         }
@@ -20,41 +24,38 @@
                             {{ item.translationKey | translate }}
                         </span>
                     </a>
-                    <ng-template ngbNavContent>First content</ng-template>
                 </li>
             }
 
             <!-- Language Selector -->
-            <li>
-                <div ngbDropdown class="d-inline-block">
-                    <!-- Current Language Display -->
-                    <div class="language-container" id="dropdownForm1" ngbDropdownToggle>
+            <li class="nav-item">
+                <div class="dropdown d-inline-block" #langDropdown (keydown.escape)="langMenuOpen = false">
+                    <button type="button" class="language-container language-toggle" id="languageMenu"
+                            aria-haspopup="true" [attr.aria-expanded]="langMenuOpen" (click)="langMenuOpen = !langMenuOpen"
+                            [attr.aria-label]="'Change language, current: ' + currentLanguage.name">
                         <span class="lang-code" aria-hidden="true">{{ currentLanguage.code2 }}</span>
                         <span class="flag-text">{{ currentLanguage.name }}</span>
                         <svg class="arrow-language" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24">
+                            viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z" />
                         </svg>
-                    </div>
+                    </button>
 
-                    <!-- Language Dropdown Menu -->
-                    <div ngbDropdownMenu aria-labelledby="dropdownForm1">
+                    <div class="dropdown-menu" [class.show]="langMenuOpen" aria-labelledby="languageMenu">
                         @for (lang of languages; track lang.code; let i = $index) {
-                            <div (click)="changeLanguage(lang.code)" 
+                            <button type="button" (click)="changeLanguage(lang.code); langMenuOpen = false" [attr.lang]="lang.code"
                                  class="language-container language-container-selector"
+                                 [attr.aria-current]="selectedLang == lang.code ? 'true' : null"
                                  [ngClass]="{
-                                     'active': languageFormControl.value == lang.code,
+                                     'active': selectedLang == lang.code,
                                      'first-item': i === 0,
                                      'last-item': i === languages.length - 1
                                  }">
-                                <div class="language-item">
+                                <span class="language-item">
                                     <span class="lang-code" aria-hidden="true">{{ lang.code2 }}</span>
-                                    <span class="flag-text">
-                                        {{ lang.name }}
-                                    </span>
-                                </div>
-
-                            </div>
+                                    <span class="flag-text">{{ lang.name }}</span>
+                                </span>
+                            </button>
                         }
                     </div>
                 </div>
@@ -76,8 +77,13 @@
                     <ol>
                         <!-- Mobile Navigation Items -->
                         @for (item of menuItems; track item.translationKey) {
-                            <li (click)="handleMenuItemClick(item)">
-                                <a class="menu-link" [ngClass]="{'main-btn': item.isCV, 'cv-btn': item.isCV}">
+                            <li>
+                                <a class="menu-link" [ngClass]="{'main-btn': item.isCV, 'cv-btn': item.isCV}"
+                                   [href]="item.isCV ? 'assets/cv/resume.pdf' : '#' + item.scrollTarget"
+                                   [attr.target]="item.isCV ? '_blank' : null"
+                                   [attr.rel]="item.isCV ? 'noopener' : null"
+                                   [attr.tabindex]="responsiveMenuVisible ? null : -1"
+                                   (click)="onMenuClick($event, item)">
                                     @if (item.number) {
                                         <span class="nav-number">{{ item.number }}</span>
                                     }
@@ -90,22 +96,23 @@
                         <li>
                             <div class="language-container">
                                 @for (lang of languages; track lang.code; let i = $index) {
-                                    <div (click)="changeLanguage(lang.code)" 
+                                    <button type="button" (click)="changeLanguage(lang.code)" [attr.lang]="lang.code"
+                                         [attr.tabindex]="responsiveMenuVisible ? null : -1"
                                          class="language-container language-container-selector"
                                          [ngClass]="{
-                                             'active': languageFormControl.value == lang.code,
+                                             'active': selectedLang == lang.code,
                                              'first-item': i === 0,
                                              'last-item': i === languages.length - 1
                                          }">
-                                        <div class="language-item">
+                                        <span class="language-item">
                                             <span class="lang-code" aria-hidden="true">{{ lang.code2 }}</span>
                                             <span class="flag-text">{{ lang.name }}</span>
-                                        </div>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" 
+                                        </span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" aria-hidden="true"
                                              class="bi bi-check2 arrow-active" viewBox="0 0 16 16">
                                             <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
                                         </svg>
-                                    </div>
+                                    </button>
                                 }
                             </div>
                         </li>
