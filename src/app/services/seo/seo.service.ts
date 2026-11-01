@@ -45,7 +45,7 @@ export class SeoService {
     this.setName('author', SITE.name);
     this.setName('keywords', [
       'Chirag Jain', 'Assistant Vice President', 'Delta Capita', 'Angular developer', 'Frontend engineer',
-      'Software engineer', 'TypeScript', 'RxJS', 'NgRx', 'Node.js', 'Solutions engineer', 'Portfolio',
+      'Software engineer', 'TypeScript', 'RxJS', 'NgRx', 'Node.js', 'Angular specialist', 'Portfolio',
     ].join(', '));
     this.setName('robots', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
 
