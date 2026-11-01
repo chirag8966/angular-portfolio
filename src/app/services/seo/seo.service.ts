@@ -45,7 +45,7 @@ export class SeoService {
     this.setName('author', SITE.name);
     this.setName('keywords', [
       'Chirag Jain', 'Assistant Vice President', 'Delta Capita', 'Angular developer', 'Frontend engineer',
-      'Software engineer', 'TypeScript', 'RxJS', 'NgRx', 'Node.js', 'Angular specialist', 'Portfolio',
+      'Software engineer', 'TypeScript', 'RxJS', 'NgRx', 'Node.js', 'Portfolio',
     ].join(', '));
     this.setName('robots', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
 
@@ -110,7 +110,7 @@ export class SeoService {
           image: SITE.photo,
           email: SITE.email,
           jobTitle: SITE.jobTitle,
-          description: `Software engineer with ${years}+ years of experience (since ${CAREER_START.getFullYear()}) who specializes in building solutions with Angular and TypeScript.`,
+          description: `Software engineer with ${years}+ years of experience (since ${CAREER_START.getFullYear()}) who specializes in building solutions for the web.`,
           worksFor: { '@type': 'Organization', name: SITE.employer, url: SITE.employerUrl },
           knowsAbout: ['Angular', 'TypeScript', 'JavaScript', 'RxJS', 'NgRx', 'Node.js', 'NestJS', 'React',
             'Frontend Architecture', 'Web Performance', 'Web Accessibility', 'AWS', 'Solution Design'],
