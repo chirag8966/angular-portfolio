@@ -317,6 +317,7 @@ html[data-theme="light"] .navbar-brand img { filter: brightness(0.6) saturate(1.
   }
   .n-section-title::after {
     content: " / 04";
+    content: " / 04" / ""; // decorative: hidden from screen readers where alt text is supported
     font-size: 11px;
     color: $Slate;
     margin-inline-start: 2px;

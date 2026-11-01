@@ -1,5 +1,5 @@
 import { isPlatformBrowser } from '@angular/common';
-import { Inject, Injectable, NgZone, PLATFORM_ID } from '@angular/core';
+import { Inject, Injectable, NgZone, OnDestroy, PLATFORM_ID } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import {
   basename, deviceClass, isOptedOut, Journey, loadJourney, Params, truncate, viewportLabel, whenIdle,
@@ -26,7 +26,7 @@ const MAX_ERRORS = 5;
  * registered outside the Angular zone, so analytics never triggers change detection.
  */
 @Injectable({ providedIn: 'root' })
-export class AnalyticsService {
+export class AnalyticsService implements OnDestroy {
   private readonly isBrowser: boolean;
   private started = false;
   private journey!: Journey;
@@ -74,10 +74,21 @@ export class AnalyticsService {
   }
 
   /**
-   * Public API kept for backwards compatibility. page_view is now sent automatically on every
-   * Router NavigationEnd (with the real document title), so this must not double count.
+   * Public API kept for backwards compatibility. page_view is now sent automatically on init and on
+   * every SPA path change (history API), so this is a no-op to avoid double counting.
    */
   sendAnalyticPageView(_path: string, _title: string) { /* handled by the router listener */ }
+
+  /** Restores the original history methods if the app (root injector) is ever destroyed. */
+  ngOnDestroy() {
+    try {
+      for (const fn of ['pushState', 'replaceState'] as const) {
+        const orig = (history[fn] as History['pushState'] & { __gaOrig?: History['pushState'] }).__gaOrig;
+        if (orig) history[fn] = orig;
+      }
+      this.observer?.disconnect();
+    } catch { /* ignore (also the server path) */ }
+  }
 
   // ---------------------------------------------------------------- core
 
@@ -130,9 +141,8 @@ export class AnalyticsService {
   private track(name: string, params: Params = {}, critical = false) {
     if (!this.isBrowser) return;
     try {
-      if (!this.journey && !this.started) { this.queue.push([name, params]); return; }
+      if (!this.started) { if (this.queue.length < 50) this.queue.push([name, params]); return; }
       this.queue.push([name, params]);
-      if (!this.started) return;
       if (critical) this.flush();
       else if (!this.flushScheduled) { this.flushScheduled = true; whenIdle(() => this.flush(), 1000); }
     } catch { /* ignore */ }
@@ -172,19 +182,27 @@ export class AnalyticsService {
     // would add ~20 kB gzip to the initial bundle). Covers pushState/replaceState/popstate, so a
     // future router is tracked automatically. Hash-only changes (#about) are not page views.
     const onNav = () => {
-      setTimeout(() => {
+      // pushState is usually called inside the Angular zone: keep the follow-up out of it
+      this.zone.runOutsideAngular(() => setTimeout(() => {
         if (location.pathname + location.search === this.lastPath) return;
         const prev = location.origin + this.lastPath;
         this.scrollDone.clear(); this.maxScroll = 0;
         this.pageView(prev);
         whenIdle(() => this.observeSections());
-      }, 0);
+      }, 0));
     };
+    // Wrap once (marker guards against double wrapping, e.g. HMR or a second instance); the
+    // originals are kept on the wrapper so they can be restored.
+    type Wrapped = History['pushState'] & { __gaOrig?: History['pushState'] };
     for (const fn of ['pushState', 'replaceState'] as const) {
-      const orig = history[fn];
-      history[fn] = function (this: History, ...args: Parameters<History['pushState']>) {
+      const current = history[fn] as Wrapped;
+      if (current.__gaOrig) continue;
+      const orig = current;
+      const wrapped: Wrapped = function (this: History, ...args: Parameters<History['pushState']>) {
         const r = orig.apply(this, args); try { onNav(); } catch { /* ignore */ } return r;
       };
+      wrapped.__gaOrig = orig;
+      history[fn] = wrapped;
     }
     window.addEventListener('popstate', onNav);
 
@@ -291,7 +309,9 @@ export class AnalyticsService {
       const t = ev.target as Element | null;
       const el = t?.closest?.('a[href],button[data-track],[data-track]') as HTMLElement | null;
       if (!el) return;
-      const text = truncate(el.getAttribute('aria-label') || el.textContent, 60);
+      const href0 = el.getAttribute('href') || '';
+      // never send link text for mailto:/tel: links: it is often the address / number itself (PII)
+      const text = /^(mailto|tel):/i.test(href0) ? '' : truncate(el.getAttribute('aria-label') || el.textContent, 60);
       const dt = el.getAttribute('data-track');
       if (!(el instanceof HTMLAnchorElement)) {
         if (dt) this.track('click', { click_type: 'button', click_id: truncate(dt, 40), link_text: text });

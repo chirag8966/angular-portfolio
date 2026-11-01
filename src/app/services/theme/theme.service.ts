@@ -1,7 +1,6 @@
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { AnalyticsService } from '../analytics/analytics.service';
 
 export type Theme = 'dark' | 'light';
 const STORAGE_KEY = 'theme';
@@ -22,7 +21,6 @@ export class ThemeService {
   constructor(
     @Inject(DOCUMENT) private document: Document,
     @Inject(PLATFORM_ID) platformId: object,
-    private analytics: AnalyticsService,
   ) {
     this.isBrowser = isPlatformBrowser(platformId);
     if (this.isBrowser) {
@@ -46,7 +44,7 @@ export class ThemeService {
     this.apply(theme);
     this.subject.next(theme);
     try { localStorage.setItem(STORAGE_KEY, theme); } catch { /* storage unavailable */ }
-    this.analytics.sendAnalyticEvent('theme_change', 'theme', theme);
+    // theme_change analytics is emitted by AnalyticsService (it observes html[data-theme]), so no call here.
   }
 
   private readStored(): Theme {
