@@ -31,10 +31,11 @@ export class SeoService {
 
   init(): void {
     const years = yearsOfExperience();
-    const title = `${SITE.name} | ${SITE.jobTitle} at ${SITE.employer} · Angular & Frontend Engineering Leader`;
+    // SERP-friendly lengths: title ~55 chars (<= 60), description ~140 chars (<= 160).
+    const title = `${SITE.name} | ${SITE.jobTitle} at ${SITE.employer}`;
     const description =
-      `${SITE.name} is an ${SITE.jobTitle} at ${SITE.employer} and a software engineering leader with ${years}+ years ` +
-      `of experience building fast, accessible, scalable web platforms with Angular, TypeScript and Node.js across fintech and healthtech.`;
+      `${SITE.name}, ${SITE.jobTitle} at ${SITE.employer}: ${years}+ years building fast, accessible ` +
+      `web platforms with Angular and TypeScript.`;
     const shareDescription =
       `${SITE.jobTitle} at ${SITE.employer}. ${years}+ years building high-performance web platforms with Angular & TypeScript. ` +
       `See my experience, projects and get in touch.`;
@@ -107,7 +108,7 @@ export class SeoService {
           familyName: 'Jain',
           url: SITE.url,
           image: SITE.photo,
-          email: `mailto:${SITE.email}`,
+          email: SITE.email,
           jobTitle: SITE.jobTitle,
           description: `Software engineering leader with ${years}+ years of experience (since ${CAREER_START.getFullYear()}) building web platforms with Angular and TypeScript.`,
           worksFor: { '@type': 'Organization', name: SITE.employer, url: SITE.employerUrl },
