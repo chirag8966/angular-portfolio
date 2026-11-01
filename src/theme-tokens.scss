@@ -1,0 +1,56 @@
+// Theme tokens. Dark is the default (and what is prerendered); light is opt-in via
+// <html data-theme="light"> (set by the inline script in index.html / ThemeService).
+:root {
+  --navy: #0a192f;
+  --light-navy: #112240;
+  --lightest-navy: #303c55;
+  --slate: #8892b0;
+  --light-slate: #a8b2d1;
+  --lightest-slate: #ccd6f6;
+  --white: #e6f1ff;
+  --green: #64ffda;
+  --green-tint: rgba(100, 255, 218, 0.07);
+  --danger: #ff6b6b;
+  --panel-alt: #172a45;
+  --menu-bg: #ccd6f6;
+  --menu-text: #cbd5f5;
+  --navy-rgb: 10, 25, 47;
+  --green-rgb: 100, 255, 218;
+  --danger-rgb: 255, 107, 107;
+  --shadow: rgba(2, 12, 27, 0.7);
+  --shadow-strong: rgba(2, 12, 27, 0.9);
+}
+
+// Light palette. Contrast (WCAG): slate 6.75:1, light-slate 9.37:1, lightest-slate 14.7:1,
+// green 5.6:1 on --navy (#f7f5f0); green >= 4.9:1 on --panel-alt.
+:root[data-theme="light"] {
+  --navy: #f7f5f0;
+  --light-navy: #ffffff;
+  --lightest-navy: #d6d2c6;
+  --slate: #4a5670;
+  --light-slate: #364159;
+  --lightest-slate: #16213a;
+  --white: #0a192f;
+  --green: #0a6f61;
+  --green-tint: rgba(10, 111, 97, 0.08);
+  --danger: #b3261e;
+  --panel-alt: #ece8df;
+  --menu-bg: #d6d2c6;
+  --menu-text: #16213a;
+  --navy-rgb: 247, 245, 240;
+  --green-rgb: 10, 111, 97;
+  --danger-rgb: 179, 38, 30;
+  --shadow: rgba(22, 33, 58, 0.16);
+  --shadow-strong: rgba(22, 33, 58, 0.22);
+}
+
+// Smooth the switch only while ThemeService has flagged a user-initiated change
+// (never on first paint) and never for users who prefer reduced motion.
+@media (prefers-reduced-motion: no-preference) {
+  html.theme-transition,
+  html.theme-transition *,
+  html.theme-transition *::before,
+  html.theme-transition *::after {
+    transition: background-color 0.25s, color 0.25s, border-color 0.25s, fill 0.25s, box-shadow 0.25s !important;
+  }
+}

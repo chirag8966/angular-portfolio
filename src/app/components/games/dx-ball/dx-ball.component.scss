@@ -39,7 +39,7 @@
   border-radius: 10px;
   background: $LightNavy;
   border: 1px solid $LightestNavy;
-  box-shadow: 0 20px 40px -20px rgba(2, 12, 27, 0.9);
+  box-shadow: 0 20px 40px -20px $ShadowStrong;
 
   canvas {
     display: block;

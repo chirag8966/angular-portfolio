@@ -238,5 +238,6 @@
   },
   "Walkthroughs.Title": "Recorridos de Proyectos",
   "OtherProjects.Subtitle": "Trabajo para clientes, productos y retos de ingeniería",
-  "OtherProjects.ViewArchive": "Ver todo en GitHub"
+  "OtherProjects.ViewArchive": "Ver todo en GitHub",
+  "Header.ThemeToggle": "Tema oscuro"
 }

@@ -238,5 +238,6 @@
   },
   "Walkthroughs.Title": "جولات في المشاريع",
   "OtherProjects.Subtitle": "أعمال للعملاء ومنتجات وتحديات هندسية",
-  "OtherProjects.ViewArchive": "عرض الكل على GitHub"
+  "OtherProjects.ViewArchive": "عرض الكل على GitHub",
+  "Header.ThemeToggle": "السمة الداكنة"
 }

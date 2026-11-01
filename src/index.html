@@ -32,9 +32,24 @@
   <link rel="preload" href="assets/fonts/Calibre/Calibre-Semibold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/SFMono/SFMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
 
+  <!-- Applies the saved theme before first paint (no flash). Dark is the default; prerendered HTML is dark. -->
+  <script>
+    (function () {
+      var t = 'dark';
+      try { if (localStorage.getItem('theme') === 'light') t = 'light'; } catch (e) {}
+      var d = document.documentElement;
+      d.dataset.theme = t;
+      var m = document.querySelector('meta[name="theme-color"]');
+      if (m) m.setAttribute('content', t === 'light' ? '#f7f5f0' : '#0a192f');
+      var c = document.querySelector('meta[name="color-scheme"]');
+      if (c) c.setAttribute('content', t);
+    })();
+  </script>
+
   <style>
     /* Prevents a white flash before the app styles load */
     html, body { background: #0a192f; margin: 0; }
+    html[data-theme="light"], html[data-theme="light"] body { background: #f7f5f0; }
     /* Above-the-fold font faces + metric-matched fallbacks, available at first paint (no CLS on swap) */
     @font-face { font-family: 'Calibre'; font-weight: 400; font-style: normal; font-display: swap; src: url('/assets/fonts/Calibre/Calibre-Regular.woff2') format('woff2'); }
     @font-face { font-family: 'Calibre'; font-weight: 600; font-style: normal; font-display: swap; src: url('/assets/fonts/Calibre/Calibre-Semibold.woff2') format('woff2'); }
