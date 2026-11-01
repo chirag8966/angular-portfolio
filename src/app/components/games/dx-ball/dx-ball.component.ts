@@ -1,5 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild, AfterViewInit, OnDestroy, HostListener, Renderer2 } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Subscription } from 'rxjs';
+import { ThemeService } from 'src/app/services/theme/theme.service';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 // Game configuration constants
@@ -21,7 +23,7 @@ const GAME_CONFIG = {
   VIEWPORT_HEIGHT_RATIO: 0.6
 };
 
-// Game colors
+// Game colors: defaults are the dark theme; refreshed from the CSS tokens on theme change
 const GAME_COLORS = {
   PRIMARY: '#64ffda',
   SPECIAL_BRICK: '#ff6b6b',
@@ -114,12 +116,26 @@ export class DxBallComponent implements OnInit, AfterViewInit, OnDestroy {
 
   constructor(
     private renderer: Renderer2,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private themeService: ThemeService
   ) {
     this.initializeGameObjects();
   }
 
+  private themeSub?: Subscription;
+
+  /** Pull canvas colours from the active theme's CSS custom properties. */
+  private syncColors(): void {
+    const cs = getComputedStyle(document.documentElement);
+    const v = (n: string, d: string) => cs.getPropertyValue(n).trim() || d;
+    GAME_COLORS.PRIMARY = v('--green', '#64ffda');
+    GAME_COLORS.SPECIAL_BRICK = v('--danger', '#ff6b6b');
+    GAME_COLORS.OVERLAY = `rgba(${v('--navy-rgb', '10, 25, 47')}, 0.72)`;
+    GAME_COLORS.TEXT = v('--lightest-slate', '#ccd6f6');
+  }
+
   ngOnInit(): void {
+    this.themeSub = this.themeService.theme$.subscribe(() => this.syncColors());
     // Set up intersection observer to detect when component is in viewport
     this.observer = new IntersectionObserver(
       (entries) => {
@@ -152,6 +168,7 @@ export class DxBallComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    this.themeSub?.unsubscribe();
     if (this.animationFrameId) {
       cancelAnimationFrame(this.animationFrameId);
     }

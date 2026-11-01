@@ -238,5 +238,6 @@
   },
   "Walkthroughs.Title": "Project Walkthroughs",
   "OtherProjects.Subtitle": "Client work, product builds and engineering challenges",
-  "OtherProjects.ViewArchive": "View all on GitHub"
+  "OtherProjects.ViewArchive": "View all on GitHub",
+  "Header.ThemeToggle": "Dark theme"
 }

@@ -1,6 +1,7 @@
 import { isPlatformBrowser } from '@angular/common';
 import { ChangeDetectorRef, Component, DestroyRef, ElementRef, HostListener, Inject, NgZone, OnInit, PLATFORM_ID, ViewChild } from '@angular/core';
 import { AnalyticsService } from 'src/app/services/analytics/analytics.service';
+import { ThemeService } from 'src/app/services/theme/theme.service';
 import { Language as LanguageCode, LanguageService } from 'src/app/services/language/language.service';
 
 interface Language {
@@ -91,6 +92,7 @@ export class HeaderComponent implements OnInit {
   constructor(
     public analyticsService: AnalyticsService,
     public languageService: LanguageService,
+    private themeService: ThemeService,
     private zone: NgZone,
     private cdr: ChangeDetectorRef,
     private destroyRef: DestroyRef,
@@ -104,6 +106,10 @@ export class HeaderComponent implements OnInit {
     this.selectedLang = this.languageService.language;
     this.currentLanguage = this.getCurrentLanguage();
   }
+
+  get isDark(): boolean { return this.themeService.theme === 'dark'; }
+
+  toggleTheme() { this.themeService.toggle(); }
 
   scroll(el: string) {
     if (!el) return;
