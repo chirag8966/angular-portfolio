@@ -289,3 +289,61 @@ a {
 
 // The logo PNG is the bright dark-theme teal; deepen it on light backgrounds
 html[data-theme="light"] .navbar-brand img { filter: brightness(0.6) saturate(1.4); }
+
+// ---- Motion chrome (CSS only) -------------------------------------------------------------
+// Button accent sweep (the existing lift stays)
+.main-btn {
+  background-image: linear-gradient($Green, $Green);
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 0 2px;
+  &:hover, &:focus-visible { background-size: 100% 2px; }
+}
+[dir="rtl"] .main-btn { background-position: right bottom; }
+
+// HUD touches on section titles: corner bracket + "/ 04" scene counter
+.section-title {
+  &::before {
+    content: "";
+    position: absolute;
+    inset-inline-start: -14px;
+    top: -8px;
+    width: 9px;
+    height: 9px;
+    border-top: 1px solid $Green;
+    border-inline-start: 1px solid $Green;
+    opacity: 0.6;
+    pointer-events: none;
+  }
+  .n-section-title::after {
+    content: " / 04";
+    font-size: 11px;
+    color: $Slate;
+    margin-inline-start: 2px;
+    vertical-align: super;
+    letter-spacing: 0.05em;
+  }
+}
+
+// Thin scroll progress bar (scroll-driven animation; silently absent where unsupported)
+@supports (animation-timeline: scroll()) {
+  @keyframes scroll-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0 0 auto 0;
+    height: 2px;
+    z-index: 20;
+    background: $Green;
+    transform-origin: left center;
+    transform: scaleX(0);
+    animation: scroll-progress linear both;
+    animation-timeline: scroll(root block);
+    pointer-events: none;
+  }
+  [dir="rtl"] body::before { transform-origin: right center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  body::before { display: none; }
+  .main-btn { background-image: none; }
+}

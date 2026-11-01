@@ -3,12 +3,15 @@
 
 .banner{
     min-height: 100vh;
+    position: relative;
 
     .colorGreen {
         color: $Green;
     }
     
     .container{
+        position: relative;
+        z-index: 1;
         display: table;
         height: 100vh;
 
@@ -75,5 +78,35 @@
     }    
 }
 
+// Kinetic entrance: pure CSS so the prerendered HTML is already complete (no JS, no stuck opacity:0).
+// Stepped 0.12s beat grid, small overshoot. Only the first, tiny pieces delay; the h1 moves by transform only.
+$beat: 0.12s;
+$pop: cubic-bezier(0.34, 1.56, 0.64, 1);
+@keyframes k-rise { from { opacity: 0; transform: translateY(0.4em); } to { opacity: 1; transform: none; } }
+@keyframes k-title { from { transform: translateY(0.28em); } to { transform: none; } }
+@keyframes k-slide { from { opacity: 0; transform: translateX(-24px); } to { opacity: 1; transform: none; } }
+@keyframes k-spark { 0% { transform: scaleX(0.02); opacity: 0; } 15% { opacity: 1; } 100% { transform: scaleX(1); opacity: 1; } }
 
-
+.banner {
+    .banner-pretitle { animation: k-rise 0.5s $pop both; }
+    .banner-title h1 { animation: k-title 0.6s $pop both; }
+    .banner-role { animation: k-rise 0.55s $pop $beat both; }
+    .banner-accent {
+        display: block;
+        width: 120px;
+        height: 2px;
+        margin: 18px 0 -20px;
+        background: linear-gradient(90deg, $Green, transparent);
+        transform-origin: left center;
+        animation: k-spark 0.9s cubic-bezier(0.22, 1, 0.36, 1) $beat * 3 both;
+    }
+    .banner-description { animation: k-rise 0.6s $pop $beat * 3 both; }
+    .div-btn-banner a { animation: k-slide 0.5s $pop backwards; } // backwards: keeps hover transform working after the entrance
+    .div-btn-banner a:nth-child(1) { animation-delay: $beat * 5; }
+    .div-btn-banner a:nth-child(2) { animation-delay: $beat * 6; }
+}
+:host-context([dir="rtl"]) .banner .banner-accent { transform-origin: right center; background: linear-gradient(270deg, $Green, transparent); }
+@media (prefers-reduced-motion: reduce) {
+    .banner .banner-pretitle, .banner .banner-title h1, .banner .banner-role, .banner .banner-accent,
+    .banner .banner-description, .banner .div-btn-banner a { animation: none; }
+}
