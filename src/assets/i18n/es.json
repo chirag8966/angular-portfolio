@@ -6,20 +6,20 @@
   "Header.cvBtn": "Currículum",
   "Header.cvName": "resume.pdf",
   "Banner.Pretitle": "Hola, mi nombre es",
-  "Banner.Description": "Soy un líder de ingeniería con <span class='underline'>más de %YEARS% años de experiencia</span> diseñando y entregando plataformas web de alto rendimiento en fintech y healthtech. Me especializo en <span class='underline'>Angular</span>, <span class='underline'>TypeScript</span> y arquitectura frontend escalable, creando productos rápidos, accesibles y hechos para durar.",
+  "Banner.Description": "Me especializo en construir aplicaciones web de punta a punta: <span class='underline'>Angular</span> en el frontend, <span class='underline'>Node.js</span> en el backend y la base de datos que las respalda. En <span class='underline'>más de %YEARS% años</span> he creado plataformas en las que equipos de fintech y healthtech confían cada día.",
   "Banner.ActionBtn": "Contáctame",
   "AboutMe.Title": "Sobre Mí",
   "AboutMe.Paragraphs": [
-    "Soy ingeniero de software y líder técnico con <span class='underline'>más de %YEARS% años</span> de experiencia convirtiendo problemas de negocio complejos en software elegante y confiable. Hoy me desempeño como <span class='underline'>Vicepresidente Asistente en Delta Capita</span>, ayudando a dar forma a la tecnología del sector de servicios financieros.",
-    "Anteriormente en CareMonitor, lideré la ingeniería frontend de plataformas de salud críticas: hice crecer el equipo de UI de 3 a 8 ingenieros y lancé productos de <span class='underline'>Telesalud</span>, <span class='underline'>Receta electrónica</span> y <span class='underline'>Agendamiento</span> utilizados por más de 15 mil usuarios.",
-    "Me importan profundamente la arquitectura limpia, el rendimiento, la accesibilidad y la experiencia del desarrollador, así como guiar a los equipos para elevar juntos el nivel. Fuera del trabajo, creo productos para pequeñas empresas y proyectos personales que combinan utilidad y oficio.",
+    "Soy ingeniero de software full-stack. Después de <span class='underline'>más de %YEARS% años</span>, sigo disfrutando de tomar un problema de negocio enredado y hacer que resulte sencillo en pantalla. Hoy soy <span class='underline'>Vicepresidente Asistente en Delta Capita</span>, donde trabajo en software para el sector de servicios financieros.",
+    "Antes pasé casi cinco años en CareMonitor al frente de la ingeniería frontend de plataformas de salud en las que confiaban pacientes y profesionales. El equipo de UI creció de 3 a 8 ingenieros por el camino, y juntos lanzamos <span class='underline'>Telesalud</span>, <span class='underline'>Receta electrónica</span> y <span class='underline'>Agendamiento</span>, productos que usan más de 15 mil personas.",
+    "Lo que más me importa son las partes del software que solo se notan cuando fallan, como una página lenta o un formulario que un lector de pantalla no puede completar. También disfruto mentorizando y de las revisiones de código en las que ambas partes aprenden algo. Fuera del trabajo hago webs para pequeños negocios y mantengo algunos proyectos personales.",
     "Tecnologías con las que trabajo habitualmente:"
   ],
   "AboutMe.technologies": [
     "Angular",
     "TypeScript",
     "RxJS / NgRx",
-    "JavaScript (ES2023+)",
+    "JavaScript",
     "Node.js / NestJS",
     "React",
     "HTML & SCSS",
@@ -36,11 +36,11 @@
       "Title": "Vicepresidente Asistente",
       "Date": "2025 - Presente",
       "Description": [
-        "🏦 Lidero la ingeniería frontend de plataformas de mercados de capitales y tecnología regulatoria al servicio de instituciones financieras globales.",
-        "🧭 Defino la arquitectura y la dirección técnica de aplicaciones Angular empresariales: librerías de componentes escalables, gestión de estado robusta y patrones orientados al rendimiento.",
-        "🤝 Colaboro con product owners, analistas de negocio y stakeholders para convertir flujos financieros complejos en experiencias intuitivas y accesibles.",
-        "👥 Mentoreo a ingenieros e impulso la excelencia técnica mediante estándares de code review, pruebas automatizadas y buenas prácticas de CI/CD.",
-        "🤖 Impulso la adopción de desarrollo asistido por IA y automatización para acelerar la entrega sin comprometer la calidad ni la seguridad."
+        "🏦 Responsable de la entrega frontend de plataformas de mercados de capitales y regtech usadas por instituciones financieras globales.",
+        "🧭 Defino la arquitectura de aplicaciones Angular empresariales: librerías de componentes compartidas, gestión de estado y presupuestos de rendimiento.",
+        "🤝 Trabajo con product owners y analistas de negocio para convertir flujos financieros en pantallas que se usan sin capacitación.",
+        "👥 Oriento a otros ingenieros y cuido la calidad con estándares de revisión de código, pruebas automatizadas y CI/CD.",
+        "🤖 Incorporo desarrollo asistido por IA donde acelera la entrega sin comprometer calidad ni seguridad."
       ]
     },
     {
@@ -48,12 +48,12 @@
       "Title": "Miembro del Personal Técnico",
       "Date": "Mayo 2020 - Marzo 2025",
       "Description": [
-        "👨‍🏫 Lideré el departamento frontend como líder de equipo, escalando el equipo de Ingeniería UI de 3 a 8 miembros a través de contratación estratégica, mentoría y liderazgo técnico.",
-        "🧑‍💼 Desempeñé un papel clave en la contratación de talento técnico de alto nivel, forjando una cultura de ingeniería de alto rendimiento alineada con el crecimiento de la empresa de 5 a más de 40 empleados.",
-        "🏥 Diseñé y lancé aplicaciones críticas de salud como Telehealth, e-Prescribing y Scheduling en asociación con el gobierno de NSW, permitiendo el crecimiento a más de 15K usuarios.",
-        "⚙️ Impulsé la excelencia frontend a través de Angular, RxJS, GraphQL, REST y CI/CD, entregando experiencias de usuario consistentes, escalables y de alto rendimiento.",
-        "♿ Lideré iniciativas de accesibilidad y UX, introduciendo documentación estandarizada, listas de verificación para desarrolladores y protocolos de PR/release para mejor calidad y cumplimiento ISO.",
-        "🧠 Optimicé procesos de ingeniería remota con seguimiento estructurado de tareas, notas de versión detalladas y prácticas de colaboración eficientes, impulsando la productividad y velocidad de entrega."
+        "👨‍🏫 Lideré el departamento frontend como responsable de equipo, escalando el equipo de Ingeniería UI de 3 a 8 miembros a través de contratación estratégica, mentoría y acompañamiento técnico directo.",
+        "🧑‍💼 Participé en reclutar a los ingenieros con los que la empresa pasó de 5 a más de 40 personas.",
+        "🏥 Construí aplicaciones de salud como Telesalud, Receta electrónica y Agendamiento junto al gobierno de NSW, hasta superar los 15 mil usuarios.",
+        "⚙️ Trabajé con Angular, RxJS, GraphQL y REST, con CI/CD para mantener estables los lanzamientos.",
+        "♿ Impulsé el trabajo de accesibilidad y UX: documentación compartida, listas de verificación y reglas de PR y lanzamiento que respaldaron el cumplimiento ISO.",
+        "🧠 Mejoré la forma de trabajar del equipo remoto: seguimiento de tareas estructurado y notas de versión claras."
       ]
     },
     {
@@ -61,10 +61,10 @@
       "Title": "Desarrollador Full Stack",
       "Date": "Ene 2023 - Feb 2023",
       "Description": [
-        "🌐 Desarrollé un sitio web PHP responsivo para Jain Tours & Travels con integración de Google Maps y tiempos de carga inferiores a 1 segundo utilizando imágenes optimizadas con CDN.",
+        "🌐 Construí un sitio web PHP responsivo para Jain Tour & Travels (jaintourandtravels.com) con Google Maps y cargas inferiores a 1 segundo gracias a imágenes en CDN.",
         "📨 Integré servicios de API SMS para comunicación en tiempo real y confirmaciones de reservas.",
-        "🧩 Diseñé formularios fáciles de usar para mejorar la experiencia de consulta y reserva en todos los dispositivos.",
-        "🚀 Implementé la aplicación full-stack en Hostinger, manejando alojamiento, configuración y optimización de rendimiento."
+        "🧩 Diseñé formularios de consulta y reserva sencillos que funcionan en cualquier dispositivo.",
+        "🚀 Me encargué del alojamiento, la configuración y el ajuste de rendimiento del sitio en producción."
       ]
     },
     {
@@ -72,12 +72,12 @@
       "Title": "Desarrollador UI",
       "Date": "Marzo 2019 - Ene 2020",
       "Description": [
-        "🚀 Construí aplicaciones Angular escalables y mantenibles usando un enfoque basado en componentes, servicios y arquitectura MVC limpia para asegurar código de alta calidad.",
-        "⚡ Optimicé el rendimiento, entregando mejoras clave en la UI que redujeron los tiempos de carga en un 30% y mejoraron significativamente la experiencia de usuario.",
-        "🤝 Colaboré entre equipos, contribuyendo activamente a discusiones multifuncionales e implementando flujos de trabajo Git robustos, incluyendo gestión de PR y revisiones de código.",
-        "🧠 Me adapté rápidamente en una startup de ritmo acelerado, obteniendo amplia exposición a desafíos reales de productos y prácticas de desarrollo ágil.",
+        "🚀 Construí aplicaciones Angular mantenibles con componentes, servicios y una estructura MVC limpia.",
+        "⚡ Reduje los tiempos de carga un 30% con mejoras puntuales de rendimiento en la interfaz.",
+        "🤝 Participé en discusiones entre equipos y configuré flujos de Git con gestión de PR y revisiones de código.",
+        "🧠 Me adapté rápido en una startup, con contacto directo con problemas reales de producto y entrega ágil.",
         "🛠️ Integré APIs y herramientas de terceros como Google Maps y Sentry para mejorar la funcionalidad de la aplicación y monitorear la confiabilidad del producto en producción.",
-        "🧩 Trabajé estrechamente con diseñadores, backend y QA, asegurando una entrega fluida de UI con un fuerte enfoque en usabilidad, rendimiento y pulido."
+        "🧩 Trabajé con diseño, backend y QA para entregar interfaces usables, rápidas y pulidas."
       ]
     },
     {
@@ -85,9 +85,9 @@
       "Title": "Desarrollador UI",
       "Date": "Oct 2019 - Dic 2019",
       "Description": [
-        "🧑‍💻 Desarrollé Technocon Lakshya, una plataforma de registro digital para el evento principal de MIT Pune, optimizando todo el proceso de registro.",
-        "🔗 Integré la plataforma con Townscript para una gestión fluida de boletos y participantes.",
-        "🌐 Implementé el sitio web en el servidor oficial del colegio MIT, permitiendo registros 100% digitales con rendimiento confiable."
+        "🧑‍💻 Desarrollé Technocon Lakshya, la plataforma de registro del evento principal de MIT Pune.",
+        "🔗 Integré Townscript para la venta de entradas y la gestión de participantes.",
+        "🌐 Desplegué el sitio en el servidor de la universidad, con lo que el registro fue 100% digital."
       ]
     },
     {
@@ -95,9 +95,9 @@
       "Title": "Ejecutivo de Atención al Cliente",
       "Date": "Mayo 2016 - Ago 2016",
       "Description": [
-        "🤝 Construí relaciones sólidas con los clientes brindando asistencia oportuna, comunicación clara y un enfoque personalizado para mejorar la satisfacción general del cliente.",
-        "🎓 Educué a los clientes sobre características de productos y mejores prácticas, capacitándolos con el conocimiento necesario para obtener el máximo valor del servicio.",
-        "🛠️ Manejé la resolución de conflictos con empatía y profesionalismo, convirtiendo situaciones desafiantes en experiencias positivas a través de una comunicación respetuosa y centrada en soluciones."
+        "🤝 Atendí a los clientes con rapidez y comunicación clara.",
+        "🎓 Mostré a los clientes cómo funcionaba el producto para que le sacaran más provecho.",
+        "🛠️ Resolví quejas con calma y convertí situaciones frustrantes en buenos resultados."
       ]
     }
   ],
@@ -196,14 +196,14 @@
     },
     {
       "Title": "Jain Tour & Travels",
-      "Description": "Un sitio web responsivo para un operador turístico regional que muestra su flota, servicios y tarifas, publicado mediante un pipeline automatizado en AWS.",
+      "Description": "Un sitio web de marketing responsivo para un operador de viajes regional que presenta su flota, servicios y precios.",
       "ghLink": "https://github.com/chirag8966/Jain-Tours-And-Travels",
+      "demoLink": "https://www.jaintourandtravels.com/",
       "Technologies": [
         "HTML5",
         "SCSS",
         "Bootstrap",
-        "GitHub Actions",
-        "AWS"
+        "GitHub Actions"
       ]
     },
     {

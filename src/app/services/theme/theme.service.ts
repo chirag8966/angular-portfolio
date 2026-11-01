@@ -4,7 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 
 export type Theme = 'dark' | 'light';
 const STORAGE_KEY = 'theme';
-const META_COLOR: Record<Theme, string> = { dark: '#0a192f', light: '#f7f5f0' };
+const META_COLOR: Record<Theme, string> = { dark: '#0a192f', light: '#f5efe3' };
 
 /**
  * Dark is the default (and what is prerendered). Light is opt-in and persisted.

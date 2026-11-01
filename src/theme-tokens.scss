@@ -21,27 +21,27 @@
   --shadow-strong: rgba(2, 12, 27, 0.9);
 }
 
-// Light palette. Contrast (WCAG): slate 6.75:1, light-slate 9.37:1, lightest-slate 14.7:1,
-// green 5.6:1 on --navy (#f7f5f0); green >= 4.9:1 on --panel-alt.
+// Light palette (warm beige). Contrast (WCAG): slate 7.67:1, light-slate 10.45:1, lightest-slate 12.59:1,
+// green 5.68:1 on --navy (#f5efe3); green >= 5.1:1 on --panel-alt.
 :root[data-theme="light"] {
-  --navy: #f7f5f0;
-  --light-navy: #ffffff;
-  --lightest-navy: #d6d2c6;
-  --slate: #4a5670;
-  --light-slate: #364159;
-  --lightest-slate: #16213a;
+  --navy: #f5efe3;
+  --light-navy: #fbf7ef;
+  --lightest-navy: #d9ccb4;
+  --slate: #4f4a42;
+  --light-slate: #3b362f;
+  --lightest-slate: #1f2a3d;
   --white: #0a192f;
-  --green: #0a6f61;
-  --green-tint: rgba(10, 111, 97, 0.08);
+  --green: #0b6a5c;
+  --green-tint: rgba(11, 106, 92, 0.08);
   --danger: #b3261e;
-  --panel-alt: #ece8df;
-  --menu-bg: #d6d2c6;
+  --panel-alt: #ece3d2;
+  --menu-bg: #e4d9c4;
   --menu-text: #16213a;
-  --navy-rgb: 247, 245, 240;
-  --green-rgb: 10, 111, 97;
+  --navy-rgb: 245, 239, 227;
+  --green-rgb: 11, 106, 92;
   --danger-rgb: 179, 38, 30;
-  --shadow: rgba(22, 33, 58, 0.16);
-  --shadow-strong: rgba(22, 33, 58, 0.22);
+  --shadow: rgba(60, 45, 25, 0.12);
+  --shadow-strong: rgba(60, 45, 25, 0.18);
 }
 
 // Smooth the switch only while ThemeService has flagged a user-initiated change

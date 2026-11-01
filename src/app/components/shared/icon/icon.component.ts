@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
-/** Inline SVG icons – replaces the ~1MB Font Awesome bundle (only 3 icons were used). */
+/** Inline SVG icons: replaces the ~1MB Font Awesome bundle (only 3 icons were used). */
 @Component({
   selector: 'app-icon',
   standalone: true,

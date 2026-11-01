@@ -6,20 +6,20 @@
   "Header.cvBtn": "Resume",
   "Header.cvName": "resume.pdf",
   "Banner.Pretitle": "Hi, my name is",
-  "Banner.Description": "I'm an engineering leader with <span class='underline'>%YEARS%+ years of experience</span> designing and delivering high-performance web platforms across fintech and healthtech. I specialise in <span class='underline'>Angular</span>, <span class='underline'>TypeScript</span> and scalable frontend architecture — building products that are fast, accessible and built to last.",
+  "Banner.Description": "I specialize in building web applications end to end: <span class='underline'>Angular</span> on the frontend, <span class='underline'>Node.js</span> on the backend and the database behind them. Over <span class='underline'>%YEARS%+ years</span> I've built platforms that fintech and healthtech teams rely on every day.",
   "Banner.ActionBtn": "Get In Touch",
   "AboutMe.Title": "About Me",
   "AboutMe.Paragraphs": [
-    "I'm a software engineer and technical leader with <span class='underline'>%YEARS%+ years</span> of experience turning complex business problems into elegant, dependable software. Today I serve as <span class='underline'>Assistant Vice President at Delta Capita</span>, helping shape technology for the financial-services industry.",
-    "Previously at CareMonitor, I led frontend engineering for mission-critical healthcare platforms — growing the UI team from 3 to 8 engineers and shipping <span class='underline'>Telehealth</span>, <span class='underline'>e-Prescribing</span> and <span class='underline'>Scheduling</span> products trusted by 15K+ users.",
-    "I care deeply about clean architecture, performance, accessibility and developer experience — and about mentoring teams to raise the bar together. Outside of work, I build products for small businesses and side projects that blend utility with craft.",
+    "I'm a full-stack software engineer, and after <span class='underline'>%YEARS%+ years</span> I still get a kick out of taking a messy business problem and making it feel simple on screen. Today I'm an <span class='underline'>Assistant Vice President at Delta Capita</span>, working on software for the financial-services industry.",
+    "Before that I spent close to five years at CareMonitor running frontend engineering for healthcare platforms that patients and clinicians relied on. The UI team grew from 3 to 8 engineers along the way, and together we shipped <span class='underline'>Telehealth</span>, <span class='underline'>e-Prescribing</span> and <span class='underline'>Scheduling</span> products used by 15K+ people.",
+    "I care most about the parts of software people only notice when they break, like a page that drags or a form a screen reader can't get through. I also like mentoring, and code reviews where both sides walk away knowing something new. Outside work I build websites for small businesses and keep a few side projects going.",
     "Technologies I work with regularly:"
   ],
   "AboutMe.technologies": [
     "Angular",
     "TypeScript",
     "RxJS / NgRx",
-    "JavaScript (ES2023+)",
+    "JavaScript",
     "Node.js / NestJS",
     "React",
     "HTML & SCSS",
@@ -36,11 +36,11 @@
       "Title": "Assistant Vice President",
       "Date": "2025 - Present",
       "Description": [
-        "🏦 Leading frontend engineering for capital-markets and regulatory-technology platforms that serve global financial institutions.",
-        "🧭 Setting architecture and technical direction for enterprise Angular applications — scalable component libraries, robust state management and performance-first patterns.",
-        "🤝 Partnering with product owners, business analysts and stakeholders to translate complex financial workflows into intuitive, accessible user experiences.",
-        "👥 Mentoring engineers and championing engineering excellence through code-review standards, automated testing and CI/CD best practices.",
-        "🤖 Driving adoption of AI-assisted development and automation to accelerate delivery without compromising quality or security."
+        "🏦 Own frontend delivery for capital-markets and regulatory-tech platforms used by global financial institutions.",
+        "🧭 Set the architecture for enterprise Angular apps: shared component libraries, state management and performance budgets.",
+        "🤝 Work with product owners and business analysts to turn financial workflows into screens people can use without training.",
+        "👥 Mentor engineers and keep quality up through code review standards, automated tests and CI/CD.",
+        "🤖 Introduce AI-assisted development where it speeds up delivery without weakening quality or security."
       ]
     },
     {
@@ -48,12 +48,12 @@
       "Title": "Member of Technical staff",
       "Date": "May 2020 - March 2025",
       "Description": [
-        "👨‍🏫 Led the frontend department as team lead, scaling the UI Engineering team from 3 to 8 through strategic hiring, mentorship, and technical leadership.",
-        "🧑‍💼 Played a key role in recruiting top technical talent, shaping a high-performing engineering culture aligned with the company’s growth from 5 to 40+ employees.",
-        "🏥 Architected and launched mission-critical healthcare apps like Telehealth, e-Prescribing, and Scheduling in partnership with NSW government, enabling growth to 15K+ users.",
-        "⚙️ Drove frontend excellence through Angular, RxJS, GraphQL, REST, and CI/CD, delivering consistent, scalable, and performant user experiences.",
-        "♿ Spearheaded accessibility and UX initiatives, introducing standardized docs, developer checklists, and PR/release protocols for better quality and ISO compliance.",
-        "🧠 Optimized remote engineering processes with structured task tracking, detailed release notes, and efficient collaboration practices, boosting productivity and delivery speed."
+        "👨‍🏫 Led the frontend department as team lead, scaling the UI Engineering team from 3 to 8 through strategic hiring, mentorship and hands-on technical guidance.",
+        "🧑‍💼 Helped recruit the engineers who took the company from 5 to 40+ people.",
+        "🏥 Built healthcare apps including Telehealth, e-Prescribing and Scheduling with NSW government, growing to 15K+ users.",
+        "⚙️ Worked across Angular, RxJS, GraphQL and REST, with CI/CD keeping releases steady.",
+        "♿ Started the accessibility and UX work: shared docs, developer checklists and PR and release rules that supported ISO compliance.",
+        "🧠 Tightened how the remote team worked: structured task tracking and clear release notes."
       ]
     },
     {
@@ -61,10 +61,10 @@
       "Title": "Full Stack Developer",
       "Date": "Jan 2023 - feb 2023",
       "Description": [
-        "🌐 Engineered a responsive PHP website for Jain Tours & Travels with Google Maps integration and sub-1-second load times using CDN-optimized images.",
+        "🌐 Built a responsive PHP website for Jain Tour & Travels (jaintourandtravels.com) with Google Maps and sub-1-second loads using CDN-optimized images.",
         "📨 Integrated SMS API services for real-time communication and booking confirmations.",
-        "🧩 Designed user-friendly forms to improve the inquiry and booking experience across devices.",
-        "🚀 Deployed the full-stack application to Hostinger, handling hosting, configuration, and performance optimization."
+        "🧩 Designed simple inquiry and booking forms that work on any device.",
+        "🚀 Handled hosting, configuration and performance tuning for the live site."
       ]
     },
     {
@@ -72,12 +72,12 @@
       "Title": "UI Developer",
       "Date": "March 2019 - Jan 2020",
       "Description": [
-        "🚀 Built scalable, maintainable Angular apps using a component-driven approach, services, and clean MVC architecture to ensure high-quality code.",
-        "⚡ Optimized performance, delivering key UI improvements that reduced load times by 30% and significantly enhanced user experience.",
-        "🤝 Collaborated across teams, actively contributing to cross-functional discussions and implementing robust Git workflows, including PR management and code reviews.",
-        "🧠 Adapted quickly in a fast-paced startup, gaining broad exposure to real-world product challenges and agile development practices.",
+        "🚀 Built maintainable Angular apps with components, services and a clean MVC structure.",
+        "⚡ Cut load times by 30% with targeted UI performance fixes.",
+        "🤝 Joined cross-team discussions and set up Git workflows including PR management and code reviews.",
+        "🧠 Picked things up fast in a startup, with exposure to real product problems and agile delivery.",
         "🛠️ Integrated third-party APIs and tools like Google Maps and Sentry to enhance app functionality and monitor product reliability in production.",
-        "🧩 Worked closely with designers, backend, and QA, ensuring seamless UI delivery with a strong focus on usability, performance, and polish."
+        "🧩 Worked with designers, backend and QA to ship UIs that were usable, fast and polished."
       ]
     },
     {
@@ -85,9 +85,9 @@
       "Title": "UI Developer",
       "Date": "Oct 2019 - dec 2019",
       "Description": [
-        "🧑‍💻 Developed Technocon Lakshya, a digital registration platform for MIT Pune’s flagship event, streamlining the entire registration process.",
-        "🔗 Integrated the platform with Townscript for seamless ticketing and participant management.",
-        "🌐 Deployed the website on MIT’s official college server, enabling 100% digital registrations with reliable performance."
+        "🧑‍💻 Developed Technocon Lakshya, the registration platform for MIT Pune's flagship event.",
+        "🔗 Integrated Townscript for ticketing and participant management.",
+        "🌐 Deployed the site on MIT's college server, so registration went 100% digital."
       ]
     },
     {
@@ -95,9 +95,9 @@
       "Title": "Customer Service Executive",
       "Date": "May 2016 - Aug 2016",
       "Description": [
-        "🤝 Built strong client relationships by delivering timely assistance, clear communication, and a personalized approach to enhance overall customer satisfaction.",
-        "🎓 Educated customers on product features and best practices, empowering them with the knowledge needed to get the most value from the service.",
-        "🛠️ Handled conflict resolution with empathy and professionalism, turning challenging situations into positive experiences through respectful and solution-focused communication."
+        "🤝 Helped customers quickly and kept communication clear.",
+        "🎓 Showed customers how the product worked so they got more out of it.",
+        "🛠️ Resolved complaints calmly and turned frustrating situations into good outcomes."
       ]
     }
   ],
@@ -145,7 +145,7 @@
   "OtherProjects.Projects": [
     {
       "Title": "Divyam Shree",
-      "Description": "A conversion-focused brand storefront for a heritage Indian tea & spice company, featuring a 62-frame scroll-driven hero, lazy-loaded sections, rich SEO metadata and live Amazon pricing — fully tested and deployed on AWS.",
+      "Description": "A conversion-focused brand storefront for a heritage Indian tea & spice company, featuring a 62-frame scroll-driven hero, lazy-loaded sections, rich SEO metadata and live Amazon pricing, fully tested and deployed on AWS.",
       "ghLink": "https://github.com/chirag8966/divyamshree-ui",
       "demoLink": "https://divyamshree.com/",
       "Technologies": [
@@ -196,14 +196,14 @@
     },
     {
       "Title": "Jain Tour & Travels",
-      "Description": "A responsive marketing website for a regional travel operator showcasing its fleet, services and pricing, shipped through an automated AWS deployment pipeline.",
+      "Description": "A responsive marketing website for a regional travel operator showcasing its fleet, services and pricing.",
       "ghLink": "https://github.com/chirag8966/Jain-Tours-And-Travels",
+      "demoLink": "https://www.jaintourandtravels.com/",
       "Technologies": [
         "HTML5",
         "SCSS",
         "Bootstrap",
-        "GitHub Actions",
-        "AWS"
+        "GitHub Actions"
       ]
     },
     {
@@ -226,14 +226,14 @@
   "dxBall": {
     "title": "DX Ball",
     "startMessage": "Click to begin",
-    "gameOver": "Game over — great run!",
+    "gameOver": "Game over. Great run!",
     "restartMessage": "Click to play again",
     "continueMessage": "Click to continue",
     "score": "Score: {{score}}",
     "lives": "Lives: {{lives}}",
     "pretitle": "Bonus round",
     "heading": "Take a Quick Break",
-    "description": "A tiny tribute to the classic DX-Ball, rendered on HTML canvas. Move your mouse — or touch and drag — to steer the paddle and clear the wall.",
+    "description": "A tiny tribute to the classic DX-Ball, rendered on HTML canvas. Move your mouse (or touch and drag) to steer the paddle and clear the wall.",
     "restartButton": "Restart"
   },
   "Walkthroughs.Title": "Project Walkthroughs",

@@ -1,5 +1,5 @@
 {
-  "name": "Chirag Jain – Portfolio",
+  "name": "Chirag Jain | Portfolio",
   "short_name": "Chirag Jain",
   "theme_color": "#0a192f",
   "background_color": "#0a192f",
@@ -62,7 +62,7 @@
       "purpose": "maskable"
     }
   ],
-  "description": "Assistant Vice President at Delta Capita and Angular engineering leader.",
+  "description": "Assistant Vice President at Delta Capita. Software engineer who builds web applications end to end with Angular, Node.js and databases.",
   "id": "/",
   "lang": "en"
 }

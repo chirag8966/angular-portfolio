@@ -119,7 +119,7 @@ body {
 }
 
 // Entrance animations.
-// NOTE: never animate `transform` on an element that *contains* position:fixed children —
+// NOTE: never animate `transform` on an element that *contains* position:fixed children:
 // a filled transform animation makes it the containing block, so the "fixed" side bars and
 // the mobile menu would scroll away with the page. Wrappers fade (opacity only); the fixed
 // elements animate their own transform.
