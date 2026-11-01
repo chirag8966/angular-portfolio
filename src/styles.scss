@@ -286,3 +286,6 @@ a {
   }
 }
 .theme-toggle-mobile { margin: 0 auto 10px; width: 44px; height: 44px; }
+
+// The logo PNG is the bright dark-theme teal; deepen it on light backgrounds
+html[data-theme="light"] .navbar-brand img { filter: brightness(0.6) saturate(1.4); }
