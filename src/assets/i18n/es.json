@@ -6,20 +6,20 @@
   "Header.cvBtn": "Currículum",
   "Header.cvName": "resume.pdf",
   "Banner.Pretitle": "Hola, mi nombre es",
-  "Banner.Description": "Soy un líder de ingeniería con <span class='underline'>más de %YEARS% años de experiencia</span> diseñando y entregando plataformas web de alto rendimiento en fintech y healthtech. Me especializo en <span class='underline'>Angular</span>, <span class='underline'>TypeScript</span> y arquitectura frontend escalable, creando productos rápidos, accesibles y hechos para durar.",
+  "Banner.Description": "Me especializo en construir soluciones, sobre todo plataformas web en las que equipos de fintech y healthtech se apoyan cada día. Llevo <span class='underline'>más de %YEARS% años</span> haciéndolo, con <span class='underline'>Angular</span> y <span class='underline'>TypeScript</span> como herramientas de cabecera y la arquitectura frontend como la parte que más disfruto.",
   "Banner.ActionBtn": "Contáctame",
   "AboutMe.Title": "Sobre Mí",
   "AboutMe.Paragraphs": [
-    "Soy ingeniero de software y líder técnico con <span class='underline'>más de %YEARS% años</span> de experiencia convirtiendo problemas de negocio complejos en software elegante y confiable. Hoy me desempeño como <span class='underline'>Vicepresidente Asistente en Delta Capita</span>, ayudando a dar forma a la tecnología del sector de servicios financieros.",
-    "Anteriormente en CareMonitor, lideré la ingeniería frontend de plataformas de salud críticas: hice crecer el equipo de UI de 3 a 8 ingenieros y lancé productos de <span class='underline'>Telesalud</span>, <span class='underline'>Receta electrónica</span> y <span class='underline'>Agendamiento</span> utilizados por más de 15 mil usuarios.",
-    "Me importan profundamente la arquitectura limpia, el rendimiento, la accesibilidad y la experiencia del desarrollador, así como guiar a los equipos para elevar juntos el nivel. Fuera del trabajo, creo productos para pequeñas empresas y proyectos personales que combinan utilidad y oficio.",
+    "Soy ingeniero de software y me especializo en construir soluciones. Después de <span class='underline'>más de %YEARS% años</span>, sigo disfrutando de tomar un problema de negocio enredado y hacer que resulte sencillo en pantalla. Hoy soy <span class='underline'>Vicepresidente Asistente en Delta Capita</span>, donde trabajo en software para el sector de servicios financieros.",
+    "Antes pasé casi cinco años en CareMonitor al frente de la ingeniería frontend de plataformas de salud en las que confiaban pacientes y profesionales. El equipo de UI creció de 3 a 8 ingenieros por el camino, y juntos lanzamos <span class='underline'>Telesalud</span>, <span class='underline'>Receta electrónica</span> y <span class='underline'>Agendamiento</span>, productos que usan más de 15 mil personas.",
+    "Lo que más me importa son las partes del software que solo se notan cuando fallan, como una página lenta o un formulario que un lector de pantalla no puede completar. También disfruto mentorizando y de las revisiones de código en las que ambas partes aprenden algo. Fuera del trabajo hago webs para pequeños negocios y mantengo algunos proyectos personales.",
     "Tecnologías con las que trabajo habitualmente:"
   ],
   "AboutMe.technologies": [
     "Angular",
     "TypeScript",
     "RxJS / NgRx",
-    "JavaScript (ES2023+)",
+    "JavaScript",
     "Node.js / NestJS",
     "React",
     "HTML & SCSS",
@@ -48,7 +48,7 @@
       "Title": "Miembro del Personal Técnico",
       "Date": "Mayo 2020 - Marzo 2025",
       "Description": [
-        "👨‍🏫 Lideré el departamento frontend como líder de equipo, escalando el equipo de Ingeniería UI de 3 a 8 miembros a través de contratación estratégica, mentoría y liderazgo técnico.",
+        "👨‍🏫 Lideré el departamento frontend como responsable de equipo, escalando el equipo de Ingeniería UI de 3 a 8 miembros a través de contratación estratégica, mentoría y acompañamiento técnico directo.",
         "🧑‍💼 Desempeñé un papel clave en la contratación de talento técnico de alto nivel, forjando una cultura de ingeniería de alto rendimiento alineada con el crecimiento de la empresa de 5 a más de 40 empleados.",
         "🏥 Diseñé y lancé aplicaciones críticas de salud como Telehealth, e-Prescribing y Scheduling en asociación con el gobierno de NSW, permitiendo el crecimiento a más de 15K usuarios.",
         "⚙️ Impulsé la excelencia frontend a través de Angular, RxJS, GraphQL, REST y CI/CD, entregando experiencias de usuario consistentes, escalables y de alto rendimiento.",
@@ -61,7 +61,7 @@
       "Title": "Desarrollador Full Stack",
       "Date": "Ene 2023 - Feb 2023",
       "Description": [
-        "🌐 Desarrollé un sitio web PHP responsivo para Jain Tours & Travels con integración de Google Maps y tiempos de carga inferiores a 1 segundo utilizando imágenes optimizadas con CDN.",
+        "🌐 Desarrollé un sitio web PHP responsivo para Jain Tours & Travels (jaintourandtravels.com) con integración de Google Maps y tiempos de carga inferiores a 1 segundo utilizando imágenes optimizadas con CDN.",
         "📨 Integré servicios de API SMS para comunicación en tiempo real y confirmaciones de reservas.",
         "🧩 Diseñé formularios fáciles de usar para mejorar la experiencia de consulta y reserva en todos los dispositivos.",
         "🚀 Implementé la aplicación full-stack en Hostinger, manejando alojamiento, configuración y optimización de rendimiento."
@@ -198,6 +198,7 @@
       "Title": "Jain Tour & Travels",
       "Description": "Un sitio web responsivo para un operador turístico regional que muestra su flota, servicios y tarifas, publicado mediante un pipeline automatizado en AWS.",
       "ghLink": "https://github.com/chirag8966/Jain-Tours-And-Travels",
+      "demoLink": "https://www.jaintourandtravels.com/",
       "Technologies": [
         "HTML5",
         "SCSS",

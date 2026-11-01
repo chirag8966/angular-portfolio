@@ -20,7 +20,7 @@ import { CommonModule } from '@angular/common';
             [src]="src"
             [attr.srcset]="srcset(src)"
             [attr.sizes]="sizes"
-            [alt]="label + ' – screenshot ' + (i + 1) + ' of ' + images.length"
+            [alt]="label + ': screenshot ' + (i + 1) + ' of ' + images.length"
             [width]="width"
             [height]="height"
             [attr.loading]="i === 0 && eager ? 'eager' : 'lazy'"

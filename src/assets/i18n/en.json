@@ -6,20 +6,20 @@
   "Header.cvBtn": "Resume",
   "Header.cvName": "resume.pdf",
   "Banner.Pretitle": "Hi, my name is",
-  "Banner.Description": "I'm an engineering leader with <span class='underline'>%YEARS%+ years of experience</span> designing and delivering high-performance web platforms across fintech and healthtech. I specialise in <span class='underline'>Angular</span>, <span class='underline'>TypeScript</span> and scalable frontend architecture — building products that are fast, accessible and built to last.",
+  "Banner.Description": "I specialize in building solutions, mostly the web platforms that fintech and healthtech teams lean on every day. I've been at it for <span class='underline'>%YEARS%+ years</span>, with <span class='underline'>Angular</span> and <span class='underline'>TypeScript</span> as my tools of choice and frontend architecture as the part I enjoy most.",
   "Banner.ActionBtn": "Get In Touch",
   "AboutMe.Title": "About Me",
   "AboutMe.Paragraphs": [
-    "I'm a software engineer and technical leader with <span class='underline'>%YEARS%+ years</span> of experience turning complex business problems into elegant, dependable software. Today I serve as <span class='underline'>Assistant Vice President at Delta Capita</span>, helping shape technology for the financial-services industry.",
-    "Previously at CareMonitor, I led frontend engineering for mission-critical healthcare platforms — growing the UI team from 3 to 8 engineers and shipping <span class='underline'>Telehealth</span>, <span class='underline'>e-Prescribing</span> and <span class='underline'>Scheduling</span> products trusted by 15K+ users.",
-    "I care deeply about clean architecture, performance, accessibility and developer experience — and about mentoring teams to raise the bar together. Outside of work, I build products for small businesses and side projects that blend utility with craft.",
+    "I'm a software engineer who specializes in building solutions, and after <span class='underline'>%YEARS%+ years</span> I still get a kick out of taking a messy business problem and making it feel simple on screen. Today I'm an <span class='underline'>Assistant Vice President at Delta Capita</span>, working on software for the financial-services industry.",
+    "Before that I spent close to five years at CareMonitor running frontend engineering for healthcare platforms that patients and clinicians relied on. The UI team grew from 3 to 8 engineers along the way, and together we shipped <span class='underline'>Telehealth</span>, <span class='underline'>e-Prescribing</span> and <span class='underline'>Scheduling</span> products used by 15K+ people.",
+    "I care most about the parts of software people only notice when they break, like a page that drags or a form a screen reader can't get through. I also like mentoring, and code reviews where both sides walk away knowing something new. Outside work I build websites for small businesses and keep a few side projects going.",
     "Technologies I work with regularly:"
   ],
   "AboutMe.technologies": [
     "Angular",
     "TypeScript",
     "RxJS / NgRx",
-    "JavaScript (ES2023+)",
+    "JavaScript",
     "Node.js / NestJS",
     "React",
     "HTML & SCSS",
@@ -37,7 +37,7 @@
       "Date": "2025 - Present",
       "Description": [
         "🏦 Leading frontend engineering for capital-markets and regulatory-technology platforms that serve global financial institutions.",
-        "🧭 Setting architecture and technical direction for enterprise Angular applications — scalable component libraries, robust state management and performance-first patterns.",
+        "🧭 Setting architecture and technical direction for enterprise Angular applications: scalable component libraries, robust state management and performance-first patterns.",
         "🤝 Partnering with product owners, business analysts and stakeholders to translate complex financial workflows into intuitive, accessible user experiences.",
         "👥 Mentoring engineers and championing engineering excellence through code-review standards, automated testing and CI/CD best practices.",
         "🤖 Driving adoption of AI-assisted development and automation to accelerate delivery without compromising quality or security."
@@ -48,7 +48,7 @@
       "Title": "Member of Technical staff",
       "Date": "May 2020 - March 2025",
       "Description": [
-        "👨‍🏫 Led the frontend department as team lead, scaling the UI Engineering team from 3 to 8 through strategic hiring, mentorship, and technical leadership.",
+        "👨‍🏫 Led the frontend department as team lead, scaling the UI Engineering team from 3 to 8 through strategic hiring, mentorship and hands-on technical guidance.",
         "🧑‍💼 Played a key role in recruiting top technical talent, shaping a high-performing engineering culture aligned with the company’s growth from 5 to 40+ employees.",
         "🏥 Architected and launched mission-critical healthcare apps like Telehealth, e-Prescribing, and Scheduling in partnership with NSW government, enabling growth to 15K+ users.",
         "⚙️ Drove frontend excellence through Angular, RxJS, GraphQL, REST, and CI/CD, delivering consistent, scalable, and performant user experiences.",
@@ -61,7 +61,7 @@
       "Title": "Full Stack Developer",
       "Date": "Jan 2023 - feb 2023",
       "Description": [
-        "🌐 Engineered a responsive PHP website for Jain Tours & Travels with Google Maps integration and sub-1-second load times using CDN-optimized images.",
+        "🌐 Engineered a responsive PHP website for Jain Tours & Travels (jaintourandtravels.com) with Google Maps integration and sub-1-second load times using CDN-optimized images.",
         "📨 Integrated SMS API services for real-time communication and booking confirmations.",
         "🧩 Designed user-friendly forms to improve the inquiry and booking experience across devices.",
         "🚀 Deployed the full-stack application to Hostinger, handling hosting, configuration, and performance optimization."
@@ -145,7 +145,7 @@
   "OtherProjects.Projects": [
     {
       "Title": "Divyam Shree",
-      "Description": "A conversion-focused brand storefront for a heritage Indian tea & spice company, featuring a 62-frame scroll-driven hero, lazy-loaded sections, rich SEO metadata and live Amazon pricing — fully tested and deployed on AWS.",
+      "Description": "A conversion-focused brand storefront for a heritage Indian tea & spice company, featuring a 62-frame scroll-driven hero, lazy-loaded sections, rich SEO metadata and live Amazon pricing, fully tested and deployed on AWS.",
       "ghLink": "https://github.com/chirag8966/divyamshree-ui",
       "demoLink": "https://divyamshree.com/",
       "Technologies": [
@@ -198,6 +198,7 @@
       "Title": "Jain Tour & Travels",
       "Description": "A responsive marketing website for a regional travel operator showcasing its fleet, services and pricing, shipped through an automated AWS deployment pipeline.",
       "ghLink": "https://github.com/chirag8966/Jain-Tours-And-Travels",
+      "demoLink": "https://www.jaintourandtravels.com/",
       "Technologies": [
         "HTML5",
         "SCSS",
@@ -226,14 +227,14 @@
   "dxBall": {
     "title": "DX Ball",
     "startMessage": "Click to begin",
-    "gameOver": "Game over — great run!",
+    "gameOver": "Game over. Great run!",
     "restartMessage": "Click to play again",
     "continueMessage": "Click to continue",
     "score": "Score: {{score}}",
     "lives": "Lives: {{lives}}",
     "pretitle": "Bonus round",
     "heading": "Take a Quick Break",
-    "description": "A tiny tribute to the classic DX-Ball, rendered on HTML canvas. Move your mouse — or touch and drag — to steer the paddle and clear the wall.",
+    "description": "A tiny tribute to the classic DX-Ball, rendered on HTML canvas. Move your mouse (or touch and drag) to steer the paddle and clear the wall.",
     "restartButton": "Restart"
   },
   "Walkthroughs.Title": "Project Walkthroughs",

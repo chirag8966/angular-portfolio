@@ -45,7 +45,7 @@ export class SeoService {
     this.setName('author', SITE.name);
     this.setName('keywords', [
       'Chirag Jain', 'Assistant Vice President', 'Delta Capita', 'Angular developer', 'Frontend engineer',
-      'Software engineer', 'TypeScript', 'RxJS', 'NgRx', 'Node.js', 'Engineering leader', 'Portfolio',
+      'Software engineer', 'TypeScript', 'RxJS', 'NgRx', 'Node.js', 'Solutions engineer', 'Portfolio',
     ].join(', '));
     this.setName('robots', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
 
@@ -53,24 +53,24 @@ export class SeoService {
     this.setProperty('og:type', 'profile');
     this.setProperty('og:site_name', SITE.name);
     this.setProperty('og:url', SITE.url);
-    this.setProperty('og:title', `${SITE.name} — ${SITE.jobTitle} at ${SITE.employer}`);
+    this.setProperty('og:title', `${SITE.name} | ${SITE.jobTitle} at ${SITE.employer}`);
     this.setProperty('og:description', shareDescription);
     this.setProperty('og:image', SITE.image);
     this.setProperty('og:image:secure_url', SITE.image);
     this.setProperty('og:image:type', 'image/jpeg');
     this.setProperty('og:image:width', '1200');
     this.setProperty('og:image:height', '630');
-    this.setProperty('og:image:alt', `${SITE.name} — ${SITE.jobTitle} at ${SITE.employer}`);
+    this.setProperty('og:image:alt', `${SITE.name} | ${SITE.jobTitle} at ${SITE.employer}`);
     this.setProperty('og:locale', 'en_US');
     this.setProperty('profile:first_name', 'Chirag');
     this.setProperty('profile:last_name', 'Jain');
 
     // X / Twitter
     this.setName('twitter:card', 'summary_large_image');
-    this.setName('twitter:title', `${SITE.name} — ${SITE.jobTitle} at ${SITE.employer}`);
+    this.setName('twitter:title', `${SITE.name} | ${SITE.jobTitle} at ${SITE.employer}`);
     this.setName('twitter:description', shareDescription);
     this.setName('twitter:image', SITE.image);
-    this.setName('twitter:image:alt', `${SITE.name} — ${SITE.jobTitle} at ${SITE.employer}`);
+    this.setName('twitter:image:alt', `${SITE.name} | ${SITE.jobTitle} at ${SITE.employer}`);
 
     this.setCanonical(SITE.url);
     this.setJsonLd(years);
@@ -95,7 +95,7 @@ export class SeoService {
     link.setAttribute('href', url);
   }
 
-  /** schema.org structured data – enables rich results / knowledge-panel signals in Google. */
+  /** schema.org structured data: enables rich results / knowledge-panel signals in Google. */
   private setJsonLd(years: number) {
     const graph = {
       '@context': 'https://schema.org',
@@ -110,17 +110,17 @@ export class SeoService {
           image: SITE.photo,
           email: SITE.email,
           jobTitle: SITE.jobTitle,
-          description: `Software engineering leader with ${years}+ years of experience (since ${CAREER_START.getFullYear()}) building web platforms with Angular and TypeScript.`,
+          description: `Software engineer with ${years}+ years of experience (since ${CAREER_START.getFullYear()}) who specializes in building solutions with Angular and TypeScript.`,
           worksFor: { '@type': 'Organization', name: SITE.employer, url: SITE.employerUrl },
           knowsAbout: ['Angular', 'TypeScript', 'JavaScript', 'RxJS', 'NgRx', 'Node.js', 'NestJS', 'React',
-            'Frontend Architecture', 'Web Performance', 'Web Accessibility', 'AWS', 'Engineering Leadership'],
+            'Frontend Architecture', 'Web Performance', 'Web Accessibility', 'AWS', 'Solution Design'],
           sameAs: [SITE.github, SITE.linkedin],
         },
         {
           '@type': 'WebSite',
           '@id': `${SITE.url}#website`,
           url: SITE.url,
-          name: `${SITE.name} — Portfolio`,
+          name: `${SITE.name} | Portfolio`,
           inLanguage: ['en', 'es', 'ar'],
           publisher: { '@id': `${SITE.url}#person` },
         },

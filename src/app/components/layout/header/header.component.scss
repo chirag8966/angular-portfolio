@@ -347,7 +347,7 @@
   &:focus { top: 12px; color: $Navy; }
 }
 
-// language controls are real <button>s now – strip native button chrome
+// language controls are real <button>s now, so strip native button chrome
 button.language-container,
 button.language-container-selector {
   font: inherit;

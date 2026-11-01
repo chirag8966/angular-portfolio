@@ -3,7 +3,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 /** First day of full-time professional work (SalesTrendz, March 2019). */
 export const CAREER_START = new Date(2019, 2, 1);
 
-/** Whole years of professional experience as of `today` – updates itself every year. */
+/** Whole years of professional experience as of `today`; updates itself every year. */
 export function yearsOfExperience(today: Date = new Date()): number {
   let years = today.getFullYear() - CAREER_START.getFullYear();
   const anniversaryPassed =
