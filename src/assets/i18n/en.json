@@ -6,11 +6,11 @@
   "Header.cvBtn": "Resume",
   "Header.cvName": "resume.pdf",
   "Banner.Pretitle": "Hi, my name is",
-  "Banner.Description": "I specialize in building solutions, mostly the web platforms that fintech and healthtech teams lean on every day. I've been at it for <span class='underline'>%YEARS%+ years</span>, with <span class='underline'>Angular</span> and <span class='underline'>TypeScript</span> as my tools of choice and frontend architecture as the part I enjoy most.",
+  "Banner.Description": "I specialize in building web applications end to end: <span class='underline'>Angular</span> on the frontend, <span class='underline'>Node.js</span> on the backend and the database behind them. Over <span class='underline'>%YEARS%+ years</span> I've built platforms that fintech and healthtech teams rely on every day.",
   "Banner.ActionBtn": "Get In Touch",
   "AboutMe.Title": "About Me",
   "AboutMe.Paragraphs": [
-    "I'm a software engineer, and after <span class='underline'>%YEARS%+ years</span> I still get a kick out of taking a messy business problem and making it feel simple on screen. Today I'm an <span class='underline'>Assistant Vice President at Delta Capita</span>, working on software for the financial-services industry.",
+    "I'm a full-stack software engineer, and after <span class='underline'>%YEARS%+ years</span> I still get a kick out of taking a messy business problem and making it feel simple on screen. Today I'm an <span class='underline'>Assistant Vice President at Delta Capita</span>, working on software for the financial-services industry.",
     "Before that I spent close to five years at CareMonitor running frontend engineering for healthcare platforms that patients and clinicians relied on. The UI team grew from 3 to 8 engineers along the way, and together we shipped <span class='underline'>Telehealth</span>, <span class='underline'>e-Prescribing</span> and <span class='underline'>Scheduling</span> products used by 15K+ people.",
     "I care most about the parts of software people only notice when they break, like a page that drags or a form a screen reader can't get through. I also like mentoring, and code reviews where both sides walk away knowing something new. Outside work I build websites for small businesses and keep a few side projects going.",
     "Technologies I work with regularly:"

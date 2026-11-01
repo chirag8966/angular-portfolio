@@ -2,7 +2,7 @@
 
 **Live site: [chiragj.pro](https://chiragj.pro)**
 
-Personal portfolio of Chirag Jain, a software engineer who specializes in building solutions for the web and is currently Assistant Vice President at Delta Capita. Built with Angular, prerendered at build time for SEO and fast first paint, and deployed to AWS S3 + CloudFront.
+Personal portfolio of Chirag Jain, a software engineer who builds web applications end to end with Angular, Node.js and databases, and is currently Assistant Vice President at Delta Capita. Built with Angular, prerendered at build time for SEO and fast first paint, and deployed to AWS S3 + CloudFront.
 
 ## ✨ Highlights
 

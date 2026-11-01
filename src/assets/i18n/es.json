@@ -6,11 +6,11 @@
   "Header.cvBtn": "Currículum",
   "Header.cvName": "resume.pdf",
   "Banner.Pretitle": "Hola, mi nombre es",
-  "Banner.Description": "Me especializo en construir soluciones, sobre todo plataformas web en las que equipos de fintech y healthtech se apoyan cada día. Llevo <span class='underline'>más de %YEARS% años</span> haciéndolo, con <span class='underline'>Angular</span> y <span class='underline'>TypeScript</span> como herramientas de cabecera y la arquitectura frontend como la parte que más disfruto.",
+  "Banner.Description": "Me especializo en construir aplicaciones web de punta a punta: <span class='underline'>Angular</span> en el frontend, <span class='underline'>Node.js</span> en el backend y la base de datos que las respalda. En <span class='underline'>más de %YEARS% años</span> he creado plataformas en las que equipos de fintech y healthtech confían cada día.",
   "Banner.ActionBtn": "Contáctame",
   "AboutMe.Title": "Sobre Mí",
   "AboutMe.Paragraphs": [
-    "Soy ingeniero de software. Después de <span class='underline'>más de %YEARS% años</span>, sigo disfrutando de tomar un problema de negocio enredado y hacer que resulte sencillo en pantalla. Hoy soy <span class='underline'>Vicepresidente Asistente en Delta Capita</span>, donde trabajo en software para el sector de servicios financieros.",
+    "Soy ingeniero de software full-stack. Después de <span class='underline'>más de %YEARS% años</span>, sigo disfrutando de tomar un problema de negocio enredado y hacer que resulte sencillo en pantalla. Hoy soy <span class='underline'>Vicepresidente Asistente en Delta Capita</span>, donde trabajo en software para el sector de servicios financieros.",
     "Antes pasé casi cinco años en CareMonitor al frente de la ingeniería frontend de plataformas de salud en las que confiaban pacientes y profesionales. El equipo de UI creció de 3 a 8 ingenieros por el camino, y juntos lanzamos <span class='underline'>Telesalud</span>, <span class='underline'>Receta electrónica</span> y <span class='underline'>Agendamiento</span>, productos que usan más de 15 mil personas.",
     "Lo que más me importa son las partes del software que solo se notan cuando fallan, como una página lenta o un formulario que un lector de pantalla no puede completar. También disfruto mentorizando y de las revisiones de código en las que ambas partes aprenden algo. Fuera del trabajo hago webs para pequeños negocios y mantengo algunos proyectos personales.",
     "Tecnologías con las que trabajo habitualmente:"
